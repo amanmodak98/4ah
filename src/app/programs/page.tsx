@@ -1,287 +1,298 @@
 'use client';
 
-import {
-  MessageSquare,
-  Users,
-  Brain,
-  Code,
-  Target,
-  Briefcase,
-  TrendingUp,
-  CheckCircle2,
-  ArrowRight,
-  Sparkles
-} from 'lucide-react';
+import { useEffect, useRef } from 'react';
 import Link from 'next/link';
-import { useFadeInUp, useStaggerAnimation } from '@/hooks/useGSAP';
+import {
+  MessageSquare, Brain, Users, Target, Briefcase, Code,
+  Award, Zap, ArrowRight, CheckCircle, ChevronRight, Sparkles
+} from 'lucide-react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+if (typeof window !== 'undefined') gsap.registerPlugin(ScrollTrigger);
 
 export default function ProgramsPage() {
-  const heroRef = useFadeInUp();
-  const programsRef = useStaggerAnimation(8);
+  const heroRef = useRef(null);
+  const cardsRef = useRef(null);
+  const methodRef = useRef(null);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.from('.prog-hero > *', { opacity: 0, y: 40, stagger: 0.15, duration: 0.8, ease: 'power3.out' });
+
+      gsap.from('.prog-card', {
+        opacity: 0, y: 60, scale: 0.93, stagger: 0.1, duration: 0.7, ease: 'back.out(1.2)',
+        scrollTrigger: { trigger: cardsRef.current, start: 'top 78%' },
+      });
+
+      gsap.from('.method-step', {
+        opacity: 0, x: -40, stagger: 0.12, duration: 0.6,
+        scrollTrigger: { trigger: methodRef.current, start: 'top 80%' },
+      });
+    });
+    return () => ctx.revert();
+  }, []);
 
   const programs = [
     {
       icon: MessageSquare,
       title: 'Communication Skills',
-      description: 'Verbal and non-verbal communication, active listening, vocabulary building, presentation skills, and public speaking.',
-      features: [
-        'Verbal & Non-Verbal Communication',
-        'Public Speaking & Presentations',
-        'Active Listening Techniques',
-        'Vocabulary Enhancement',
-      ],
-      gradient: 'from-blue-500 to-cyan-500',
+      tag: 'All Years',
+      tagColor: 'badge-orange',
+      gradient: 'linear-gradient(135deg, #F97316 0%, #FBBF24 100%)',
+      light: 'from-orange/5 to-yellow/5',
+      border: '#fed7aa',
+      highlights: ['Verbal & Non-Verbal', 'Public Speaking', 'Vocabulary Enhancement', 'Corporate Correspondence'],
       href: '/programs#communication',
-    },
-    {
-      icon: Users,
-      title: 'Soft Skills Development',
-      description: 'Personality development, grooming, teamwork, leadership, adaptability, emotional intelligence, and workplace etiquette.',
-      features: [
-        'Personality & Grooming',
-        'Leadership & Teamwork',
-        'Emotional Intelligence',
-        'Workplace Etiquette',
-      ],
-      gradient: 'from-purple-500 to-pink-500',
-      href: '/programs#soft-skills',
     },
     {
       icon: Brain,
       title: 'Quantitative Aptitude',
-      description: 'Number systems, percentages, profit & loss, time & work, permutation & combination, data interpretation, and problem-solving.',
-      features: [
-        'Number Systems & Simplification',
-        'Time, Speed & Distance',
-        'Data Interpretation',
-        'Shortcut Techniques',
-      ],
-      gradient: 'from-orange-500 to-red-500',
+      tag: '60 hrs',
+      tagColor: 'badge-purple',
+      gradient: 'linear-gradient(135deg, #7C3AED 0%, #A78BFA 100%)',
+      light: 'from-purple/5 to-purple-light/5',
+      border: '#ddd6fe',
+      highlights: ['Number Systems', 'Percentages & Profit', 'Time-Speed-Distance', 'Data Interpretation'],
       href: '/programs#aptitude',
     },
     {
-      icon: TrendingUp,
+      icon: Target,
       title: 'Logical Reasoning',
-      description: 'Series, coding-decoding, blood relations, puzzles, syllogism, statement & assumptions, and critical thinking.',
-      features: [
-        'Series & Pattern Recognition',
-        'Puzzles & Seating Arrangement',
-        'Syllogism & Assumptions',
-        'Critical Thinking',
-      ],
-      gradient: 'from-green-500 to-teal-500',
+      tag: '60 hrs combined',
+      tagColor: 'badge-teal',
+      gradient: 'linear-gradient(135deg, #0D9488 0%, #34D399 100%)',
+      light: 'from-teal/5 to-emerald-400/5',
+      border: '#99f6e4',
+      highlights: ['Series & Patterns', 'Puzzles & Arrangements', 'Syllogism', 'Critical Thinking'],
       href: '/programs#reasoning',
+    },
+    {
+      icon: Users,
+      title: 'Soft Skills & Personality',
+      tag: 'Year-wise',
+      tagColor: 'badge-orange',
+      gradient: 'linear-gradient(135deg, #EC4899 0%, #F97316 100%)',
+      light: 'from-pink-400/5 to-orange/5',
+      border: '#fbcfe8',
+      highlights: ['Leadership & Teamwork', 'Emotional Intelligence', 'Time Management', 'Professional Grooming'],
+      href: '/programs#soft-skills',
     },
     {
       icon: Code,
       title: 'Technical Training',
-      description: 'Domain-specific technical skills training aligned with industry requirements and emerging technologies.',
-      features: [
-        'Programming Fundamentals',
-        'Domain-Specific Skills',
-        'Industry Tools & Technologies',
-        'Hands-on Projects',
-      ],
-      gradient: 'from-indigo-500 to-purple-500',
+      tag: 'Domain-specific',
+      tagColor: 'badge-teal',
+      gradient: 'linear-gradient(135deg, #0284C7 0%, #06B6D4 100%)',
+      light: 'from-blue-500/5 to-cyan-400/5',
+      border: '#bae6fd',
+      highlights: ['Programming Fundamentals', 'Industry Tools', 'Domain Knowledge', 'Hands-on Projects'],
       href: '/programs#technical',
     },
     {
-      icon: Target,
+      icon: Award,
       title: 'Placement Readiness',
-      description: 'Resume building, LinkedIn optimization, group discussions, mock interviews, HR interview preparation, and placement strategy.',
-      features: [
-        'Resume & LinkedIn Profile',
-        'Group Discussion Mastery',
-        'Mock Interviews',
-        'Personal Branding',
-      ],
-      gradient: 'from-pink-500 to-rose-500',
+      tag: 'Final Year',
+      tagColor: 'badge-purple',
+      gradient: 'linear-gradient(135deg, #7C3AED 0%, #EC4899 100%)',
+      light: 'from-purple/5 to-pink-400/5',
+      border: '#ddd6fe',
+      highlights: ['Resume & LinkedIn', 'Group Discussions', 'Mock Interviews', 'Personal Branding'],
       href: '/programs#placement',
     },
     {
       icon: Briefcase,
       title: 'Corporate Training',
-      description: 'Professional development for working professionals including leadership, time management, and advanced communication.',
-      features: [
-        'Leadership Development',
-        'Time & Stress Management',
-        'Advanced Communication',
-        'Decision Making Skills',
-      ],
-      gradient: 'from-yellow-500 to-orange-500',
+      tag: 'Enterprise',
+      tagColor: 'badge-teal',
+      gradient: 'linear-gradient(135deg, #0D9488 0%, #0284C7 100%)',
+      light: 'from-teal/5 to-blue-500/5',
+      border: '#99f6e4',
+      highlights: ['Employee Upskilling', 'Leadership Programs', 'Change Management', 'Performance Enhancement'],
       href: '/corporate-solutions',
     },
     {
       icon: Sparkles,
       title: 'Flagship 90-Hour Program',
-      description: 'Comprehensive final-year employability program combining 60 hours aptitude + 30 hours soft skills training.',
-      features: [
-        '60 Hours Aptitude Training',
-        '30 Hours Soft Skills',
-        'Complete Mock Process',
-        'Individual Feedback Reports',
-      ],
-      gradient: 'from-cyan-500 to-blue-500',
+      tag: '⭐ Most Popular',
+      tagColor: 'badge-orange',
+      gradient: 'linear-gradient(135deg, #F97316 0%, #7C3AED 100%)',
+      light: 'from-orange/5 to-purple/5',
+      border: '#fed7aa',
+      highlights: ['60 hrs Aptitude', '30 hrs Soft Skills', 'Complete Mock Process', 'Individual Feedback'],
       href: '/flagship-program',
+      featured: true,
     },
   ];
 
   const methodology = [
-    { step: 'ASSESS', description: 'Pre-training assessment to understand current skill levels' },
-    { step: 'LEARN', description: 'Structured learning with expert trainers and proven curriculum' },
-    { step: 'PRACTICE', description: 'Continuous practice through worksheets, activities, and simulations' },
-    { step: 'FEEDBACK', description: 'Personalized feedback to identify strengths and improvement areas' },
-    { step: 'IMPROVE', description: 'Targeted improvement plans and ongoing mentorship support' },
+    { step: '01', title: 'Assess', desc: 'Pre-training diagnostic to understand baseline skills and gaps', color: '#F97316' },
+    { step: '02', title: 'Learn', desc: 'Structured modules with concept clarity, examples and guided practice', color: '#7C3AED' },
+    { step: '03', title: 'Practise', desc: 'Worksheets, simulations, role-plays and group activities', color: '#0D9488' },
+    { step: '04', title: 'Feedback', desc: 'Personalised feedback reports and improvement guidance per learner', color: '#EC4899' },
+    { step: '05', title: 'Improve', desc: 'Progressive tests, assignments and ongoing mentorship support', color: '#F97316' },
   ];
 
   return (
     <div className="pt-20">
-      {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-navy-950 via-navy-900 to-navy-800 text-white relative overflow-hidden">
-        <div className="absolute top-20 right-10 w-96 h-96 bg-orange-500/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 left-10 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+      {/* ═══════ HERO ═══════ */}
+      <section
+        ref={heroRef}
+        className="relative min-h-[60vh] flex items-center overflow-hidden"
+        style={{ background: 'linear-gradient(135deg, #7C3AED 0%, #8B5CF6 50%, #A78BFA 100%)' }}
+      >
+        <div className="absolute -top-40 -right-40 w-[600px] h-[600px] rounded-full opacity-20"
+             style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.5), transparent)' }} />
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-white" style={{ clipPath: 'ellipse(100% 100% at 50% 100%)' }} />
 
-        <div className="container-custom relative z-10">
-          <div ref={heroRef} className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center space-x-2 px-5 py-2.5 bg-orange-500/10 border border-orange-500/30 rounded-full mb-8">
-              <Target className="w-4 h-4 text-orange-400" />
-              <span className="text-sm font-bold text-orange-400">Comprehensive Training Programs</span>
+        <div className="container relative z-10 py-20">
+          <div className="max-w-3xl prog-hero">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 bg-white/20 backdrop-blur-sm border border-white/30">
+              <Target className="w-4 h-4 text-white" />
+              <span className="text-xs font-bold uppercase tracking-widest text-white">Training Programs</span>
             </div>
-
-            <h1 className="text-5xl md:text-6xl font-black mb-6 leading-tight">
-              Building <span className="gradient-text">Industry-Ready</span> Professionals
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-black text-white leading-tight mb-6">
+              Programs That
+              <br />
+              <span className="text-yellow-300">Create Careers</span>
             </h1>
-
-            <p className="text-xl text-gray-300 leading-relaxed">
-              Comprehensive training solutions across technical, aptitude, and soft skills. We deliver training not just theory — but practical, industry-relevant competencies that employers seek.
+            <p className="text-xl text-purple-50 leading-relaxed max-w-2xl">
+              From aptitude to soft skills, from fresher to professional — every competency covered with proven, hands-on methodology.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Programs Grid */}
-      <section className="section-padding section-light">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="section-title mb-4">
-              Our <span className="gradient-text">Training Programs</span>
+      {/* ═══════ PROGRAMS GRID ═══════ */}
+      <section className="section bg-white" ref={cardsRef}>
+        <div className="container">
+          <div className="text-center mb-14">
+            <h2 className="text-headline text-gray-900 mb-3">
+              All <span className="gradient-text">Training Programs</span>
             </h2>
-            <div className="divider"></div>
-            <p className="section-subtitle text-gray-600">
-              From communication to coding, aptitude to leadership — we cover every skill that matters.
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto">
+              Industry-aligned curricula designed with employer inputs — practical, progressive, and measurable.
             </p>
           </div>
 
-          <div ref={programsRef} className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {programs.map((program, idx) => (
-              <div
-                key={idx}
-                className="card group hover:shadow-2xl transition-all duration-500 overflow-hidden"
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {programs.map((p) => (
+              <Link
+                key={p.title}
+                href={p.href}
+                className={`prog-card group relative overflow-hidden rounded-3xl border-2 p-7 flex flex-col transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl bg-gradient-to-br ${p.light} ${p.featured ? 'lg:col-span-2 lg:row-span-1' : ''}`}
+                style={{ borderColor: p.border }}
               >
-                {/* Header with Gradient */}
-                <div className={`h-32 bg-gradient-to-br ${program.gradient} relative flex items-center justify-center`}>
-                  <div className="absolute inset-0 bg-black/20"></div>
-                  <program.icon className="w-12 h-12 text-white relative z-10 group-hover:scale-110 transition-transform" />
+                {/* Top gradient on hover */}
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity duration-500 rounded-3xl"
+                     style={{ background: p.gradient }} />
+
+                {/* Icon + badge */}
+                <div className="flex items-start justify-between mb-6 relative z-10">
+                  <div className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110"
+                       style={{ background: p.gradient }}>
+                    <p.icon className="w-7 h-7 text-white" />
+                  </div>
+                  <span className={`badge ${p.tagColor}`}>{p.tag}</span>
                 </div>
 
-                {/* Content */}
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-navy-900 mb-3 group-hover:text-orange-500 transition-colors">
-                    {program.title}
-                  </h3>
-                  <p className="text-gray-600 text-sm mb-4 leading-relaxed">
-                    {program.description}
-                  </p>
+                <h3 className="text-xl font-display font-bold text-gray-900 mb-3 group-hover:text-gray-700 transition-colors relative z-10">
+                  {p.title}
+                </h3>
 
-                  {/* Features */}
-                  <ul className="space-y-2 mb-4">
-                    {program.features.slice(0, 3).map((feature, fidx) => (
-                      <li key={fidx} className="flex items-center text-xs text-gray-600">
-                        <CheckCircle2 className="w-4 h-4 text-green-500 mr-2 flex-shrink-0" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
+                <ul className="space-y-2 flex-1 relative z-10">
+                  {p.highlights.map((h) => (
+                    <li key={h} className="flex items-center gap-2 text-sm text-gray-600">
+                      <div className="w-1.5 h-1.5 rounded-full flex-shrink-0"
+                           style={{ background: p.gradient.includes('#F97316') ? '#F97316' : p.gradient.includes('#7C3AED') ? '#7C3AED' : '#0D9488' }} />
+                      {h}
+                    </li>
+                  ))}
+                </ul>
 
-                  {/* CTA */}
-                  <Link
-                    href={program.href}
-                    className="inline-flex items-center text-orange-500 font-bold text-sm group-hover:text-orange-600"
-                  >
-                    Learn More
-                    <ArrowRight className="ml-1 w-4 h-4 group-hover:translate-x-2 transition-transform" />
-                  </Link>
+                <div className="flex items-center gap-1 mt-5 font-bold text-sm text-gray-500 group-hover:text-gray-900 transition-colors relative z-10">
+                  Learn more <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
+
+          <div className="text-center mt-12">
+            <Link href="/contact" className="btn btn-primary btn-lg">
+              Get a Custom Program Proposal
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </div>
         </div>
       </section>
 
-      {/* Training Methodology */}
-      <section className="section-padding bg-gradient-to-b from-navy-950 to-navy-900">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="section-title mb-4 text-white">
-              Our <span className="gradient-text">Training Methodology</span>
+      {/* ═══════ METHODOLOGY ═══════ */}
+      <section ref={methodRef} className="section" style={{ background: 'linear-gradient(180deg, #0F172A 0%, #1E293B 100%)' }}>
+        <div className="container">
+          <div className="text-center mb-14">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 bg-orange/15 border border-orange/25">
+              <Zap className="w-4 h-4 text-orange" />
+              <span className="text-xs font-bold uppercase tracking-widest text-orange">Our Approach</span>
+            </div>
+            <h2 className="text-headline text-white mb-3">
+              The 5-Step <span className="gradient-text">Methodology</span>
             </h2>
-            <div className="divider"></div>
-            <p className="section-subtitle text-gray-300">
-              A proven 5-stage approach that ensures learning is applied, not just discussed.
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+              Every module follows this proven cycle — because learning is only valuable when it's applied.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-5 gap-6">
-            {methodology.map((item, idx) => (
-              <div key={idx} className="relative">
-                <div className="card-dark p-6 text-center group hover:scale-105 transition-all">
-                  {/* Number Badge */}
-                  <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg">
-                    <span className="text-white font-black text-lg">{idx + 1}</span>
-                  </div>
-
-                  {/* Step Name */}
-                  <div className="text-xl font-black text-orange-400 mb-2">
-                    {item.step}
-                  </div>
-
-                  {/* Description */}
-                  <p className="text-sm text-gray-400 leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
-
-                {/* Arrow (except last item) */}
+          <div className="flex flex-col md:flex-row gap-4 md:gap-0 items-stretch">
+            {methodology.map((m, idx) => (
+              <div key={m.step} className="method-step flex-1 relative">
+                {/* Connector arrow */}
                 {idx < methodology.length - 1 && (
-                  <div className="hidden md:block absolute top-1/2 -right-3 transform -translate-y-1/2 z-10">
-                    <ArrowRight className="w-6 h-6 text-orange-500" />
+                  <div className="hidden md:flex absolute top-1/2 -right-4 z-10 w-8 h-8 bg-white/10 rounded-full items-center justify-center">
+                    <ChevronRight className="w-4 h-4 text-white" />
                   </div>
                 )}
+
+                <div className="h-full rounded-2xl p-6 border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 hover:scale-105 hover:border-white/25">
+                  <div className="text-5xl font-display font-black mb-3" style={{ color: m.color, opacity: 0.3 }}>
+                    {m.step}
+                  </div>
+                  <h3 className="text-xl font-display font-bold text-white mb-2" style={{ color: m.color }}>
+                    {m.title}
+                  </h3>
+                  <p className="text-sm text-gray-400 leading-relaxed">{m.desc}</p>
+                </div>
               </div>
             ))}
+          </div>
+
+          {/* Quote */}
+          <div className="mt-14 p-10 rounded-3xl border border-white/10 text-center"
+               style={{ background: 'rgba(249,115,22,0.08)' }}>
+            <p className="text-xl text-white font-semibold">
+              "The learner is <span className="text-orange">not a passive participant</span> — every module creates opportunities to apply, receive feedback and improve."
+            </p>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="section-padding section-light">
-        <div className="container-custom">
-          <div className="max-w-4xl mx-auto">
-            <div className="card p-12 bg-gradient-to-br from-orange-500/10 to-purple-500/10 border-2 border-orange-500/20 text-center">
-              <h2 className="text-4xl font-black text-navy-900 mb-4">
-                Ready to Build <span className="gradient-text">Skilled Professionals?</span>
-              </h2>
-              <p className="text-xl text-gray-700 mb-8 leading-relaxed">
-                Let's design a customized training program tailored to your institution's needs.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                <Link href="/contact" className="btn btn-primary px-8 py-4">
-                  Request Training Proposal
-                </Link>
-                <Link href="/flagship-program" className="btn btn-secondary px-8 py-4">
-                  View Flagship Program
-                </Link>
-              </div>
+      {/* ═══════ CTA ═══════ */}
+      <section className="section bg-white">
+        <div className="container">
+          <div className="rounded-3xl p-12 md:p-16 text-center" style={{ background: 'linear-gradient(135deg, #F97316 0%, #EA580C 100%)' }}>
+            <h2 className="text-4xl md:text-5xl font-display font-black text-white mb-4">
+              Ready to Build Industry-Ready Graduates?
+            </h2>
+            <p className="text-xl text-orange-50 mb-10 max-w-2xl mx-auto">
+              Let's design a customised training program tailored to your institution's calendar and requirements.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/contact" className="btn btn-lg bg-white text-orange hover:bg-gray-50 shadow-2xl font-bold px-10">
+                Request Proposal
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+              <Link href="/flagship-program" className="btn btn-ghost btn-lg px-10">
+                Flagship 90-Hour Program
+              </Link>
             </div>
           </div>
         </div>

@@ -1,185 +1,155 @@
 'use client';
 
 import { useState } from 'react';
-import { Mail, Phone, MapPin, Send, Building2, Users, Calendar, CheckCircle2 } from 'lucide-react';
-import { useFadeInUp, useSlideIn } from '@/hooks/useGSAP';
+import { Mail, Phone, MapPin, Send, Building2, Users, CheckCircle2, Calendar, Sparkles, ArrowRight } from 'lucide-react';
 
 export default function ContactPage() {
-  const heroRef = useFadeInUp();
-  const formRef = useSlideIn('left');
-  const infoRef = useSlideIn('right');
-
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    institution: '',
-    institutionType: 'college',
-    studentCount: '',
-    message: '',
+    name: '', email: '', phone: '', institution: '', institutionType: 'college', studentCount: '', message: '',
   });
-
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-
-    // Simulate form submission
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        institution: '',
-        institutionType: 'college',
-        studentCount: '',
-        message: '',
-      });
+      setFormData({ name: '', email: '', phone: '', institution: '', institutionType: 'college', studentCount: '', message: '' });
     }, 1500);
   };
 
   return (
     <div className="pt-20">
-      {/* Hero Section */}
-      <section className="section-padding bg-gradient-to-br from-navy-950 via-navy-900 to-navy-800 text-white relative overflow-hidden">
-        <div className="absolute top-20 right-10 w-96 h-96 bg-orange-500/20 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 left-10 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+      {/* ═══════ HERO ═══════ */}
+      <section
+        className="relative min-h-[50vh] flex items-center overflow-hidden"
+        style={{ background: 'linear-gradient(135deg, #F97316 0%, #EC4899 60%, #7C3AED 100%)' }}
+      >
+        <div className="absolute top-0 right-0 w-[400px] h-[400px] rounded-full opacity-20 animate-pulse"
+             style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.6), transparent)' }} />
+        <div className="absolute bottom-0 left-0 right-0 h-20 bg-gray-50"
+             style={{ clipPath: 'ellipse(100% 100% at 50% 100%)' }} />
 
-        <div className="container-custom relative z-10">
-          <div ref={heroRef} className="max-w-4xl mx-auto text-center">
-            <div className="inline-flex items-center space-x-2 px-5 py-2.5 bg-orange-500/10 border border-orange-500/30 rounded-full mb-8">
-              <Send className="w-4 h-4 text-orange-400" />
-              <span className="text-sm font-bold text-orange-400">Get In Touch</span>
+        <div className="container relative z-10 py-20">
+          <div className="max-w-3xl text-center mx-auto">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 bg-white/20 backdrop-blur-sm border border-white/30">
+              <Send className="w-4 h-4 text-white" />
+              <span className="text-xs font-bold uppercase tracking-widest text-white">Get In Touch</span>
             </div>
 
-            <h1 className="text-5xl md:text-6xl font-black mb-6 leading-tight">
-              Let's <span className="gradient-text">Transform</span> Your Students Together
+            <h1 className="text-5xl md:text-6xl font-display font-black text-white leading-tight mb-6">
+              Let's Transform
+              <br />
+              <span className="inline-block px-4 py-1 bg-white text-orange rounded-2xl mt-2">
+                Students Together
+              </span>
             </h1>
 
-            <p className="text-xl text-gray-300 leading-relaxed">
-              Partner with 4Ability Hive and build a generation of confident, skilled, and employment-ready professionals.
+            <p className="text-xl text-white/90 leading-relaxed">
+              Partner with 4Ability Hive and build confident, skilled, industry-ready graduates. Request a free training proposal today.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Contact Form & Info Section */}
-      <section className="section-padding section-light">
-        <div className="container-custom">
+      {/* ═══════ FORM + INFO ═══════ */}
+      <section className="section bg-gray-50">
+        <div className="container">
           <div className="grid lg:grid-cols-2 gap-12">
-            {/* Contact Form */}
-            <div ref={formRef}>
-              <div className="card p-8 lg:p-10">
-                <h2 className="text-3xl font-bold text-navy-900 mb-2">
-                  Request a Training Proposal
+            {/* Form */}
+            <div>
+              <div className="card p-10 bg-white">
+                <h2 className="text-3xl font-display font-black text-gray-900 mb-2">
+                  Request Training Proposal
                 </h2>
-                <p className="text-gray-600 mb-8">
-                  Fill out the form below and we'll get back to you within 24 hours with a customized training proposal.
+                <p className="text-gray-500 mb-8">
+                  Fill the form below and we'll send a customised proposal within 24 hours.
                 </p>
 
                 {isSubmitted ? (
-                  <div className="bg-green-50 border-2 border-green-500 rounded-xl p-8 text-center">
-                    <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <CheckCircle2 className="w-10 h-10 text-white" />
+                  <div className="text-center py-16">
+                    <div className="w-20 h-20 rounded-full bg-green-500 flex items-center justify-center mx-auto mb-6 animate-bounce">
+                      <CheckCircle2 className="w-12 h-12 text-white" />
                     </div>
-                    <h3 className="text-2xl font-bold text-green-700 mb-2">Thank You!</h3>
-                    <p className="text-gray-700">
-                      We've received your request. Our team will contact you within 24 hours.
+                    <h3 className="text-2xl font-display font-black text-gray-900 mb-3">Thank You!</h3>
+                    <p className="text-gray-600 mb-8">
+                      We've received your request. Our team will contact you within 24 hours with a customised proposal.
                     </p>
+                    <button onClick={() => setIsSubmitted(false)} className="btn btn-outline">
+                      Send Another Request
+                    </button>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} className="space-y-6">
-                    <div className="grid md:grid-cols-2 gap-6">
+                  <form onSubmit={handleSubmit} className="space-y-5">
+                    <div className="grid md:grid-cols-2 gap-5">
                       <div>
-                        <label htmlFor="name" className="block text-sm font-bold text-navy-900 mb-2">
-                          Full Name *
-                        </label>
+                        <label className="block text-sm font-bold text-gray-900 mb-2">Full Name *</label>
                         <input
                           type="text"
-                          id="name"
                           name="name"
                           value={formData.name}
                           onChange={handleChange}
                           required
-                          className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-orange-500 focus:outline-none transition-colors"
+                          className="input"
                           placeholder="John Doe"
                         />
                       </div>
-
                       <div>
-                        <label htmlFor="email" className="block text-sm font-bold text-navy-900 mb-2">
-                          Email Address *
-                        </label>
+                        <label className="block text-sm font-bold text-gray-900 mb-2">Email Address *</label>
                         <input
                           type="email"
-                          id="email"
                           name="email"
                           value={formData.email}
                           onChange={handleChange}
                           required
-                          className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-orange-500 focus:outline-none transition-colors"
-                          placeholder="john@example.com"
+                          className="input"
+                          placeholder="john@institution.edu"
                         />
                       </div>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-6">
+                    <div className="grid md:grid-cols-2 gap-5">
                       <div>
-                        <label htmlFor="phone" className="block text-sm font-bold text-navy-900 mb-2">
-                          Phone Number *
-                        </label>
+                        <label className="block text-sm font-bold text-gray-900 mb-2">Phone Number *</label>
                         <input
                           type="tel"
-                          id="phone"
                           name="phone"
                           value={formData.phone}
                           onChange={handleChange}
                           required
-                          className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-orange-500 focus:outline-none transition-colors"
+                          className="input"
                           placeholder="+91 98765 43210"
                         />
                       </div>
-
                       <div>
-                        <label htmlFor="institution" className="block text-sm font-bold text-navy-900 mb-2">
-                          Institution Name *
-                        </label>
+                        <label className="block text-sm font-bold text-gray-900 mb-2">Institution Name *</label>
                         <input
                           type="text"
-                          id="institution"
                           name="institution"
                           value={formData.institution}
                           onChange={handleChange}
                           required
-                          className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-orange-500 focus:outline-none transition-colors"
+                          className="input"
                           placeholder="Your Institution"
                         />
                       </div>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-6">
+                    <div className="grid md:grid-cols-2 gap-5">
                       <div>
-                        <label htmlFor="institutionType" className="block text-sm font-bold text-navy-900 mb-2">
-                          Institution Type *
-                        </label>
+                        <label className="block text-sm font-bold text-gray-900 mb-2">Institution Type *</label>
                         <select
-                          id="institutionType"
                           name="institutionType"
                           value={formData.institutionType}
                           onChange={handleChange}
                           required
-                          className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-orange-500 focus:outline-none transition-colors"
+                          className="input"
                         >
                           <option value="college">College / University</option>
                           <option value="corporate">Corporate</option>
@@ -187,53 +157,46 @@ export default function ContactPage() {
                           <option value="training">Training Institute</option>
                         </select>
                       </div>
-
                       <div>
-                        <label htmlFor="studentCount" className="block text-sm font-bold text-navy-900 mb-2">
-                          Number of Students / Employees *
-                        </label>
+                        <label className="block text-sm font-bold text-gray-900 mb-2">Number of Students *</label>
                         <input
                           type="text"
-                          id="studentCount"
                           name="studentCount"
                           value={formData.studentCount}
                           onChange={handleChange}
                           required
-                          className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-orange-500 focus:outline-none transition-colors"
+                          className="input"
                           placeholder="e.g., 100-200"
                         />
                       </div>
                     </div>
 
                     <div>
-                      <label htmlFor="message" className="block text-sm font-bold text-navy-900 mb-2">
-                        Your Requirements *
-                      </label>
+                      <label className="block text-sm font-bold text-gray-900 mb-2">Training Requirements *</label>
                       <textarea
-                        id="message"
                         name="message"
                         value={formData.message}
                         onChange={handleChange}
                         required
                         rows={5}
-                        className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-orange-500 focus:outline-none transition-colors resize-none"
-                        placeholder="Tell us about your training needs, preferred dates, and any specific requirements..."
+                        className="input resize-none"
+                        placeholder="Tell us about your training needs, preferred dates, and specific requirements..."
                       />
                     </div>
 
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full btn btn-primary py-4 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="btn btn-primary w-full py-4 text-lg disabled:opacity-50 disabled:cursor-not-allowed"
                     >
                       {isSubmitting ? (
-                        <span className="flex items-center justify-center">
-                          <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
+                        <span className="flex items-center justify-center gap-2">
+                          <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
                           Sending...
                         </span>
                       ) : (
-                        <span className="flex items-center justify-center">
-                          <Send className="w-5 h-5 mr-2" />
+                        <span className="flex items-center justify-center gap-2">
+                          <Send className="w-5 h-5" />
                           Submit Request
                         </span>
                       )}
@@ -243,95 +206,105 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Contact Information */}
-            <div ref={infoRef} className="space-y-8">
-              {/* Contact Details */}
-              <div className="card p-8">
-                <h3 className="text-2xl font-bold text-navy-900 mb-6">Contact Information</h3>
-                <div className="space-y-6">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-orange-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
-                      <Mail className="w-6 h-6 text-white" />
+            {/* Info Sidebar */}
+            <div className="space-y-6">
+              {/* Contact Info */}
+              <div className="card p-8 bg-white">
+                <h3 className="text-2xl font-display font-bold text-gray-900 mb-6">Contact Information</h3>
+                <div className="space-y-5">
+                  {[
+                    { icon: Mail, label: 'Email', value: 'info@4ah.in', href: 'mailto:info@4ah.in', color: 'orange' },
+                    { icon: Phone, label: 'Phone', value: '+91 99999 99999', href: 'tel:+919999999999', color: 'purple' },
+                    { icon: MapPin, label: 'Location', value: 'India', href: null, color: 'teal' },
+                    { icon: Calendar, label: 'Hours', value: 'Mon-Sat: 9 AM - 6 PM', href: null, color: 'blue-500' },
+                  ].map((item) => (
+                    <div key={item.label} className="flex items-start gap-4">
+                      <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-${item.color}/10`}>
+                        <item.icon className={`w-6 h-6 text-${item.color}`} />
+                      </div>
+                      <div>
+                        <div className="font-bold text-gray-900 mb-1">{item.label}</div>
+                        {item.href ? (
+                          <a href={item.href} className={`text-${item.color} hover:underline font-semibold`}>
+                            {item.value}
+                          </a>
+                        ) : (
+                          <span className="text-gray-600">{item.value}</span>
+                        )}
+                      </div>
                     </div>
-                    <div>
-                      <div className="font-bold text-navy-900 mb-1">Email</div>
-                      <a href="mailto:info@4ah.in" className="text-orange-500 hover:text-orange-600 transition-colors">
-                        info@4ah.in
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
-                      <Phone className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <div className="font-bold text-navy-900 mb-1">Phone</div>
-                      <a href="tel:+919876543210" className="text-orange-500 hover:text-orange-600 transition-colors">
-                        +91 98765 43210
-                      </a>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
-                      <MapPin className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <div className="font-bold text-navy-900 mb-1">Location</div>
-                      <p className="text-gray-600">
-                        India
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-green-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg">
-                      <Calendar className="w-6 h-6 text-white" />
-                    </div>
-                    <div>
-                      <div className="font-bold text-navy-900 mb-1">Business Hours</div>
-                      <p className="text-gray-600">
-                        Monday - Saturday: 9:00 AM - 6:00 PM
-                      </p>
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </div>
 
-              {/* Quick Options */}
-              <div className="card p-8 bg-gradient-to-br from-orange-500/10 to-purple-500/10 border-2 border-orange-500/20">
-                <h3 className="text-xl font-bold text-navy-900 mb-4">What Happens Next?</h3>
+              {/* What Happens Next */}
+              <div className="p-8 rounded-2xl" style={{ background: 'linear-gradient(135deg, #F97316 0%, #EA580C 100%)' }}>
+                <Sparkles className="w-10 h-10 text-white mb-4" />
+                <h3 className="text-xl font-display font-bold text-white mb-5">What Happens Next?</h3>
                 <ul className="space-y-4">
                   {[
                     'We review your requirements within 24 hours',
                     'Our team schedules a consultation call',
-                    'We prepare a customized training proposal',
-                    'You review and we finalize the program',
+                    'We prepare a customised training proposal',
+                    'You review and we finalise the program',
                   ].map((step, idx) => (
-                    <li key={idx} className="flex items-start space-x-3">
-                      <div className="w-6 h-6 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                        <span className="text-white text-xs font-bold">{idx + 1}</span>
+                    <li key={idx} className="flex items-start gap-3">
+                      <div className="w-6 h-6 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center flex-shrink-0 mt-0.5">
+                        <span className="text-white text-sm font-bold">{idx + 1}</span>
                       </div>
-                      <span className="text-gray-700">{step}</span>
+                      <span className="text-white/90 font-medium">{step}</span>
                     </li>
                   ))}
                 </ul>
               </div>
 
-              {/* Partner Types */}
+              {/* Quick Links */}
               <div className="grid grid-cols-2 gap-4">
-                <div className="card p-6 text-center hover:shadow-xl transition-all">
-                  <Building2 className="w-10 h-10 text-orange-500 mx-auto mb-3" />
-                  <div className="font-bold text-navy-900">Colleges</div>
-                  <div className="text-sm text-gray-600">Year-wise training</div>
-                </div>
-                <div className="card p-6 text-center hover:shadow-xl transition-all">
-                  <Users className="w-10 h-10 text-blue-500 mx-auto mb-3" />
-                  <div className="font-bold text-navy-900">Corporates</div>
-                  <div className="text-sm text-gray-600">Employee upskilling</div>
-                </div>
+                {[
+                  { icon: Building2, label: 'College Solutions', href: '/college-solutions', color: 'purple' },
+                  { icon: Users, label: 'Corporate Training', href: '/corporate-solutions', color: 'teal' },
+                ].map((link) => (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    className={`card p-6 text-center hover:shadow-xl transition-all group bg-${link.color}/5 border-${link.color}/20`}
+                  >
+                    <link.icon className={`w-10 h-10 mx-auto mb-3 text-${link.color} group-hover:scale-110 transition-transform`} />
+                    <div className="font-bold text-gray-900 text-sm">{link.label}</div>
+                  </a>
+                ))}
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ═══════ TRUST SECTION ═══════ */}
+      <section className="section bg-white">
+        <div className="container">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full mb-8 bg-green-50 border border-green-200">
+              <CheckCircle2 className="w-5 h-5 text-green-600" />
+              <span className="font-bold text-green-700">Trusted by 50+ Institutions</span>
+            </div>
+
+            <h2 className="text-4xl font-display font-black text-gray-900 mb-6">
+              Join Leading Institutions Who Trust{' '}
+              <span className="gradient-text">4Ability Hive</span>
+            </h2>
+
+            <div className="grid md:grid-cols-4 gap-6 mt-12">
+              {[
+                { value: '24 hrs', label: 'Response Time' },
+                { value: '95%', label: 'Satisfaction Rate' },
+                { value: '1000+', label: 'Students Trained' },
+                { value: 'Custom', label: 'Flexible Programs' },
+              ].map((stat) => (
+                <div key={stat.label} className="p-6 rounded-2xl bg-gradient-to-br from-orange/5 to-purple/5 border border-orange/20">
+                  <div className="text-4xl font-display font-black text-orange mb-2">{stat.value}</div>
+                  <div className="text-sm text-gray-600 font-semibold">{stat.label}</div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
