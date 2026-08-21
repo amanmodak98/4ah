@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Disallow admin or private pages (if any)
+# Disallow: /admin/
+# Disallow: /api/
+
+# Sitemap
+Sitemap: https://4ah.in/sitemap.xml
+
+# Crawl-delay (optional, helps with server load)
+Crawl-delay: 1
