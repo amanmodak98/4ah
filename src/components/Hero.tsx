@@ -4,7 +4,6 @@ import { ArrowRight, Sparkles, Target, TrendingUp } from 'lucide-react';
 import Link from 'next/link';
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
-import { HeroOrb } from './ThreeScene';
 
 export default function Hero() {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -60,11 +59,6 @@ export default function Hero() {
       <div className="absolute top-20 left-10 w-96 h-96 bg-orange-500/20 rounded-full blur-3xl animate-pulse" />
       <div className="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl animate-pulse delay-1000" />
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-500" />
-
-      {/* Three.js Hero Orb */}
-      <div className="absolute top-1/4 right-10 w-96 h-96 hidden lg:block opacity-60">
-        <HeroOrb />
-      </div>
 
       <div className="container-custom relative z-10 py-32">
         <div className="max-w-5xl mx-auto text-center">
