@@ -16,14 +16,14 @@ export default function Home() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Hero entrance
+      // Hero entrance — use fromTo so elements never flash invisible on SSR hydration
       const tl = gsap.timeline({ delay: 0.1 });
-      tl.from('.hero-badge',    { opacity: 0, y: 20, duration: 0.5, ease: 'power3.out' })
-        .from('.hero-heading',  { opacity: 0, y: 40, duration: 0.7, ease: 'power3.out' }, '-=0.2')
-        .from('.hero-sub',      { opacity: 0, y: 25, duration: 0.6, ease: 'power3.out' }, '-=0.4')
-        .from('.hero-pills',    { opacity: 0, y: 20, duration: 0.5, stagger: 0.08, ease: 'power3.out' }, '-=0.3')
-        .from('.hero-ctas',     { opacity: 0, y: 20, duration: 0.5, ease: 'power3.out' }, '-=0.3')
-        .from('.hero-stat-card',{ opacity: 0, y: 30, scale: 0.95, duration: 0.5, stagger: 0.1, ease: 'back.out(1.4)' }, '-=0.2');
+      tl.fromTo('.hero-badge',    { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' })
+        .fromTo('.hero-heading',  { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' }, '-=0.2')
+        .fromTo('.hero-sub',      { opacity: 0, y: 25 }, { opacity: 1, y: 0, duration: 0.6, ease: 'power3.out' }, '-=0.4')
+        .fromTo('.hero-pills',    { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, stagger: 0.08, ease: 'power3.out' }, '-=0.3')
+        .fromTo('.hero-ctas',     { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.5, ease: 'power3.out' }, '-=0.3')
+        .fromTo('.hero-stat-card',{ opacity: 0, y: 30, scale: 0.95 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, stagger: 0.1, ease: 'back.out(1.4)' }, '-=0.2');
 
       // Stats counter
       ScrollTrigger.create({

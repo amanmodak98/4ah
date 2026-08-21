@@ -19,14 +19,11 @@ export default function AboutPage() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Hero entrance
-      gsap.from('.about-hero-content > *', {
-        opacity: 0,
-        y: 40,
-        stagger: 0.15,
-        duration: 0.8,
-        ease: 'power3.out',
-      });
+      // Hero entrance — fromTo so hero content never flashes invisible on hydration
+      gsap.fromTo('.about-hero-content > *',
+        { opacity: 0, y: 40 },
+        { opacity: 1, y: 0, stagger: 0.15, duration: 0.8, ease: 'power3.out' }
+      );
 
       // Story section
       gsap.from('.story-item', {

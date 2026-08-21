@@ -213,19 +213,19 @@ export default function ContactPage() {
                 <h3 className="text-2xl font-display font-bold text-gray-900 mb-6">Contact Information</h3>
                 <div className="space-y-5">
                   {[
-                    { icon: Mail, label: 'Email', value: 'info@4ah.in', href: 'mailto:info@4ah.in', color: 'orange' },
-                    { icon: Phone, label: 'Phone', value: '+91 99999 99999', href: 'tel:+919999999999', color: 'purple' },
-                    { icon: MapPin, label: 'Location', value: 'India', href: null, color: 'teal' },
-                    { icon: Calendar, label: 'Hours', value: 'Mon-Sat: 9 AM - 6 PM', href: null, color: 'blue-500' },
+                    { icon: Mail,     label: 'Email',    value: 'info@4ah.in',          href: 'mailto:info@4ah.in',  colorClass: 'bg-orange/10',    textClass: 'text-orange'    },
+                    { icon: Phone,    label: 'Phone',    value: '+91 99999 99999',       href: 'tel:+919999999999',   colorClass: 'bg-purple/10',    textClass: 'text-purple'    },
+                    { icon: MapPin,   label: 'Location', value: 'India',                 href: null,                  colorClass: 'bg-teal/10',      textClass: 'text-teal'      },
+                    { icon: Calendar, label: 'Hours',    value: 'Mon-Sat: 9 AM - 6 PM', href: null,                  colorClass: 'bg-blue-500/10',  textClass: 'text-blue-500'  },
                   ].map((item) => (
                     <div key={item.label} className="flex items-start gap-4">
-                      <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 bg-${item.color}/10`}>
-                        <item.icon className={`w-6 h-6 text-${item.color}`} />
+                      <div className={`w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 ${item.colorClass}`}>
+                        <item.icon className={`w-6 h-6 ${item.textClass}`} />
                       </div>
                       <div>
                         <div className="font-bold text-gray-900 mb-1">{item.label}</div>
                         {item.href ? (
-                          <a href={item.href} className={`text-${item.color} hover:underline font-semibold`}>
+                          <a href={item.href} className={`${item.textClass} hover:underline font-semibold`}>
                             {item.value}
                           </a>
                         ) : (
@@ -261,15 +261,15 @@ export default function ContactPage() {
               {/* Quick Links */}
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { icon: Building2, label: 'College Solutions', href: '/college-solutions', color: 'purple' },
-                  { icon: Users, label: 'Corporate Training', href: '/corporate-solutions', color: 'teal' },
+                  { icon: Building2, label: 'College Solutions',  href: '/college-solutions', colorClass: 'bg-purple/5 border-purple/20', iconClass: 'text-purple'  },
+                  { icon: Users,     label: 'Corporate Training', href: '/corporate-solutions', colorClass: 'bg-teal/5 border-teal/20',   iconClass: 'text-teal'    },
                 ].map((link) => (
                   <a
                     key={link.label}
                     href={link.href}
-                    className={`card p-6 text-center hover:shadow-xl transition-all group bg-${link.color}/5 border-${link.color}/20`}
+                    className={`card p-6 text-center hover:shadow-xl transition-all group ${link.colorClass}`}
                   >
-                    <link.icon className={`w-10 h-10 mx-auto mb-3 text-${link.color} group-hover:scale-110 transition-transform`} />
+                    <link.icon className={`w-10 h-10 mx-auto mb-3 ${link.iconClass} group-hover:scale-110 transition-transform`} />
                     <div className="font-bold text-gray-900 text-sm">{link.label}</div>
                   </a>
                 ))}

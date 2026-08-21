@@ -18,7 +18,10 @@ export default function CollegeSolutionsPage() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from('.cs-hero > *', { opacity: 0, y: 40, stagger: 0.15, duration: 0.8, ease: 'power3.out' });
+      gsap.fromTo('.cs-hero > *',
+        { opacity: 0, y: 40 },
+        { opacity: 1, y: 0, stagger: 0.15, duration: 0.8, ease: 'power3.out' }
+      );
 
       gsap.from('.year-card', {
         opacity: 0, y: 60, scale: 0.93, stagger: 0.15, duration: 0.8, ease: 'back.out(1.2)',

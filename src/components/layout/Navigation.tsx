@@ -29,6 +29,15 @@ const navigationItems: NavItem[] = [
       { label: 'Flagship 90-Hour Program', href: '/flagship-program' },
     ],
   },
+  {
+    label: 'About Us',
+    href: '/about',
+    children: [
+      { label: 'Our Story', href: '/about' },
+      { label: 'Meet Our Founders', href: '/founders' },
+      { label: 'Our Methodology', href: '/methodology' },
+    ],
+  },
   { label: 'Success Stories', href: '/success-stories' },
   { label: 'Contact', href: '/contact' },
 ];

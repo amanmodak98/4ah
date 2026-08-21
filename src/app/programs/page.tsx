@@ -18,7 +18,10 @@ export default function ProgramsPage() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from('.prog-hero > *', { opacity: 0, y: 40, stagger: 0.15, duration: 0.8, ease: 'power3.out' });
+      gsap.fromTo('.prog-hero > *',
+        { opacity: 0, y: 40 },
+        { opacity: 1, y: 0, stagger: 0.15, duration: 0.8, ease: 'power3.out' }
+      );
 
       gsap.from('.prog-card', {
         opacity: 0, y: 60, scale: 0.93, stagger: 0.1, duration: 0.7, ease: 'back.out(1.2)',

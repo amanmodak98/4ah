@@ -19,18 +19,26 @@ export default function FlagshipProgramPage() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.from('.flag-hero > *', { opacity: 0, y: 40, stagger: 0.15, duration: 0.8, ease: 'power3.out' });
+      gsap.fromTo('.flag-hero > *',
+        { opacity: 0, y: 40 },
+        { opacity: 1, y: 0, stagger: 0.15, duration: 0.8, ease: 'power3.out' }
+      );
       gsap.from('.highlight-card', {
         opacity: 0, y: 50, scale: 0.92, stagger: 0.1, duration: 0.7, ease: 'back.out(1.4)',
         scrollTrigger: { trigger: '.highlight-grid', start: 'top 78%' },
       });
-      gsap.from('.week-row', {
-        opacity: 0, x: -30, stagger: 0.07, duration: 0.5,
-        scrollTrigger: { trigger: curriculumRef.current, start: 'top 80%' },
-      });
     });
     return () => ctx.revert();
   }, []);
+
+  // Re-animate curriculum rows whenever the active tab changes
+  useEffect(() => {
+    if (!curriculumRef.current) return;
+    gsap.fromTo('.week-row',
+      { opacity: 0, x: -20 },
+      { opacity: 1, x: 0, stagger: 0.05, duration: 0.4, ease: 'power2.out' }
+    );
+  }, [activeTab]);
 
   const aptitude = [
     { week: 1, topic: 'Pre-Assessment, Number System, Divisibility, Simplification & Approximation', hours: 6 },
