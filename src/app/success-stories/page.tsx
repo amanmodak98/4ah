@@ -132,7 +132,7 @@ export default function SuccessStoriesPage() {
             </p>
           </div>
 
-          {/* Filter (placeholder for future interactivity) */}
+          {/* Filter tabs — click to show only College / Corporate / Student entries */}
           <div className="flex justify-center gap-3 mb-12">
             {filters.map((filter) => (
               <button

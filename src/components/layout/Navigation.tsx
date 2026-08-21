@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X, ChevronDown } from 'lucide-react';
 
@@ -18,7 +19,15 @@ interface NavItem {
 
 const navigationItems: NavItem[] = [
   { label: 'Home', href: '/' },
-  { label: 'About', href: '/about' },
+  {
+    label: 'About',
+    href: '/about',
+    children: [
+      { label: 'Our Story', href: '/about' },
+      { label: 'Meet Our Founders', href: '/founders' },
+      { label: 'Our Methodology', href: '/methodology' },
+    ],
+  },
   {
     label: 'Programs',
     href: '/programs',
@@ -27,15 +36,6 @@ const navigationItems: NavItem[] = [
       { label: 'College Solutions', href: '/college-solutions' },
       { label: 'Corporate Training', href: '/corporate-solutions' },
       { label: 'Flagship 90-Hour Program', href: '/flagship-program' },
-    ],
-  },
-  {
-    label: 'About Us',
-    href: '/about',
-    children: [
-      { label: 'Our Story', href: '/about' },
-      { label: 'Meet Our Founders', href: '/founders' },
-      { label: 'Our Methodology', href: '/methodology' },
     ],
   },
   { label: 'Success Stories', href: '/success-stories' },
@@ -105,10 +105,17 @@ export default function Navigation() {
     >
       <div className="container">
         <div className="flex items-center justify-between h-20">
-          {/* Logo */}
+          {/* Logo — uses the actual logo.png from /public */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="relative w-11 h-11 rounded-xl bg-gradient-to-br from-orange to-orange-dark flex items-center justify-center shadow-orange transition-all group-hover:scale-105">
-              <span className="text-white font-display font-black text-lg">4A</span>
+            <div className="relative w-11 h-11 rounded-xl overflow-hidden shadow-orange transition-all group-hover:scale-105">
+              <Image
+                src="/logo.png"
+                alt="4Ability Hive"
+                fill
+                sizes="44px"
+                className="object-cover"
+                priority
+              />
             </div>
             <div className="hidden sm:block">
               <div className="font-display font-black text-gray-900 text-lg leading-none">

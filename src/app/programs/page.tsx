@@ -12,7 +12,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 if (typeof window !== 'undefined') gsap.registerPlugin(ScrollTrigger);
 
 export default function ProgramsPage() {
-  const heroRef = useRef(null);
+  // cardsRef and methodRef are used as ScrollTrigger trigger anchors
   const cardsRef = useRef(null);
   const methodRef = useRef(null);
 
@@ -23,15 +23,19 @@ export default function ProgramsPage() {
         { opacity: 1, y: 0, stagger: 0.15, duration: 0.8, ease: 'power3.out' }
       );
 
-      gsap.from('.prog-card', {
-        opacity: 0, y: 60, scale: 0.93, stagger: 0.1, duration: 0.7, ease: 'back.out(1.2)',
-        scrollTrigger: { trigger: cardsRef.current, start: 'top 78%' },
-      });
+      // ── Program cards — scale + fade on scroll ────────────────────────────
+      gsap.fromTo('.prog-card',
+        { opacity: 0, y: 60, scale: 0.93 },
+        { opacity: 1, y: 0, scale: 1, stagger: 0.1, duration: 0.7, ease: 'back.out(1.2)',
+          scrollTrigger: { trigger: cardsRef.current, start: 'top 78%' } }
+      );
 
-      gsap.from('.method-step', {
-        opacity: 0, x: -40, stagger: 0.12, duration: 0.6,
-        scrollTrigger: { trigger: methodRef.current, start: 'top 80%' },
-      });
+      // ── Methodology steps — slide in from left on scroll ─────────────────
+      gsap.fromTo('.method-step',
+        { opacity: 0, x: -40 },
+        { opacity: 1, x: 0, stagger: 0.12, duration: 0.6, ease: 'power3.out',
+          scrollTrigger: { trigger: methodRef.current, start: 'top 80%' } }
+      );
     });
     return () => ctx.revert();
   }, []);
@@ -140,7 +144,6 @@ export default function ProgramsPage() {
     <div className="pt-20">
       {/* ═══════ HERO ═══════ */}
       <section
-        ref={heroRef}
         className="relative min-h-[60vh] flex items-center overflow-hidden"
         style={{ background: 'linear-gradient(135deg, #7C3AED 0%, #8B5CF6 50%, #A78BFA 100%)' }}
       >

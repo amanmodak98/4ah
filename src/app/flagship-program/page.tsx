@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import {
   Clock, Brain, MessageSquare, Target, CheckCircle,
-  ArrowRight, Zap, Award, Users, BarChart3, ChevronDown
+  ArrowRight, Zap, Award,
 } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -14,7 +14,7 @@ if (typeof window !== 'undefined') gsap.registerPlugin(ScrollTrigger);
 
 export default function FlagshipProgramPage() {
   const [activeTab, setActiveTab] = useState<'aptitude' | 'softskills'>('aptitude');
-  const heroRef = useRef(null);
+  // curriculumRef is the ScrollTrigger anchor for the week-row animation
   const curriculumRef = useRef(null);
 
   useEffect(() => {
@@ -87,7 +87,6 @@ export default function FlagshipProgramPage() {
     <div className="pt-20">
       {/* ═══════ HERO ═══════ */}
       <section
-        ref={heroRef}
         className="relative min-h-[70vh] flex items-center overflow-hidden"
         style={{ background: 'linear-gradient(135deg, #F97316 0%, #DC2626 40%, #7C3AED 100%)' }}
       >

@@ -3,7 +3,7 @@
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
 import {
-  Target, Eye, Heart, Rocket, Award, Lightbulb, TrendingUp,
+  Eye, Heart, Rocket, Award, Lightbulb, TrendingUp,
   Users, Zap, CheckCircle, ArrowRight, Sparkles
 } from 'lucide-react';
 import { gsap } from 'gsap';
@@ -19,40 +19,36 @@ export default function AboutPage() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Hero entrance — fromTo so hero content never flashes invisible on hydration
+      // ── Hero entrance ────────────────────────────────────────────────────
+      // fromTo gives GSAP explicit start/end states so the hero never flashes
+      // invisible during React hydration (gsap.from() would read the DOM end
+      // state at runtime and could briefly expose blank content on slow devices)
       gsap.fromTo('.about-hero-content > *',
         { opacity: 0, y: 40 },
         { opacity: 1, y: 0, stagger: 0.15, duration: 0.8, ease: 'power3.out' }
       );
 
-      // Story section
-      gsap.from('.story-item', {
-        opacity: 0,
-        x: -40,
-        stagger: 0.2,
-        duration: 0.7,
-        scrollTrigger: { trigger: storyRef.current, start: 'top 75%' },
-      });
+      // ── Story items — slide in from left on scroll ────────────────────────
+      gsap.fromTo('.story-item',
+        { opacity: 0, x: -40 },
+        { opacity: 1, x: 0, stagger: 0.2, duration: 0.7, ease: 'power3.out',
+          scrollTrigger: { trigger: storyRef.current, start: 'top 75%' } }
+      );
 
-      // Philosophy cards
-      gsap.from('.philosophy-card', {
-        opacity: 0,
-        y: 60,
-        scale: 0.9,
-        stagger: 0.15,
-        duration: 0.8,
-        ease: 'back.out(1.2)',
-        scrollTrigger: { trigger: philosophyRef.current, start: 'top 75%' },
-      });
+      // ── Philosophy cards — scale + fade in on scroll ──────────────────────
+      gsap.fromTo('.philosophy-card',
+        { opacity: 0, y: 60, scale: 0.9 },
+        { opacity: 1, y: 0, scale: 1, stagger: 0.15, duration: 0.8,
+          ease: 'back.out(1.2)',
+          scrollTrigger: { trigger: philosophyRef.current, start: 'top 75%' } }
+      );
 
-      // Values
-      gsap.from('.value-card', {
-        opacity: 0,
-        y: 40,
-        stagger: 0.1,
-        duration: 0.6,
-        scrollTrigger: { trigger: valuesRef.current, start: 'top 80%' },
-      });
+      // ── Values grid — staggered fade up ──────────────────────────────────
+      gsap.fromTo('.value-card',
+        { opacity: 0, y: 40 },
+        { opacity: 1, y: 0, stagger: 0.1, duration: 0.6,
+          scrollTrigger: { trigger: valuesRef.current, start: 'top 80%' } }
+      );
     });
 
     return () => ctx.revert();
@@ -93,13 +89,16 @@ export default function AboutPage() {
     },
   ];
 
+  // ── Core values data ────────────────────────────────────────────────────
+  // IMPORTANT: Tailwind's JIT purges dynamic class strings like `bg-${color}`.
+  // All Tailwind classes MUST be literal strings so the compiler can detect them.
   const values = [
-    { icon: Zap,      title: 'Excellence',    color: 'orange' },
-    { icon: Heart,    title: 'Commitment',   color: 'purple' },
-    { icon: Users,    title: 'Collaboration',color: 'teal' },
-    { icon: Lightbulb,title: 'Innovation',   color: 'blue-500' },
-    { icon: Award,    title: 'Integrity',    color: 'orange' },
-    { icon: Rocket,   title: 'Empowerment',  color: 'purple' },
+    { icon: Zap,       title: 'Excellence',    bgClass: 'from-orange/5 to-orange/10',       borderClass: 'border-orange/20',    hoverBorder: 'hover:border-orange',    iconBg: 'bg-orange',    textHover: 'group-hover:text-orange',    barBg: 'bg-orange',    desc: 'We strive for the highest standards in everything we do, from training quality to learner outcomes.' },
+    { icon: Heart,     title: 'Commitment',    bgClass: 'from-purple/5 to-purple/10',       borderClass: 'border-purple/20',    hoverBorder: 'hover:border-purple',    iconBg: 'bg-purple',    textHover: 'group-hover:text-purple',    barBg: 'bg-purple',    desc: 'Our dedication extends beyond classroom sessions — we provide lifetime mentorship and career guidance.' },
+    { icon: Users,     title: 'Collaboration', bgClass: 'from-teal/5 to-teal/10',           borderClass: 'border-teal/20',      hoverBorder: 'hover:border-teal',      iconBg: 'bg-teal',      textHover: 'group-hover:text-teal',      barBg: 'bg-teal',      desc: 'We work closely with institutions, corporates, and learners to create tailored, impactful solutions.' },
+    { icon: Lightbulb, title: 'Innovation',    bgClass: 'from-blue-500/5 to-blue-500/10',   borderClass: 'border-blue-500/20',  hoverBorder: 'hover:border-blue-500',  iconBg: 'bg-blue-500',  textHover: 'group-hover:text-blue-500',  barBg: 'bg-blue-500',  desc: 'We continuously evolve our methodologies to stay relevant with industry demands and learner needs.' },
+    { icon: Award,     title: 'Integrity',     bgClass: 'from-orange/5 to-orange/10',       borderClass: 'border-orange/20',    hoverBorder: 'hover:border-orange',    iconBg: 'bg-orange',    textHover: 'group-hover:text-orange',    barBg: 'bg-orange',    desc: 'We maintain transparency, honesty, and ethical practices in all our partnerships and training programs.' },
+    { icon: Rocket,    title: 'Empowerment',   bgClass: 'from-purple/5 to-purple/10',       borderClass: 'border-purple/20',    hoverBorder: 'hover:border-purple',    iconBg: 'bg-purple',    textHover: 'group-hover:text-purple',    barBg: 'bg-purple',    desc: 'We believe every learner has unique potential. Our programs help discover and develop hidden strengths.' },
   ];
 
   return (
@@ -302,22 +301,18 @@ export default function AboutPage() {
             {values.map((v, idx) => (
               <div
                 key={v.title}
-                className={`value-card group relative overflow-hidden rounded-2xl p-8 bg-gradient-to-br from-${v.color}/5 to-${v.color}/10 border-2 border-${v.color}/20 hover:border-${v.color} hover:shadow-xl transition-all duration-300 hover:-translate-y-1`}
+                className={`value-card group relative overflow-hidden rounded-2xl p-8 bg-gradient-to-br ${v.bgClass} border-2 ${v.borderClass} ${v.hoverBorder} hover:shadow-xl transition-all duration-300 hover:-translate-y-1`}
               >
-                <div className={`w-14 h-14 rounded-xl bg-${v.color} flex items-center justify-center mb-5 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                <div className={`w-14 h-14 rounded-xl ${v.iconBg} flex items-center justify-center mb-5 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                   <v.icon className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="text-2xl font-display font-bold text-gray-900 mb-2 group-hover:text-${v.color} transition-colors">
+                <h3 className={`text-2xl font-display font-bold text-gray-900 mb-2 ${v.textHover} transition-colors`}>
                   {v.title}
                 </h3>
-                <div className={`h-1 w-16 bg-${v.color} rounded-full mb-4 group-hover:w-24 transition-all duration-300`} />
+                <div className={`h-1 w-16 ${v.barBg} rounded-full mb-4 group-hover:w-24 transition-all duration-300`} />
                 <p className="text-gray-600 leading-relaxed">
-                  {idx === 0 && 'We strive for the highest standards in everything we do, from training quality to learner outcomes.'}
-                  {idx === 1 && 'Our dedication extends beyond classroom sessions — we provide lifetime mentorship and career guidance.'}
-                  {idx === 2 && 'We work closely with institutions, corporates, and learners to create tailored, impactful training solutions.'}
-                  {idx === 3 && 'We continuously evolve our methodologies to stay relevant with industry demands and learner needs.'}
-                  {idx === 4 && 'We maintain transparency, honesty, and ethical practices in all our partnerships and training programs.'}
-                  {idx === 5 && 'We believe every learner has unique potential. Our programs help discover and develop hidden strengths.'}
+                  {/* Move descriptions into the values data object instead of idx-based inline conditionals */}
+                  {v.desc}
                 </p>
               </div>
             ))}

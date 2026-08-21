@@ -12,26 +12,32 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 if (typeof window !== 'undefined') gsap.registerPlugin(ScrollTrigger);
 
 export default function CollegeSolutionsPage() {
-  const heroRef = useRef(null);
+  // journeyRef and proofRef are used as ScrollTrigger trigger anchors
   const journeyRef = useRef(null);
   const proofRef = useRef(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      // ── Hero entrance — fromTo gives explicit start/end so there is no
+      //    flash-of-invisible during SSR→client hydration ──────────────────
       gsap.fromTo('.cs-hero > *',
         { opacity: 0, y: 40 },
         { opacity: 1, y: 0, stagger: 0.15, duration: 0.8, ease: 'power3.out' }
       );
 
-      gsap.from('.year-card', {
-        opacity: 0, y: 60, scale: 0.93, stagger: 0.15, duration: 0.8, ease: 'back.out(1.2)',
-        scrollTrigger: { trigger: journeyRef.current, start: 'top 75%' },
-      });
+      // ── Year cards — scale + fade on scroll ──────────────────────────────
+      gsap.fromTo('.year-card',
+        { opacity: 0, y: 60, scale: 0.93 },
+        { opacity: 1, y: 0, scale: 1, stagger: 0.15, duration: 0.8, ease: 'back.out(1.2)',
+          scrollTrigger: { trigger: journeyRef.current, start: 'top 75%' } }
+      );
 
-      gsap.from('.proof-item', {
-        opacity: 0, x: -30, stagger: 0.1, duration: 0.6,
-        scrollTrigger: { trigger: proofRef.current, start: 'top 80%' },
-      });
+      // ── Proof items — slide in from left on scroll ────────────────────────
+      gsap.fromTo('.proof-item',
+        { opacity: 0, x: -30 },
+        { opacity: 1, x: 0, stagger: 0.1, duration: 0.6, ease: 'power3.out',
+          scrollTrigger: { trigger: proofRef.current, start: 'top 80%' } }
+      );
     });
     return () => ctx.revert();
   }, []);
@@ -116,7 +122,6 @@ export default function CollegeSolutionsPage() {
     <div className="pt-20">
       {/* ═══════ HERO ═══════ */}
       <section
-        ref={heroRef}
         className="relative min-h-[60vh] flex items-center overflow-hidden"
         style={{ background: 'linear-gradient(135deg, #0D9488 0%, #0284C7 60%, #0F172A 100%)' }}
       >

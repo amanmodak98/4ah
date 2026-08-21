@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Mail, Phone, Linkedin, Twitter, Instagram, Youtube, ArrowRight } from 'lucide-react';
 
 export default function Footer() {
@@ -16,12 +17,12 @@ export default function Footer() {
   ];
 
   const companyLinks = [
-    { label: 'About Us', href: '/about' },
-    { label: 'Our Founders', href: '/about#team' },
-    { label: 'Our Methodology', href: '/about#methodology' },
-    { label: 'College Solutions', href: '/college-solutions' },
-    { label: 'Corporate Training', href: '/corporate-solutions' },
-    { label: 'Success Stories', href: '/success-stories' },
+    { label: 'About Us',         href: '/about' },
+    { label: 'Our Founders',     href: '/founders' },
+    { label: 'Our Methodology',  href: '/methodology' },
+    { label: 'College Solutions',href: '/college-solutions' },
+    { label: 'Corporate Training',href: '/corporate-solutions' },
+    { label: 'Success Stories',  href: '/success-stories' },
   ];
 
   const social = [
@@ -62,11 +63,17 @@ export default function Footer() {
       {/* Main Footer */}
       <div className="container py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-          {/* Brand Column */}
+          {/* Brand Column — logo + tagline + contact */}
           <div className="lg:col-span-1">
             <Link href="/" className="inline-flex items-center gap-3 mb-6">
-              <div className="w-11 h-11 rounded-xl bg-gradient-to-br from-orange to-orange-dark flex items-center justify-center">
-                <span className="text-white font-display font-black text-lg">4A</span>
+              <div className="relative w-11 h-11 rounded-xl overflow-hidden">
+                <Image
+                  src="/logo.png"
+                  alt="4Ability Hive"
+                  fill
+                  sizes="44px"
+                  className="object-cover"
+                />
               </div>
               <div>
                 <div className="font-display font-black text-white text-lg leading-none">4Ability Hive</div>
@@ -160,11 +167,15 @@ export default function Footer() {
         className="border-t"
         style={{ borderColor: 'rgba(255,255,255,0.08)' }}
       >
-        <div className="container py-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
-          <span>© {year} 4Ability Hive. All rights reserved.</span>
+        <div className="container py-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+          <span className="text-gray-400">© {year} 4Ability Hive. All rights reserved.</span>
           <div className="flex items-center gap-4">
-            <span className="text-gray-600">Privacy Policy</span>
-            <span className="text-gray-600">Terms of Service</span>
+            <span className="text-gray-400">Privacy Policy</span>
+            <span className="text-gray-400">Terms of Service</span>
+            <span className="text-gray-600">|</span>
+            <a href="https://infirexa.tech" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-orange transition-colors">
+              Built by Infirexa.tech
+            </a>
           </div>
         </div>
       </div>

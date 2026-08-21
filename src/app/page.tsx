@@ -187,82 +187,221 @@ export default function Home() {
       {/* ═══════════════ HERO ═══════════════ */}
       <section
         ref={heroRef}
-        className="relative min-h-[92vh] flex items-center overflow-hidden"
-        style={{ background: 'linear-gradient(135deg, #0F172A 0%, #1E293B 60%, #0F172A 100%)' }}
+        className="relative min-h-screen flex items-center overflow-hidden"
+        style={{ background: 'linear-gradient(135deg, #0F172A 0%, #1E293B 30%, #334155 60%, #475569 100%)' }}
       >
-        {/* Gradient blobs */}
-        <div className="absolute -top-32 -left-32 w-96 h-96 rounded-full opacity-30"
-             style={{ background: 'radial-gradient(circle, rgba(249,115,22,0.4) 0%, transparent 70%)' }} />
-        <div className="absolute -bottom-20 right-10 w-80 h-80 rounded-full opacity-20"
-             style={{ background: 'radial-gradient(circle, rgba(124,58,237,0.5) 0%, transparent 70%)' }} />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full opacity-10"
-             style={{ background: 'radial-gradient(circle, rgba(249,115,22,0.3) 0%, transparent 70%)' }} />
+        {/* Animated background elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          {/* Large floating orbs */}
+          <div className="absolute top-20 right-[10%] w-[600px] h-[600px] rounded-full opacity-20 animate-float"
+               style={{ background: 'radial-gradient(circle, rgba(249,115,22,0.4), transparent 70%)' }} />
+          <div className="absolute bottom-20 left-[5%] w-[500px] h-[500px] rounded-full opacity-15 animate-float"
+               style={{ background: 'radial-gradient(circle, rgba(139,92,246,0.4), transparent 70%)', animationDelay: '2s' }} />
 
-        {/* Grid pattern */}
-        <div className="absolute inset-0 bg-grid opacity-40" />
+          {/* Subtle grid pattern */}
+          <div className="absolute inset-0 bg-grid opacity-[0.03]" />
 
-        <div className="container relative z-10 py-24">
-          <div className="max-w-4xl">
-            {/* Badge */}
-            <div className="hero-badge inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest text-orange mb-8"
-                 style={{ background: 'rgba(249,115,22,0.12)', border: '1px solid rgba(249,115,22,0.25)' }}>
-              <span className="w-1.5 h-1.5 rounded-full bg-orange animate-pulse" />
-              India's Premier L&D Training Partner
+          {/* Accent lines */}
+          <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-orange/30 to-transparent" />
+          <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-purple/30 to-transparent" />
+        </div>
+
+        <div className="container relative z-10 py-32">
+          <div className="max-w-5xl mx-auto">
+            {/* Badge with pulse animation */}
+            <div className="hero-badge inline-flex items-center gap-3 px-5 py-3 rounded-full text-sm font-bold tracking-wide mb-8"
+                 style={{
+                   background: 'rgba(249,115,22,0.15)',
+                   border: '1px solid rgba(249,115,22,0.3)',
+                   boxShadow: '0 4px 20px rgba(249,115,22,0.15)'
+                 }}>
+              <span className="relative flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-orange"></span>
+              </span>
+              <span className="text-orange-200">Transforming Careers Across India</span>
             </div>
 
-            {/* Heading */}
-            <h1 className="hero-heading text-display text-white mb-6 leading-[1.08]">
-              Transform Students Into{' '}
-              <span className="gradient-text">Industry-Ready</span>{' '}
-              Professionals
+            {/* Main Heading - improved hierarchy and impact */}
+            <h1 className="hero-heading text-6xl md:text-7xl lg:text-8xl font-display font-black text-white mb-8 leading-[1.05]">
+              Build{' '}
+              <span className="relative inline-block">
+                <span className="text-gradient-animate">Job-Ready</span>
+                <svg className="absolute -bottom-2 left-0 w-full" height="12" viewBox="0 0 200 12" fill="none">
+                  <path d="M2 10C50 5, 100 5, 198 10" stroke="url(#gradient)" strokeWidth="3" strokeLinecap="round"/>
+                  <defs>
+                    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" stopColor="#F97316" />
+                      <stop offset="100%" stopColor="#8B5CF6" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </span>
+              <br />
+              Professionals,<br />
+              Not Just Graduates
             </h1>
 
-            {/* Sub */}
-            <p className="hero-sub text-lg md:text-xl text-gray-300 max-w-2xl mb-8 leading-relaxed">
-              Comprehensive employability training that bridges the gap between academic education
-              and workplace expectations — building confidence, skills, and careers.
+            {/* Subheading - more compelling value prop */}
+            <p className="hero-sub text-xl md:text-2xl text-gray-300 max-w-3xl mb-10 leading-relaxed font-medium">
+              Bridge the skills gap with comprehensive employability training.
+              <span className="text-white font-semibold"> From aptitude to communication, technical skills to workplace readiness</span> —
+              we prepare students for real careers, not just exams.
             </p>
 
-            {/* Pills */}
-            <div className="flex flex-wrap gap-2 mb-10">
-              {['ASPIRE', 'ACQUIRE', 'ASCEND', 'AMPLIFY'].map((word) => (
-                <span key={word} className="hero-pills px-4 py-1.5 rounded-full text-xs font-bold tracking-widest text-orange"
-                      style={{ background: 'rgba(249,115,22,0.10)', border: '1px solid rgba(249,115,22,0.20)' }}>
-                  {word}
+            {/* 4A Pills - redesigned */}
+            <div className="flex flex-wrap gap-3 mb-12">
+              {[
+                { word: 'ASPIRE', icon: '🎯' },
+                { word: 'ACQUIRE', icon: '📚' },
+                { word: 'ASCEND', icon: '🚀' },
+                { word: 'AMPLIFY', icon: '⚡' }
+              ].map((item) => (
+                <span key={item.word}
+                      className="hero-pills group px-5 py-2.5 rounded-full text-sm font-bold tracking-wider text-white/90 hover:text-white transition-all cursor-default hover:scale-105"
+                      style={{
+                        background: 'rgba(255,255,255,0.08)',
+                        border: '1px solid rgba(255,255,255,0.15)',
+                        backdropFilter: 'blur(10px)'
+                      }}>
+                  <span className="mr-2">{item.icon}</span>
+                  {item.word}
                 </span>
               ))}
             </div>
 
-            {/* CTAs */}
-            <div className="hero-ctas flex flex-col sm:flex-row gap-4 mb-16">
-              <Link href="/contact" className="btn btn-primary btn-lg">
-                Partner With Us
+            {/* CTAs - improved design */}
+            <div className="hero-ctas flex flex-col sm:flex-row gap-5 mb-20">
+              <Link href="/contact"
+                    className="btn btn-lg px-8 py-4 bg-gradient-to-r from-orange to-orange-dark text-white font-bold hover:shadow-2xl hover:shadow-orange/30 transition-all hover:scale-105">
+                Schedule a Consultation
                 <ArrowRight className="w-5 h-5" />
               </Link>
-              <Link href="/flagship-program" className="btn btn-ghost btn-lg">
+              <Link href="/flagship-program"
+                    className="btn btn-lg px-8 py-4 bg-white/10 backdrop-blur-sm text-white border-2 border-white/20 hover:bg-white/15 hover:border-white/30 transition-all">
                 <Play className="w-5 h-5" />
-                Explore Programs
+                View Our Programs
               </Link>
             </div>
 
-            {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-              {stats.map((s) => (
-                <div key={s.label} className="hero-stat-card p-5 rounded-2xl text-center"
-                     style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.10)' }}>
-                  <div className="text-3xl font-display font-black mb-1"
-                       style={{ color: '#F97316' }}>
+            {/* Stats - completely redesigned with better prominence */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {stats.map((s, idx) => (
+                <div key={s.label}
+                     className="hero-stat-card group p-6 rounded-2xl text-center hover:scale-105 transition-all cursor-default"
+                     style={{
+                       background: 'rgba(255,255,255,0.08)',
+                       border: '2px solid rgba(255,255,255,0.12)',
+                       backdropFilter: 'blur(20px)',
+                       boxShadow: '0 8px 32px rgba(0,0,0,0.1)'
+                     }}>
+                  <div className="text-5xl md:text-6xl font-display font-black mb-2 bg-gradient-to-br from-orange via-orange-light to-purple bg-clip-text text-transparent group-hover:scale-110 transition-transform">
                     {s.value}{s.suffix}
                   </div>
-                  <div className="text-xs text-gray-400 font-semibold">{s.label}</div>
+                  <div className="text-sm text-gray-300 font-semibold uppercase tracking-wide">{s.label}</div>
                 </div>
               ))}
             </div>
           </div>
         </div>
 
-        {/* Bottom fade */}
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-white to-transparent" />
+        {/* Bottom gradient fade to next section */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white via-white/80 to-transparent" />
+      </section>
+
+      {/* ═══════════════ RESULTS SECTION ═══════════════ */}
+      <section className="section bg-white relative overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-orange/5 to-purple/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-80 h-80 bg-gradient-to-tr from-teal/5 to-blue-500/5 rounded-full blur-3xl" />
+
+        <div className="container relative z-10">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange/10 border border-orange/20 mb-4">
+              <Zap className="w-4 h-4 text-orange" />
+              <span className="text-sm font-bold text-orange">Real Impact, Real Numbers</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-display font-black text-gray-900 mb-4">
+              What Students <span className="gradient-text">Actually Achieve</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Measurable outcomes from students who completed our comprehensive training programs
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {/* Aptitude Improvement */}
+            <div className="p-10 rounded-3xl border-2 border-orange/20 hover:border-orange/40 bg-white hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+              <div className="text-center">
+                <div className="text-7xl font-display font-black mb-2 bg-gradient-to-br from-orange to-orange-dark bg-clip-text text-transparent">
+                  85%
+                </div>
+                <div className="text-2xl font-display font-bold text-gray-900 mb-3">
+                  Aptitude Improvement
+                </div>
+                <p className="text-gray-600 font-medium">
+                  Average score increase
+                </p>
+              </div>
+              <div className="mt-6 pt-6 border-t border-gray-200">
+                <p className="text-sm text-gray-500 text-center leading-relaxed">
+                  Students show dramatic improvement in quantitative, logical reasoning, and data interpretation after our structured training
+                </p>
+              </div>
+            </div>
+
+            {/* Communication Boost */}
+            <div className="p-10 rounded-3xl border-2 border-purple/20 hover:border-purple/40 bg-white hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+              <div className="text-center">
+                <div className="text-7xl font-display font-black mb-2 bg-gradient-to-br from-purple to-purple-light bg-clip-text text-transparent">
+                  95%
+                </div>
+                <div className="text-2xl font-display font-bold text-gray-900 mb-3">
+                  Communication Boost
+                </div>
+                <p className="text-gray-600 font-medium">
+                  Self-reported confidence
+                </p>
+              </div>
+              <div className="mt-6 pt-6 border-t border-gray-200">
+                <p className="text-sm text-gray-500 text-center leading-relaxed">
+                  Students report significant confidence gains in verbal communication, presentations, and professional interactions
+                </p>
+              </div>
+            </div>
+
+            {/* Interview Success */}
+            <div className="p-10 rounded-3xl border-2 border-teal/20 hover:border-teal/40 bg-white hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+              <div className="text-center">
+                <div className="text-7xl font-display font-black mb-2 bg-gradient-to-br from-teal to-cyan-500 bg-clip-text text-transparent">
+                  3x
+                </div>
+                <div className="text-2xl font-display font-bold text-gray-900 mb-3">
+                  Interview Success
+                </div>
+                <p className="text-gray-600 font-medium">
+                  vs. untrained peers
+                </p>
+              </div>
+              <div className="mt-6 pt-6 border-t border-gray-200">
+                <p className="text-sm text-gray-500 text-center leading-relaxed">
+                  Our students are 3 times more likely to clear interviews compared to peers without structured training
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom CTA */}
+          <div className="text-center mt-16">
+            <p className="text-gray-600 mb-6 text-lg">
+              Join <span className="font-bold text-gray-900">1,000+ students</span> who transformed their careers with 4Ability Hive
+            </p>
+            <Link href="/success-stories" className="btn btn-lg bg-gradient-to-r from-orange to-purple text-white hover:shadow-2xl hover:scale-105 transition-all inline-flex">
+              Read Success Stories
+              <ArrowRight className="w-5 h-5" />
+            </Link>
+          </div>
+        </div>
       </section>
 
       {/* ═══════════════ PROGRAMS ═══════════════ */}
