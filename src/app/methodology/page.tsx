@@ -17,10 +17,10 @@ import {
 } from 'lucide-react';
 
 export default function MethodologyPage() {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1,
-  });
+  const [stepsRef, stepsInView] = useInView({ triggerOnce: true, threshold: 0.1 });
+  const [principlesRef, principlesInView] = useInView({ triggerOnce: true, threshold: 0.1 });
+  const [deliveryRef, deliveryInView] = useInView({ triggerOnce: true, threshold: 0.1 });
+  const [ctaRef, ctaInView] = useInView({ triggerOnce: true, threshold: 0.1 });
 
   const methodologySteps = [
     {
@@ -139,7 +139,7 @@ export default function MethodologyPage() {
   ];
 
   return (
-    <main className="min-h-screen pt-20">
+    <main className="min-h-screen pt-20 bg-[#0A0F1E]">
       {/* Hero Section */}
       <section className="section-padding relative overflow-hidden">
         <div className="absolute inset-0">
@@ -210,11 +210,11 @@ export default function MethodologyPage() {
       </section>
 
       {/* Detailed Methodology Steps */}
-      <section ref={ref} className="section-padding bg-[#0A0F1E]">
+      <section ref={stepsRef} className="section-padding bg-[#0A0F1E]">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
+            animate={stepsInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
             className="text-center mb-20"
           >
@@ -231,7 +231,7 @@ export default function MethodologyPage() {
               <motion.div
                 key={step.title}
                 initial={{ opacity: 0, y: 30 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
+                animate={stepsInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="relative"
               >
@@ -280,7 +280,7 @@ export default function MethodologyPage() {
       </section>
 
       {/* Core Principles */}
-      <section className="section-padding relative overflow-hidden">
+      <section ref={principlesRef} className="section-padding relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-purple-500/10 to-transparent rounded-full blur-3xl" />
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-pink-500/10 to-transparent rounded-full blur-3xl" />
@@ -289,7 +289,7 @@ export default function MethodologyPage() {
         <div className="container-custom relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
+            animate={principlesInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
             className="text-center mb-20"
           >
@@ -306,7 +306,7 @@ export default function MethodologyPage() {
               <motion.div
                 key={principle.title}
                 initial={{ opacity: 0, scale: 0.9 }}
-                animate={inView ? { opacity: 1, scale: 1 } : {}}
+                animate={principlesInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 whileHover={{ y: -10, scale: 1.02 }}
                 className="group relative"
@@ -326,11 +326,11 @@ export default function MethodologyPage() {
       </section>
 
       {/* Delivery Framework */}
-      <section className="section-padding bg-[#0A0F1E]">
+      <section ref={deliveryRef} className="section-padding bg-[#0A0F1E]">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
+            animate={deliveryInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
@@ -378,7 +378,7 @@ export default function MethodologyPage() {
               <motion.div
                 key={item.title}
                 initial={{ opacity: 0, y: 20 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
+                animate={deliveryInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-gradient-to-br from-white/5 to-white/0 border border-white/10 hover:border-orange-500/30 rounded-2xl p-8 backdrop-blur-xl transition-all duration-300"
               >
@@ -398,7 +398,7 @@ export default function MethodologyPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding relative overflow-hidden">
+      <section ref={ctaRef} className="section-padding relative overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-orange-500/20 to-transparent rounded-full blur-3xl" />
         </div>
@@ -406,7 +406,7 @@ export default function MethodologyPage() {
         <div className="container-custom relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
+            animate={ctaInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
             className="bg-gradient-to-br from-[#131B2E] to-[#0F1521] border border-white/10 rounded-3xl p-16 backdrop-blur-xl text-center"
           >
@@ -419,11 +419,11 @@ export default function MethodologyPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <Link href="/contact" className="btn-primary text-lg group">
+              <Link href="/contact" className="btn btn-primary text-lg group">
                 Request a Demo Session
                 <ArrowRight className="inline-block ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link href="/flagship-program" className="btn-secondary text-lg group">
+              <Link href="/flagship-program" className="btn btn-secondary text-lg group">
                 View Our Programs
                 <Target className="inline-block ml-2 w-6 h-6" />
               </Link>

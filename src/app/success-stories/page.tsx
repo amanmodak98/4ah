@@ -1,5 +1,6 @@
 'use client';
 
+import { useState } from 'react';
 import { Star, Award, TrendingUp, Users, Quote } from 'lucide-react';
 import Link from 'next/link';
 
@@ -81,6 +82,10 @@ export default function SuccessStoriesPage() {
   ];
 
   const filters = ['All', 'College', 'Corporate', 'Student'];
+  const [activeFilter, setActiveFilter] = useState<string>('All');
+  const filtered = activeFilter === 'All'
+    ? testimonials
+    : testimonials.filter((t) => t.type === activeFilter);
 
   return (
     <div className="pt-20">
@@ -132,8 +137,9 @@ export default function SuccessStoriesPage() {
             {filters.map((filter) => (
               <button
                 key={filter}
+                onClick={() => setActiveFilter(filter)}
                 className={`px-5 py-2 rounded-full font-display font-bold text-sm transition-all ${
-                  filter === 'All'
+                  filter === activeFilter
                     ? 'bg-orange text-white shadow-orange'
                     : 'bg-white text-gray-600 hover:bg-gray-100'
                 }`}
@@ -144,7 +150,7 @@ export default function SuccessStoriesPage() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-6">
-            {testimonials.map((t) => (
+            {filtered.map((t) => (
               <div key={t.name} className="card p-8 hover:shadow-xl transition-all">
                 {/* Type badge */}
                 <div className="flex items-center justify-between mb-4">

@@ -43,7 +43,7 @@ export const useFadeInUp = () => {
           trigger: element,
           start: 'top 85%',
           end: 'bottom 15%',
-          toggleActions: 'play none none reverse',
+          toggleActions: 'play none none none',
         },
       }
     );
@@ -78,7 +78,7 @@ export const useStaggerAnimation = (childCount: number) => {
           trigger: ref.current,
           start: 'top 80%',
           end: 'bottom 20%',
-          toggleActions: 'play none none reverse',
+          toggleActions: 'play none none none',
         },
       }
     );
@@ -161,7 +161,7 @@ export const useSlideIn = (direction: 'left' | 'right' = 'left') => {
           trigger: element,
           start: 'top 85%',
           end: 'bottom 15%',
-          toggleActions: 'play none none reverse',
+          toggleActions: 'play none none none',
         },
       }
     );

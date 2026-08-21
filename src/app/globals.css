@@ -451,3 +451,123 @@
     -webkit-text-fill-color: transparent;
   }
 }
+
+/* ─── Legacy-compatible aliases ─────────────────────────────────────────────
+   Older page files reference these class names. These rules map them to the
+   current design system so those pages render correctly without a full rewrite.
+   ──────────────────────────────────────────────────────────────────────────── */
+
+@layer components {
+  /* Layout aliases */
+  .section-padding { padding-block: var(--section-y); }
+
+  .container-custom {
+    width: 100%;
+    max-width: 1200px;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+
+  @media (min-width: 768px) {
+    .container-custom { padding-inline: 2rem; }
+  }
+
+  /* Heading aliases */
+  .section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-family: var(--font-display);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    line-height: 1.2;
+    color: inherit;
+  }
+
+  .section-subtitle {
+    font-size: 1.125rem;
+    color: inherit;
+    max-width: 42rem;
+    line-height: 1.8;
+    opacity: 0.75;
+  }
+
+  /* Secondary / ghost button — works on both dark and light backgrounds */
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.75rem;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 0.9375rem;
+    border-radius: 0.625rem;
+    border: 2px solid rgba(255, 255, 255, 0.30);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    line-height: 1;
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.50);
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary:active { transform: translateY(0); }
+
+  /* Dark card — for use inside dark/navy background sections */
+  .card-dark {
+    background: linear-gradient(135deg, #131B2E 0%, #0F1521 100%);
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.10);
+    transition: all 0.3s ease;
+    color: white;
+  }
+
+  .card-dark h1,
+  .card-dark h2,
+  .card-dark h3,
+  .card-dark h4 { color: white; }
+
+  .card-dark:hover {
+    border-color: rgba(255, 255, 255, 0.22);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.30);
+    transform: translateY(-3px);
+  }
+
+  /* Light section tint */
+  .section-light { background: var(--gray-50); }
+}
+
+@layer utilities {
+  /* Animated gradient text */
+  .text-gradient-animate {
+    background: linear-gradient(
+      135deg,
+      var(--orange)       0%,
+      var(--yellow)       40%,
+      var(--orange-light) 70%,
+      var(--orange)       100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 4s ease infinite;
+  }
+
+  @keyframes gradientShift {
+    0%   { background-position: 0% center; }
+    50%  { background-position: 100% center; }
+    100% { background-position: 0% center; }
+  }
+
+  /* Radial gradient background (Tailwind doesn't ship this by default) */
+  .bg-gradient-radial {
+    background-image: radial-gradient(var(--tw-gradient-stops));
+  }
+}

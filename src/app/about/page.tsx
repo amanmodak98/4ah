@@ -118,7 +118,7 @@ export default function AboutPage() {
         {/* Animated blobs */}
         <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full opacity-20 animate-float"
              style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.4), transparent)' }} />
-        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full opacity-20"
+        <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full opacity-20 animate-float"
              style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.3), transparent)', animationDelay: '2s' }} />
 
         <div className="container relative z-10 py-20">

@@ -252,9 +252,7 @@ export default function Home() {
                      style={{ background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.10)' }}>
                   <div className="text-3xl font-display font-black mb-1"
                        style={{ color: '#F97316' }}>
-                    <span className="count-up" data-target={s.value} data-suffix={s.suffix}>
-                      0{s.suffix}
-                    </span>
+                    {s.value}{s.suffix}
                   </div>
                   <div className="text-xs text-gray-400 font-semibold">{s.label}</div>
                 </div>

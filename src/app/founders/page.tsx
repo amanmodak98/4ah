@@ -52,7 +52,7 @@ export default function FoundersPage() {
   ];
 
   return (
-    <div className="min-h-screen pt-20">
+    <div className="min-h-screen pt-20 bg-[#0A0F1E]">
       <section className="section-padding relative overflow-hidden">
         {/* Background Elements */}
         <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-bl from-orange-500/10 to-transparent rounded-full blur-3xl" />

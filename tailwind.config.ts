@@ -23,6 +23,12 @@ const config: Config = {
           DEFAULT: '#0F172A',
           light:   '#1E293B',
           50:      '#f8fafc',
+          800:     '#0F1F35',
+          900:     '#0A1628',
+          950:     '#07111F',
+        },
+        cream: {
+          100: '#FFFBF5',
         },
         purple: {
           DEFAULT: '#7C3AED',

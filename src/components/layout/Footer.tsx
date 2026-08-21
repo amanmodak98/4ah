@@ -163,9 +163,8 @@ export default function Footer() {
         <div className="container py-5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-gray-500">
           <span>© {year} 4Ability Hive. All rights reserved.</span>
           <div className="flex items-center gap-4">
-            <Link href="/privacy-policy" className="hover:text-orange transition-colors">Privacy Policy</Link>
-            <Link href="/terms"          className="hover:text-orange transition-colors">Terms of Service</Link>
-            <Link href="/sitemap.xml"    className="hover:text-orange transition-colors">Sitemap</Link>
+            <span className="text-gray-600">Privacy Policy</span>
+            <span className="text-gray-600">Terms of Service</span>
           </div>
         </div>
       </div>
