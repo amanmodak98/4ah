@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { ArrowRight, Play, ChevronRight, Zap, Target, TrendingUp, Users } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import FAQ from '@/components/FAQ';
+import { faqSchema, reviewSchema, aggregateRatingSchema } from '@/lib/metadata';
 
 if (typeof window !== 'undefined') gsap.registerPlugin(ScrollTrigger);
 
@@ -182,8 +184,65 @@ export default function Home() {
     },
   ];
 
+  const faqs = [
+    {
+      question: 'What is 4Ability Hive and what services do you provide?',
+      answer: '4Ability Hive is a Learning & Development company specializing in employability training for students and corporate professionals. We offer comprehensive programs in soft skills, communication, aptitude training, placement readiness, and corporate training solutions across India.',
+    },
+    {
+      question: 'How does the year-wise learning journey work for college students?',
+      answer: 'Our progressive approach starts from first year with foundation skills (self-awareness, grooming, learning mindset), builds professional communication and adaptability in second year, develops leadership and emotional intelligence in third year, and culminates with advanced aptitude and placement preparation in final year. This ensures students are continuously developing rather than cramming skills at the last minute.',
+    },
+    {
+      question: 'What makes your training methodology different from traditional classroom teaching?',
+      answer: 'We follow a 5-step experiential learning methodology: Assess → Learn → Practice → Feedback → Improve. Unlike passive lectures, 70% of our time is spent on hands-on activities, role-plays, simulations, and continuous feedback. Students actively participate and apply what they learn in real workplace scenarios.',
+    },
+    {
+      question: 'What results can institutions expect from your training programs?',
+      answer: 'Institutions typically see 85% improvement in aptitude scores, 95% boost in communication confidence, and 3x higher interview success rates compared to untrained peers. We provide pre and post-assessment reports, individual feedback, and measurable outcomes for every program.',
+    },
+    {
+      question: 'Do you offer training delivery in both online and offline modes?',
+      answer: 'Yes, we offer flexible delivery modes including in-person classroom sessions, virtual live sessions, and hybrid models based on institutional requirements and preferences. All modes maintain our interactive, practice-first methodology.',
+    },
+    {
+      question: 'How can my college or organization partner with 4Ability Hive?',
+      answer: 'Simply reach out through our contact form or email us at info@4ah.in. We\'ll schedule a consultation to understand your needs, discuss program options, and design a customized training proposal aligned with your calendar and goals.',
+    },
+  ];
+
+  // Review schemas for testimonials
+  const reviewSchemas = testimonials.map(t => reviewSchema({
+    author: t.name,
+    reviewBody: t.quote,
+    reviewRating: t.rating,
+  }));
+
+  // Aggregate rating schema
+  const aggregateRating = aggregateRatingSchema(5, testimonials.length);
+
+  // FAQ Schema
+  const homeFAQSchema = faqSchema(faqs);
+
   return (
     <div className="pt-20">
+      {/* JSON-LD Schema */}
+      {reviewSchemas.map((schema, idx) => (
+        <script
+          key={`review-${idx}`}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aggregateRating) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeFAQSchema) }}
+      />
+
       {/* ═══════════════ HERO ═══════════════ */}
       <section
         ref={heroRef}
@@ -322,7 +381,7 @@ export default function Home() {
               <span className="text-sm font-bold text-orange">Real Impact, Real Numbers</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-display font-black text-gray-900 mb-4">
-              What Students <span className="gradient-text">Actually Achieve</span>
+              What Do Students <span className="gradient-text">Actually Achieve?</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
               Measurable outcomes from students who completed our comprehensive training programs
@@ -490,7 +549,7 @@ export default function Home() {
                 <div className="relative z-10">
                   <div className="text-5xl mb-4">🎓</div>
                   <h3 className="text-2xl font-display font-black text-white mb-4">
-                    Employability is a Journey,<br />Not a Last-Minute Effort
+                    Why Is Employability a Journey,<br />Not a Last-Minute Effort?
                   </h3>
                   <p className="text-gray-300 leading-relaxed mb-8">
                     Students who start in first year arrive at placements with years of practice.
@@ -519,8 +578,8 @@ export default function Home() {
             <div className="order-1 lg:order-2">
               <div className="section-label mb-4">Why 4Ability Hive</div>
               <h2 className="text-headline text-gray-900 mb-4">
-                We're a Partner,<br />
-                <span className="gradient-text">Not Just a Vendor</span>
+                Why Are We a Partner,<br />
+                <span className="gradient-text">Not Just a Vendor?</span>
               </h2>
               <p className="text-gray-500 text-lg mb-10 leading-relaxed">
                 Our commitment goes beyond classroom sessions — we strive to create lasting transformations
@@ -602,6 +661,17 @@ export default function Home() {
               Read All Success Stories
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* ═══════════════ FAQ SECTION ═══════════════ */}
+      <section className="section bg-white">
+        <div className="container">
+          <FAQ
+            faqs={faqs}
+            title="Frequently Asked Questions"
+            subtitle="Everything you need to know about 4Ability Hive"
+          />
         </div>
       </section>
 

@@ -16,6 +16,9 @@ import {
 } from 'lucide-react';
 import Link from 'next/link';
 import { useFadeInUp, useStaggerAnimation } from '@/hooks/useGSAP';
+import FAQ from '@/components/FAQ';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import { faqSchema, itemListSchema } from '@/lib/metadata';
 
 export default function CorporateSolutionsPage() {
   const heroRef = useFadeInUp();
@@ -149,8 +152,74 @@ export default function CorporateSolutionsPage() {
     'Diversity & Inclusion Training',
   ];
 
+  const faqs = [
+    {
+      question: 'What corporate training programs do you offer?',
+      answer: 'We offer comprehensive corporate training including Employee Upskilling, Professional Development, Leadership Training, Performance Enhancement, and fully Customized Programs. Our training covers communication, leadership, emotional intelligence, problem-solving, team building, and more - all tailored to your organizational needs.',
+    },
+    {
+      question: 'How do you customize training for our organization?',
+      answer: 'We begin with a comprehensive need assessment to understand your specific challenges, goals, and workforce profile. Based on this, we design custom curriculum, select relevant case studies, and adapt our delivery methods to align with your organizational culture and objectives.',
+    },
+    {
+      question: 'Can training be delivered on-site at our office?',
+      answer: 'Yes, we offer flexible delivery options including on-site training at your location, online virtual sessions, or hybrid models. Our trainers can travel to your office anywhere in India, or we can conduct engaging virtual sessions with the same high-quality, interactive experience.',
+    },
+    {
+      question: 'What is the typical duration of corporate training programs?',
+      answer: 'Program duration varies based on your needs. We offer short workshops (1-2 days), multi-week training modules (2-8 weeks), and long-term development programs (3-6 months). Each program is designed to fit your organizational calendar and minimize workflow disruption.',
+    },
+    {
+      question: 'How do you measure training effectiveness and ROI?',
+      answer: 'We use pre and post-training assessments, performance metrics, behavioral observations, and participant feedback surveys. You receive detailed reports showing skill improvements, competency gains, and measurable impact on employee performance. Most organizations see 30-40% performance improvement.',
+    },
+    {
+      question: 'What makes your corporate training different from others?',
+      answer: 'Our training is 90% application-based with real workplace scenarios, role-plays, and hands-on activities - not passive lectures. Trainers have 15+ years of combined corporate and training experience. We provide ongoing support, progress tracking, and customize every aspect to your organizational context.',
+    },
+  ];
+
+  // ItemList Schema for corporate solutions
+  const corporateSolutionsSchema = itemListSchema(
+    solutions.map(s => ({
+      name: s.title,
+      url: 'https://4ah.in/corporate-solutions',
+      description: s.description,
+    }))
+  );
+
+  // FAQ Schema
+  const corporateFAQSchema = faqSchema(faqs);
+
+  // Breadcrumb Schema
+  const corporateBreadcrumbSchema = breadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Corporate Solutions', url: '/corporate-solutions' },
+  ]);
+
   return (
     <div className="pt-20">
+      {/* JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(corporateSolutionsSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(corporateFAQSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(corporateBreadcrumbSchema) }}
+      />
+
+      {/* Breadcrumbs */}
+      <div className="bg-gray-50 border-b border-gray-200">
+        <div className="container">
+          <Breadcrumbs items={[{ name: 'Corporate Solutions', url: '/corporate-solutions' }]} />
+        </div>
+      </div>
+
       {/* Hero Section */}
       <section className="section-padding bg-gradient-to-br from-navy-950 via-navy-900 to-navy-800 text-white relative overflow-hidden">
         <div className="absolute top-20 right-10 w-96 h-96 bg-orange-500/20 rounded-full blur-3xl animate-pulse" />
@@ -325,6 +394,17 @@ export default function CorporateSolutionsPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="section bg-gray-50">
+        <div className="container">
+          <FAQ
+            faqs={faqs}
+            title="Frequently Asked Questions"
+            subtitle="Everything you need to know about our corporate training solutions"
+          />
         </div>
       </section>
 

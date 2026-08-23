@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Quote, Linkedin, Mail, ChevronDown, Sparkles, Heart, Target, Users } from 'lucide-react';
 import { useFadeInUp, useStaggerAnimation } from '@/hooks/useGSAP';
 import { useState } from 'react';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 export default function FoundersPage() {
   const titleRef = useFadeInUp();
@@ -99,8 +100,51 @@ export default function FoundersPage() {
     },
   ];
 
+  // Person schemas for each founder
+  const personSchemas = founders.map(founder => ({
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    name: founder.name,
+    jobTitle: founder.role,
+    worksFor: {
+      '@type': 'Organization',
+      name: '4Ability Hive',
+      url: 'https://4ah.in',
+    },
+    sameAs: founder.linkedin,
+    email: founder.email,
+    description: founder.background,
+    knowsAbout: founder.expertise,
+  }));
+
+  // Breadcrumb Schema
+  const foundersBreadcrumbSchema = breadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Founders', url: '/founders' },
+  ]);
+
   return (
     <div className="pt-20">
+      {/* JSON-LD Schema for founders */}
+      {personSchemas.map((schema, idx) => (
+        <script
+          key={`person-${idx}`}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(foundersBreadcrumbSchema) }}
+      />
+
+      {/* Breadcrumbs */}
+      <div className="bg-gray-50 border-b border-gray-200">
+        <div className="container">
+          <Breadcrumbs items={[{ name: 'Founders', url: '/founders' }]} />
+        </div>
+      </div>
+
       {/* ═══════════════ HERO ═══════════════ */}
       <section className="relative min-h-[50vh] flex items-center overflow-hidden bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
         <div className="absolute inset-0 bg-grid opacity-5" />

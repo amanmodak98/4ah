@@ -8,6 +8,9 @@ import {
 } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import FAQ from '@/components/FAQ';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import { faqSchema } from '@/lib/metadata';
 
 if (typeof window !== 'undefined') gsap.registerPlugin(ScrollTrigger);
 
@@ -118,8 +121,56 @@ export default function CollegeSolutionsPage() {
     },
   ];
 
+  const faqs = [
+    {
+      question: 'Why should we start training from first year instead of just final year?',
+      answer: 'Employability is a journey, not a last-minute effort. Students who start training in first year arrive at final year placements with years of continuous practice and confidence. This progressive approach ensures skills are deeply ingrained rather than superficially learned under pressure.',
+    },
+    {
+      question: 'How does the year-wise learning journey work?',
+      answer: 'Each year focuses on age-appropriate skills: First year builds foundation and confidence, Second year develops professional communication and adaptability, Third year focuses on leadership and emotional intelligence, and Final year delivers advanced aptitude and placement readiness. Skills compound over time.',
+    },
+    {
+      question: 'Can we customize the year-wise curriculum for our college?',
+      answer: 'Absolutely. We design programs based on your institution\'s calendar, student profile, industry focus, and placement goals. The year-wise framework is flexible and can be adapted to your specific requirements and constraints.',
+    },
+    {
+      question: 'What if we only want training for final year students?',
+      answer: 'We offer standalone final year programs including our flagship 90-hour employability program. However, we always recommend the year-wise approach for maximum impact. Institutions that implement progressive training consistently see better placement outcomes.',
+    },
+    {
+      question: 'How do you measure progress across the four years?',
+      answer: 'Each program includes pre and post-assessments, individual feedback reports, and progress tracking. Students and institutions receive detailed reports showing skill development, improvement areas, and readiness metrics at each stage.',
+    },
+  ];
+
+  const collegeFAQSchema = faqSchema(faqs);
+
+  // Breadcrumb Schema
+  const collegeBreadcrumbSchema = breadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'College Solutions', url: '/college-solutions' },
+  ]);
+
   return (
     <div className="pt-20">
+      {/* JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collegeFAQSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(collegeBreadcrumbSchema) }}
+      />
+
+      {/* Breadcrumbs */}
+      <div className="bg-gray-50 border-b border-gray-200">
+        <div className="container">
+          <Breadcrumbs items={[{ name: 'College Solutions', url: '/college-solutions' }]} />
+        </div>
+      </div>
+
       {/* ═══════ HERO ═══════ */}
       <section
         className="relative min-h-[60vh] flex items-center overflow-hidden"
@@ -322,6 +373,17 @@ export default function CollegeSolutionsPage() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ═══════ FAQ SECTION ═══════ */}
+      <section className="section bg-gray-50">
+        <div className="container">
+          <FAQ
+            faqs={faqs}
+            title="Frequently Asked Questions"
+            subtitle="Everything you need to know about our year-wise approach"
+          />
         </div>
       </section>
 

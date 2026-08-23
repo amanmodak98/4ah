@@ -8,6 +8,9 @@ import {
 } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import FAQ from '@/components/FAQ';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import { faqSchema } from '@/lib/metadata';
 
 if (typeof window !== 'undefined') gsap.registerPlugin(ScrollTrigger);
 
@@ -101,8 +104,56 @@ export default function AboutPage() {
     { icon: Rocket,    title: 'Empowerment',   bgClass: 'from-purple/5 to-purple/10',       borderClass: 'border-purple/20',    hoverBorder: 'hover:border-purple',    iconBg: 'bg-purple',    textHover: 'group-hover:text-purple',    barBg: 'bg-purple',    desc: 'We believe every learner has unique potential. Our programs help discover and develop hidden strengths.' },
   ];
 
+  const faqs = [
+    {
+      question: 'What is 4Ability Hive and when was it founded?',
+      answer: '4Ability Hive is a Learning & Development company specializing in employability training for students and corporate professionals. We partner with colleges and organizations across India to transform students into confident, industry-ready professionals through our structured, experiential training programs.',
+    },
+    {
+      question: 'What does the 4A philosophy mean?',
+      answer: 'Our 4A philosophy represents our complete learner journey: ASPIRE (identify goals and potential), ACQUIRE (build skills through training), ASCEND (apply skills and gain confidence), and AMPLIFY (create impact and lead). This framework guides every program we design.',
+    },
+    {
+      question: 'Who are the founders of 4Ability Hive?',
+      answer: 'We are founded by a team of passionate educators and corporate trainers with 10-15+ years of combined experience in L&D, talent development, aptitude training, soft skills training, and technology. Our diverse expertise ensures comprehensive, industry-relevant training solutions.',
+    },
+    {
+      question: 'What makes 4Ability Hive different from other training companies?',
+      answer: 'Our approach is 70% practice-based with experiential learning, not passive lectures. We offer year-wise progressive training (not last-minute cramming), provide individual feedback for every learner, use proven 5-step methodology, and maintain long-term partnerships with continuous support.',
+    },
+    {
+      question: 'What are your core values?',
+      answer: 'We are guided by Excellence (highest training standards), Commitment (lifetime mentorship), Collaboration (partnering with institutions), Innovation (evolving methodologies), Integrity (transparent practices), and Empowerment (unlocking learner potential).',
+    },
+  ];
+
+  const aboutFAQSchema = faqSchema(faqs);
+
+  // Breadcrumb Schema
+  const aboutBreadcrumbSchema = breadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'About', url: '/about' },
+  ]);
+
   return (
     <div className="pt-20">
+      {/* JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutFAQSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutBreadcrumbSchema) }}
+      />
+
+      {/* Breadcrumbs */}
+      <div className="bg-gray-50 border-b border-gray-200">
+        <div className="container">
+          <Breadcrumbs items={[{ name: 'About', url: '/about' }]} />
+        </div>
+      </div>
+
       {/* ═══════════════ HERO ═══════════════ */}
       <section
         ref={heroRef}
@@ -317,6 +368,17 @@ export default function AboutPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="section bg-gray-50">
+        <div className="container">
+          <FAQ
+            faqs={faqs}
+            title="Frequently Asked Questions"
+            subtitle="Learn more about who we are and what drives us"
+          />
         </div>
       </section>
 

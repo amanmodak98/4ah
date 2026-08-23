@@ -15,6 +15,7 @@ import {
   Users,
   Award,
 } from 'lucide-react';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 export default function MethodologyPage() {
   const [stepsRef, stepsInView] = useInView({ triggerOnce: true, threshold: 0.1 });
@@ -138,8 +139,51 @@ export default function MethodologyPage() {
     },
   ];
 
+  // HowTo Schema for the 5-step methodology
+  const howToSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: 'How 4Ability Hive Training Methodology Works',
+    description: 'Our proven 5-step training methodology: Assess, Learn, Practice, Feedback, and Improve - designed to transform students into workplace-ready professionals.',
+    step: methodologySteps.map((step, index) => ({
+      '@type': 'HowToStep',
+      position: index + 1,
+      name: step.title,
+      text: step.description,
+      itemListElement: step.details.map((detail, detailIndex) => ({
+        '@type': 'HowToDirection',
+        position: detailIndex + 1,
+        text: detail,
+      })),
+    })),
+    totalTime: 'P10W', // 10 weeks in ISO 8601 duration format
+  };
+
+  // Breadcrumb Schema
+  const methodologyBreadcrumbSchema = breadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Methodology', url: '/methodology' },
+  ]);
+
   return (
     <main className="min-h-screen pt-20 bg-[#0A0F1E]">
+      {/* JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(methodologyBreadcrumbSchema) }}
+      />
+
+      {/* Breadcrumbs - needs white background section */}
+      <div className="bg-gray-50 border-b border-gray-200">
+        <div className="container">
+          <Breadcrumbs items={[{ name: 'Methodology', url: '/methodology' }]} />
+        </div>
+      </div>
+
       {/* Hero Section */}
       <section className="section-padding relative overflow-hidden">
         <div className="absolute inset-0">

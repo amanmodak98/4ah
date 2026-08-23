@@ -8,6 +8,9 @@ import {
 } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import FAQ from '@/components/FAQ';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import { faqSchema, itemListSchema } from '@/lib/metadata';
 
 if (typeof window !== 'undefined') gsap.registerPlugin(ScrollTrigger);
 
@@ -140,8 +143,70 @@ export default function ProgramsPage() {
     { step: '05', title: 'Improve', desc: 'Progressive tests, assignments and ongoing mentorship support', color: '#F97316' },
   ];
 
+  const faqs = [
+    {
+      question: 'What training programs do you offer for colleges?',
+      answer: 'We offer comprehensive training programs including Communication Skills, Quantitative Aptitude, Logical Reasoning, Soft Skills & Personality Development, Technical Training, Placement Readiness, and our flagship 90-hour program. Programs can be customized based on year-wise requirements from first year to final year.',
+    },
+    {
+      question: 'How long does each training program take?',
+      answer: 'Program duration varies based on your needs. Our flagship program is 90 hours delivered over 10 weeks. Individual modules like communication or aptitude can range from 20-60 hours. We design programs to fit your academic calendar and placement timeline.',
+    },
+    {
+      question: 'Can programs be customized for our specific requirements?',
+      answer: 'Absolutely. All our programs are customizable based on your institution\'s needs, student profile, industry focus, and placement goals. We work closely with colleges to design curricula that align with your objectives.',
+    },
+    {
+      question: 'What teaching methodology do you use?',
+      answer: 'We follow a proven 5-step methodology: Assess → Learn → Practice → Feedback → Improve. Our approach is experiential and practice-first, with 70% of time spent on hands-on activities, role-plays, simulations, and continuous feedback rather than passive lectures.',
+    },
+    {
+      question: 'Do you provide corporate training as well?',
+      answer: 'Yes, we offer customized corporate training programs for employee upskilling, leadership development, communication enhancement, and performance improvement. Our corporate solutions are tailored to organizational needs and learning objectives.',
+    },
+  ];
+
+  // ItemList Schema for programs catalog
+  const programsListSchema = itemListSchema(
+    programs.map(p => ({
+      name: p.title,
+      url: `https://4ah.in${p.href}`,
+      description: p.highlights.join(', '),
+    }))
+  );
+
+  // FAQ Schema
+  const programsFAQSchema = faqSchema(faqs);
+
+  // Breadcrumb Schema
+  const programsBreadcrumbSchema = breadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Programs', url: '/programs' },
+  ]);
+
   return (
     <div className="pt-20">
+      {/* JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(programsListSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(programsFAQSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(programsBreadcrumbSchema) }}
+      />
+
+      {/* Breadcrumbs */}
+      <div className="bg-gray-50 border-b border-gray-200">
+        <div className="container">
+          <Breadcrumbs items={[{ name: 'Programs', url: '/programs' }]} />
+        </div>
+      </div>
+
       {/* ═══════ HERO ═══════ */}
       <section
         className="relative min-h-[60vh] flex items-center overflow-hidden"
@@ -241,7 +306,7 @@ export default function ProgramsPage() {
               <span className="text-xs font-bold uppercase tracking-widest text-orange">Our Approach</span>
             </div>
             <h2 className="text-headline text-white mb-3">
-              The 5-Step <span className="gradient-text">Methodology</span>
+              What Is Our 5-Step <span className="gradient-text">Training Methodology?</span>
             </h2>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">
               Every module follows this proven cycle — because learning is only valuable when it's applied.
@@ -278,6 +343,17 @@ export default function ProgramsPage() {
               "The learner is <span className="text-orange">not a passive participant</span> — every module creates opportunities to apply, receive feedback and improve."
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* ═══════ FAQ SECTION ═══════ */}
+      <section className="section bg-gray-50">
+        <div className="container">
+          <FAQ
+            faqs={faqs}
+            title="Frequently Asked Questions"
+            subtitle="Common questions about our training programs"
+          />
         </div>
       </section>
 

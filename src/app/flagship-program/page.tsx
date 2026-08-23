@@ -9,6 +9,9 @@ import {
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useState } from 'react';
+import FAQ from '@/components/FAQ';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import { faqSchema, courseSchema } from '@/lib/metadata';
 
 if (typeof window !== 'undefined') gsap.registerPlugin(ScrollTrigger);
 
@@ -83,8 +86,77 @@ export default function FlagshipProgramPage() {
     'Students equipped to clear competitive selection processes',
   ];
 
+  const faqs = [
+    {
+      question: 'What is the duration of the flagship 90-hour program?',
+      answer: 'The program is delivered over 10 weeks, with 90 total hours of structured training. This includes 60 hours of quantitative and logical aptitude training (6 hours per week) and 30 hours of soft skills and corporate readiness training (3 hours per week).',
+    },
+    {
+      question: 'How is the training delivered - online or offline?',
+      answer: 'The training can be delivered in both online and offline modes based on institutional requirements. We offer flexible delivery formats including in-person classroom sessions, virtual live sessions, or hybrid models to suit your needs.',
+    },
+    {
+      question: 'What results can we expect from this program?',
+      answer: 'Institutions typically see an 85% average improvement in aptitude test scores, 95% improvement in communication confidence (self-reported), and 3x higher interview success rates compared to untrained peers. Students also receive individual feedback reports showing their progress.',
+    },
+    {
+      question: 'Is the curriculum customizable for our institution?',
+      answer: 'Yes, the schedule and curriculum are indicative and can be customized to align with your institutional calendar, student needs, and specific placement requirements. We work closely with colleges to design the optimal training plan.',
+    },
+    {
+      question: 'What is included in the 90-hour program?',
+      answer: 'The program includes 60 hours of aptitude training covering quantitative reasoning, logical reasoning, and data interpretation, plus 30 hours of soft skills training covering communication, group discussions, interview preparation, resume building, and professional development. All students receive pre/post assessments, practice materials, and personalized feedback.',
+    },
+    {
+      question: 'Who are the trainers for this program?',
+      answer: 'All our trainers have 10+ years of combined corporate and academic experience. They bring real-world expertise and use experiential learning methods to ensure students gain practical, applicable skills.',
+    },
+  ];
+
+  // Course Schema for SEO/GEO
+  const flagshipCourseSchema = courseSchema({
+    name: 'Final Year Employability Skills Program - 90 Hours',
+    description: 'Comprehensive 90-hour training program combining 60 hours of quantitative and logical aptitude training with 30 hours of soft skills and corporate readiness training. Designed to prepare final year students for campus placements.',
+    provider: '4Ability Hive',
+    url: 'https://4ah.in/flagship-program',
+    hasCourseInstance: {
+      courseMode: 'Blended',
+      duration: 'P10W', // 10 weeks in ISO 8601 duration format
+    },
+  });
+
+  // FAQ Schema for SEO/AEO
+  const flagshipFAQSchema = faqSchema(faqs);
+
+  // Breadcrumb Schema
+  const flagshipBreadcrumbSchema = breadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Flagship Program', url: '/flagship-program' },
+  ]);
+
   return (
     <div className="pt-20">
+      {/* JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(flagshipCourseSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(flagshipFAQSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(flagshipBreadcrumbSchema) }}
+      />
+
+      {/* Breadcrumbs */}
+      <div className="bg-gray-50 border-b border-gray-200">
+        <div className="container">
+          <Breadcrumbs items={[{ name: 'Flagship Program', url: '/flagship-program' }]} />
+        </div>
+      </div>
+
       {/* ═══════ HERO ═══════ */}
       <section
         className="relative min-h-[70vh] flex items-center overflow-hidden"
@@ -147,7 +219,7 @@ export default function FlagshipProgramPage() {
           <div className="text-center mb-14">
             <div className="section-label justify-center mb-4">Measurable Results</div>
             <h2 className="text-headline text-gray-900 mb-3">
-              What Students <span className="gradient-text">Actually Achieve</span>
+              What Results Do Students <span className="gradient-text">Actually Achieve?</span>
             </h2>
           </div>
 
@@ -178,7 +250,7 @@ export default function FlagshipProgramPage() {
         <div className="container">
           <div className="text-center mb-12">
             <h2 className="text-headline text-gray-900 mb-3">
-              Week-by-Week <span className="gradient-text">Curriculum</span>
+              What's Covered in the <span className="gradient-text">Week-by-Week Curriculum?</span>
             </h2>
             <p className="text-gray-500 text-lg max-w-2xl mx-auto">
               Every week is carefully designed to build on the last — progressive, purposeful, and practical.
@@ -270,8 +342,7 @@ export default function FlagshipProgramPage() {
             <div>
               <div className="section-label mb-4">What You Get</div>
               <h2 className="text-headline text-gray-900 mb-6">
-                Deliverables &{' '}
-                <span className="gradient-text">Expected Outcomes</span>
+                What Are the Deliverables & <span className="gradient-text">Expected Outcomes?</span>
               </h2>
               <ul className="space-y-4">
                 {deliverables.map((item, idx) => (
@@ -292,7 +363,7 @@ export default function FlagshipProgramPage() {
                      style={{ background: 'radial-gradient(circle, #F97316, transparent)' }} />
                 <Zap className="w-12 h-12 text-orange mb-6" />
                 <h3 className="text-3xl font-display font-black text-white mb-4">
-                  Why This Works
+                  Why Does This Approach Work?
                 </h3>
                 <p className="text-gray-400 text-lg leading-relaxed mb-8">
                   The learner is <span className="text-orange font-bold">not a passive participant</span> — every module creates opportunities to apply, receive feedback and improve.
@@ -313,6 +384,17 @@ export default function FlagshipProgramPage() {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ═══════ FAQ SECTION ═══════ */}
+      <section className="section bg-gray-50">
+        <div className="container">
+          <FAQ
+            faqs={faqs}
+            title="Frequently Asked Questions"
+            subtitle="Everything you need to know about our flagship 90-hour program"
+          />
         </div>
       </section>
 

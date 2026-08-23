@@ -3,6 +3,9 @@
 import { useState } from 'react';
 import { Star, Award, TrendingUp, Users, Quote } from 'lucide-react';
 import Link from 'next/link';
+import FAQ from '@/components/FAQ';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import { faqSchema, reviewSchema, aggregateRatingSchema } from '@/lib/metadata';
 
 export default function SuccessStoriesPage() {
   const testimonials = [
@@ -87,8 +90,78 @@ export default function SuccessStoriesPage() {
     ? testimonials
     : testimonials.filter((t) => t.type === activeFilter);
 
+  const faqs = [
+    {
+      question: 'Are these testimonials from real students and institutions?',
+      answer: 'Yes, all testimonials are from genuine students, colleges, and corporate clients who have completed our training programs. We value authentic feedback and these represent real experiences and measurable outcomes from our partnerships.',
+    },
+    {
+      question: 'What kind of results do students typically achieve?',
+      answer: 'Students typically see 85% improvement in aptitude test scores, 95% boost in communication confidence, and 3x higher interview success rates. Many students receive multiple job offers and report feeling significantly more prepared for workplace challenges.',
+    },
+    {
+      question: 'How do colleges measure the impact of your training?',
+      answer: 'Colleges track improvements through pre and post-training assessments, placement success rates, student feedback surveys, and employer satisfaction scores. Most institutions report 30-50% improvement in overall placement rates after implementing our programs.',
+    },
+    {
+      question: 'What do corporate clients say about the training effectiveness?',
+      answer: 'Corporate clients consistently report 30-40% improvement in employee performance metrics, enhanced team communication, better leadership capabilities, and measurable ROI. Many organizations become long-term partners and extend training across multiple departments.',
+    },
+    {
+      question: 'Can we speak to previous clients before deciding?',
+      answer: 'Absolutely. We can connect you with previous clients from similar institutions or organizations. Many of our partners are happy to share their experiences and outcomes. Contact us and we\'ll arrange reference calls based on your specific requirements.',
+    },
+  ];
+
+  // Review Schemas for all testimonials
+  const reviewSchemas = testimonials.map(t => reviewSchema({
+    author: t.name,
+    reviewBody: t.quote,
+    reviewRating: t.rating,
+  }));
+
+  // Aggregate Rating Schema
+  const aggregateRating = aggregateRatingSchema(5, testimonials.length);
+
+  // FAQ Schema
+  const successFAQSchema = faqSchema(faqs);
+
+  // Breadcrumb Schema
+  const successBreadcrumbSchema = breadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Success Stories', url: '/success-stories' },
+  ]);
+
   return (
     <div className="pt-20">
+      {/* JSON-LD Schema */}
+      {reviewSchemas.map((schema, idx) => (
+        <script
+          key={`review-${idx}`}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aggregateRating) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(successFAQSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(successBreadcrumbSchema) }}
+      />
+
+      {/* Breadcrumbs */}
+      <div className="bg-gray-50 border-b border-gray-200">
+        <div className="container">
+          <Breadcrumbs items={[{ name: 'Success Stories', url: '/success-stories' }]} />
+        </div>
+      </div>
+
       {/* Hero */}
       <section className="section bg-gradient-to-br from-orange to-orange-dark text-white">
         <div className="container text-center">
@@ -204,6 +277,17 @@ export default function SuccessStoriesPage() {
               </span>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="section bg-white">
+        <div className="container">
+          <FAQ
+            faqs={faqs}
+            title="Frequently Asked Questions"
+            subtitle="What you need to know about our success stories and client testimonials"
+          />
         </div>
       </section>
 

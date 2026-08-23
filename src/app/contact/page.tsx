@@ -2,6 +2,9 @@
 
 import { useState } from 'react';
 import { Mail, Phone, MapPin, Send, Building2, Users, CheckCircle2, Calendar, Sparkles, ArrowRight } from 'lucide-react';
+import FAQ from '@/components/FAQ';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import { faqSchema } from '@/lib/metadata';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
@@ -24,8 +27,56 @@ export default function ContactPage() {
     }, 1500);
   };
 
+  const faqs = [
+    {
+      question: 'How do I request a training proposal for my institution?',
+      answer: 'Simply fill out the contact form above with your institution details, or email us directly at info@4ah.in. We\'ll schedule a consultation call within 24-48 hours to understand your requirements and share a customized training proposal.',
+    },
+    {
+      question: 'What information do you need to prepare a proposal?',
+      answer: 'We need basic information about your institution (type, student strength, year groups), your training objectives, preferred timeline, and any specific skill areas you want to focus on. The more details you provide, the more tailored our proposal will be.',
+    },
+    {
+      question: 'How quickly can training programs be started?',
+      answer: 'Once we finalize the proposal and logistics, programs can typically begin within 2-3 weeks. We work flexibly to align with your academic calendar and placement schedules.',
+    },
+    {
+      question: 'Do you provide training across India or only in specific regions?',
+      answer: 'We provide training across India in both online and offline modes. Our trainer network covers multiple cities, and we can arrange sessions anywhere in the country based on your location and requirements.',
+    },
+    {
+      question: 'Is there a minimum student count required for institutional training?',
+      answer: 'We work with batches of all sizes, from small groups of 20-30 students to large batches of 200+ students. Our programs are designed to scale while maintaining quality and individual attention.',
+    },
+  ];
+
+  const contactFAQSchema = faqSchema(faqs);
+
+  // Breadcrumb Schema
+  const contactBreadcrumbSchema = breadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Contact', url: '/contact' },
+  ]);
+
   return (
     <div className="pt-20">
+      {/* JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactFAQSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(contactBreadcrumbSchema) }}
+      />
+
+      {/* Breadcrumbs */}
+      <div className="bg-gray-50 border-b border-gray-200">
+        <div className="container">
+          <Breadcrumbs items={[{ name: 'Contact', url: '/contact' }]} />
+        </div>
+      </div>
+
       {/* ═══════ HERO ═══════ */}
       <section
         className="relative min-h-[50vh] flex items-center overflow-hidden"
@@ -307,6 +358,17 @@ export default function ContactPage() {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ═══════ FAQ SECTION ═══════ */}
+      <section className="section bg-white">
+        <div className="container">
+          <FAQ
+            faqs={faqs}
+            title="Frequently Asked Questions"
+            subtitle="Quick answers to common questions about getting started"
+          />
         </div>
       </section>
     </div>
