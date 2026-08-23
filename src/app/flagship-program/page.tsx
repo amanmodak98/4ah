@@ -11,7 +11,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useState } from 'react';
 import FAQ from '@/components/FAQ';
 import Breadcrumbs from '@/components/Breadcrumbs';
-import { faqSchema, courseSchema } from '@/lib/metadata';
+import { faqSchema, courseSchema, breadcrumbSchema } from '@/lib/metadata';
 
 if (typeof window !== 'undefined') gsap.registerPlugin(ScrollTrigger);
 

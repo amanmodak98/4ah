@@ -16,6 +16,7 @@ import {
   Award,
 } from 'lucide-react';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import { breadcrumbSchema } from '@/lib/metadata';
 
 export default function MethodologyPage() {
   const [stepsRef, stepsInView] = useInView({ triggerOnce: true, threshold: 0.1 });

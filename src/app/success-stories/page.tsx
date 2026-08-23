@@ -5,7 +5,7 @@ import { Star, Award, TrendingUp, Users, Quote } from 'lucide-react';
 import Link from 'next/link';
 import FAQ from '@/components/FAQ';
 import Breadcrumbs from '@/components/Breadcrumbs';
-import { faqSchema, reviewSchema, aggregateRatingSchema } from '@/lib/metadata';
+import { faqSchema, reviewSchema, aggregateRatingSchema, breadcrumbSchema } from '@/lib/metadata';
 
 export default function SuccessStoriesPage() {
   const testimonials = [

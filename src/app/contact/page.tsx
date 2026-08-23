@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { Mail, Phone, MapPin, Send, Building2, Users, CheckCircle2, Calendar, Sparkles, ArrowRight } from 'lucide-react';
 import FAQ from '@/components/FAQ';
 import Breadcrumbs from '@/components/Breadcrumbs';
-import { faqSchema } from '@/lib/metadata';
+import { faqSchema, breadcrumbSchema } from '@/lib/metadata';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({

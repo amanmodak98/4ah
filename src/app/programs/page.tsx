@@ -10,7 +10,7 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import FAQ from '@/components/FAQ';
 import Breadcrumbs from '@/components/Breadcrumbs';
-import { faqSchema, itemListSchema } from '@/lib/metadata';
+import { faqSchema, itemListSchema, breadcrumbSchema } from '@/lib/metadata';
 
 if (typeof window !== 'undefined') gsap.registerPlugin(ScrollTrigger);
 

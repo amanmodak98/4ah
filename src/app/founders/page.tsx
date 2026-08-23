@@ -6,6 +6,7 @@ import { Quote, Linkedin, Mail, ChevronDown, Sparkles, Heart, Target, Users } fr
 import { useFadeInUp, useStaggerAnimation } from '@/hooks/useGSAP';
 import { useState } from 'react';
 import Breadcrumbs from '@/components/Breadcrumbs';
+import { breadcrumbSchema } from '@/lib/metadata';
 
 export default function FoundersPage() {
   const titleRef = useFadeInUp();

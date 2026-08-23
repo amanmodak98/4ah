@@ -18,7 +18,7 @@ import Link from 'next/link';
 import { useFadeInUp, useStaggerAnimation } from '@/hooks/useGSAP';
 import FAQ from '@/components/FAQ';
 import Breadcrumbs from '@/components/Breadcrumbs';
-import { faqSchema, itemListSchema } from '@/lib/metadata';
+import { faqSchema, itemListSchema, breadcrumbSchema } from '@/lib/metadata';
 
 export default function CorporateSolutionsPage() {
   const heroRef = useFadeInUp();
