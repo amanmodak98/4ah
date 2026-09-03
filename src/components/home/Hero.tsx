@@ -118,7 +118,7 @@ export default function Hero() {
           {/* Trust Indicators */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
             {[
-              { value: '1000+', label: 'Students Trained' },
+              { value: '10k+', label: 'Learners Trained' },
               { value: '90+', label: 'Hours Training' },
               { value: '50+', label: 'College Partners' },
               { value: '95%', label: 'Satisfaction Rate' },

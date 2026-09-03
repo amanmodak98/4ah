@@ -29,7 +29,7 @@ export default function CorporateSolutionsPage() {
     {
       icon: Users,
       title: 'Employee Upskilling',
-      description: 'Enhance workforce capabilities through targeted soft skills and technical training programs tailored to your organization.',
+      description: 'Enhance workforce capabilities through targeted soft skills and professional development programs tailored to your organization.',
       features: [
         'Communication Excellence',
         'Leadership Development',

@@ -58,7 +58,7 @@ export default function ProgramsPage() {
     {
       icon: Brain,
       title: 'Quantitative Aptitude',
-      tag: '60 hrs',
+      tag: 'Comprehensive',
       tagColor: 'badge-purple',
       gradient: 'linear-gradient(135deg, #7C3AED 0%, #A78BFA 100%)',
       light: 'from-purple/5 to-purple-light/5',
@@ -69,7 +69,7 @@ export default function ProgramsPage() {
     {
       icon: Target,
       title: 'Logical Reasoning',
-      tag: '60 hrs combined',
+      tag: 'Comprehensive',
       tagColor: 'badge-teal',
       gradient: 'linear-gradient(135deg, #0D9488 0%, #34D399 100%)',
       light: 'from-teal/5 to-emerald-400/5',
@@ -129,7 +129,7 @@ export default function ProgramsPage() {
       gradient: 'linear-gradient(135deg, #F97316 0%, #7C3AED 100%)',
       light: 'from-orange/5 to-purple/5',
       border: '#fed7aa',
-      highlights: ['60 hrs Aptitude', '30 hrs Soft Skills', 'Complete Mock Process', 'Individual Feedback'],
+      highlights: ['Comprehensive Aptitude', 'Complete Soft Skills', 'Complete Mock Process', 'Individual Feedback'],
       href: '/flagship-program',
       featured: true,
     },

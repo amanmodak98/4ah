@@ -14,7 +14,7 @@ export default function SuccessStoriesPage() {
       role: 'Placement Officer',
       institution: 'National Institute of Technology',
       type: 'College',
-      quote: 'The 4Ability Hive program transformed our final year students. Their confidence levels skyrocketed, and we saw a 40% improvement in placement success rates. The trainers are exceptional, and the structured curriculum covers everything from aptitude to mock interviews.',
+      quote: 'The 4Ability Hive program transformed our final year learners. Their confidence levels skyrocketed, and we saw a 40% improvement in placement success rates. The trainers are exceptional, and the structured curriculum covers everything from aptitude to mock interviews.',
       initials: 'PS',
       rating: 5,
       impact: '40% increase in placements',
@@ -78,13 +78,13 @@ export default function SuccessStoriesPage() {
   ];
 
   const stats = [
-    { icon: Users, value: '1000+', label: 'Students Transformed', color: 'text-orange' },
+    { icon: Users, value: '10k+', label: 'Learners Transformed', color: 'text-orange' },
     { icon: Award, value: '50+', label: 'Partner Institutions', color: 'text-purple' },
     { icon: TrendingUp, value: '95%', label: 'Satisfaction Rate', color: 'text-teal' },
     { icon: Star, value: '4.8/5', label: 'Average Rating', color: 'text-yellow-500' },
   ];
 
-  const filters = ['All', 'College', 'Corporate', 'Student'];
+  const filters = ['All', 'College', 'Corporate', 'Learner'];
   const [activeFilter, setActiveFilter] = useState<string>('All');
   const filtered = activeFilter === 'All'
     ? testimonials
@@ -92,16 +92,16 @@ export default function SuccessStoriesPage() {
 
   const faqs = [
     {
-      question: 'Are these testimonials from real students and institutions?',
-      answer: 'Yes, all testimonials are from genuine students, colleges, and corporate clients who have completed our training programs. We value authentic feedback and these represent real experiences and measurable outcomes from our partnerships.',
+      question: 'Are these testimonials from real learners and institutions?',
+      answer: 'Yes, all testimonials are from genuine learners, colleges, and corporate clients who have completed our training programs. We value authentic feedback and these represent real experiences and measurable outcomes from our partnerships.',
     },
     {
-      question: 'What kind of results do students typically achieve?',
-      answer: 'Students typically see 85% improvement in aptitude test scores, 95% boost in communication confidence, and 3x higher interview success rates. Many students receive multiple job offers and report feeling significantly more prepared for workplace challenges.',
+      question: 'What kind of results do learners typically achieve?',
+      answer: 'Learners typically see 85% improvement in aptitude test scores, 95% boost in communication confidence, and 3x higher interview success rates. Many learners receive multiple job offers and report feeling significantly more prepared for workplace challenges.',
     },
     {
       question: 'How do colleges measure the impact of your training?',
-      answer: 'Colleges track improvements through pre and post-training assessments, placement success rates, student feedback surveys, and employer satisfaction scores. Most institutions report 30-50% improvement in overall placement rates after implementing our programs.',
+      answer: 'Colleges track improvements through pre and post-training assessments, placement success rates, learner feedback surveys, and employer satisfaction scores. Most institutions report 30-50% improvement in overall placement rates after implementing our programs.',
     },
     {
       question: 'What do corporate clients say about the training effectiveness?',
@@ -173,7 +173,7 @@ export default function SuccessStoriesPage() {
             Real Results From Real People
           </h1>
           <p className="text-xl text-orange-50 max-w-2xl mx-auto leading-relaxed">
-            Hear from students, colleges, and corporates who experienced transformation through our training programs.
+            Hear from learners, colleges, and corporates who experienced transformation through our training programs.
           </p>
         </div>
       </section>
@@ -201,7 +201,7 @@ export default function SuccessStoriesPage() {
               Testimonials That <span className="gradient-text">Tell Our Story</span>
             </h2>
             <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-              From placement officers to students to HR managers — real feedback from real partnerships.
+              From placement officers to learners to HR managers — real feedback from real partnerships.
             </p>
           </div>
 
@@ -298,7 +298,7 @@ export default function SuccessStoriesPage() {
             Ready to Write Your <span className="gradient-text">Success Story?</span>
           </h2>
           <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Join 50+ institutions and 1000+ students who transformed with 4Ability Hive training programs.
+            Join 50+ institutions and 10,000+ learners who transformed with 4Ability Hive training programs.
           </p>
           <Link href="/contact" className="btn btn-primary btn-lg">
             Partner With Us

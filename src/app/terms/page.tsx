@@ -1,6 +1,8 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { FileText, Mail, Phone } from 'lucide-react';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import { breadcrumbSchema } from '@/lib/metadata';
 
 export const metadata: Metadata = {
   title: 'Terms & Conditions | 4Ability Hive',
@@ -8,8 +10,27 @@ export const metadata: Metadata = {
 };
 
 export default function TermsPage() {
+  // Breadcrumb Schema
+  const termsBreadcrumbSchema = breadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Terms & Conditions', url: '/terms' },
+  ]);
+
   return (
     <div className="pt-20">
+      {/* JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(termsBreadcrumbSchema) }}
+      />
+
+      {/* Breadcrumbs */}
+      <div className="bg-gray-50 border-b border-gray-200">
+        <div className="container">
+          <Breadcrumbs items={[{ name: 'Terms & Conditions', url: '/terms' }]} />
+        </div>
+      </div>
+
       {/* Hero */}
       <section className="relative py-16 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
         <div className="container">

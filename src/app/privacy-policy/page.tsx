@@ -1,6 +1,8 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
 import { Shield, Mail, Phone } from 'lucide-react';
+import Breadcrumbs from '@/components/Breadcrumbs';
+import { breadcrumbSchema } from '@/lib/metadata';
 
 export const metadata: Metadata = {
   title: 'Privacy Policy | 4Ability Hive',
@@ -8,8 +10,27 @@ export const metadata: Metadata = {
 };
 
 export default function PrivacyPolicyPage() {
+  // Breadcrumb Schema
+  const privacyBreadcrumbSchema = breadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Privacy Policy', url: '/privacy-policy' },
+  ]);
+
   return (
     <div className="pt-20">
+      {/* JSON-LD Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(privacyBreadcrumbSchema) }}
+      />
+
+      {/* Breadcrumbs */}
+      <div className="bg-gray-50 border-b border-gray-200">
+        <div className="container">
+          <Breadcrumbs items={[{ name: 'Privacy Policy', url: '/privacy-policy' }]} />
+        </div>
+      </div>
+
       {/* Hero */}
       <section className="relative py-16 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
         <div className="container">

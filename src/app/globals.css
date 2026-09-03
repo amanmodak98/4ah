@@ -572,3 +572,38 @@
     background-image: radial-gradient(var(--tw-gradient-stops));
   }
 }
+
+/* ═══════════════════════════════════════════════════════
+   HERO BACKGROUND ANIMATIONS
+   ═══════════════════════════════════════════════════════ */
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  25% { transform: translateY(-30px) translateX(20px); }
+  50% { transform: translateY(-60px) translateX(0px); }
+  75% { transform: translateY(-30px) translateX(-20px); }
+}
+
+@keyframes gradient-x {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Utility classes for new animations */
+.animate-float {
+  animation: float 20s ease-in-out infinite;
+}
+
+.animate-gradient-x {
+  background-size: 200% auto;
+  animation: gradient-x 3s linear infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 30s linear infinite;
+}

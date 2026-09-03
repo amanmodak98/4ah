@@ -2,31 +2,37 @@ import { Metadata } from 'next';
 
 const siteUrl = 'https://4ah.in';
 const siteName = '4Ability Hive';
-const siteDescription = 'Transform students into industry-ready professionals with comprehensive employability training. Expert-led programs in soft skills, aptitude, communication, and placement readiness across India.';
+const siteDescription = 'Transform learners into industry-ready professionals with comprehensive employability training. Expert-led programs in soft skills, aptitude, communication, and placement readiness across India. 10,000+ learners trained.';
 
 export const defaultMetadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: '4Ability Hive - Transform Students Into Industry-Ready Professionals',
+    default: '4Ability Hive - Transform Learners Into Industry-Ready Professionals',
     template: '%s | 4Ability Hive',
   },
   description: siteDescription,
   keywords: [
-    'employability training',
+    'employability training India',
     'soft skills training',
-    'aptitude training',
-    'communication skills',
-    'placement readiness',
+    'aptitude training programs',
+    'communication skills development',
+    'placement readiness training',
     'college training programs',
-    'corporate training',
-    'student development',
-    'career skills',
+    'corporate training solutions',
+    'learner development programs',
+    'career skills training',
     'professional development',
     'job readiness training',
-    'campus to corporate',
-    'skill development programs',
-    'technical training',
-    'interview preparation',
+    'campus placement training',
+    'skill development programs India',
+    'interview preparation training',
+    'year-wise employability programs',
+    'fresher training programs',
+    'graduate employability',
+    'workplace readiness',
+    'experiential learning',
+    '4Ability Hive',
+    '4AH training',
   ],
   authors: [{ name: '4Ability Hive' }],
   creator: '4Ability Hive',
@@ -41,23 +47,24 @@ export const defaultMetadata: Metadata = {
     locale: 'en_IN',
     url: siteUrl,
     siteName: siteName,
-    title: '4Ability Hive - Transform Students Into Industry-Ready Professionals',
+    title: '4Ability Hive - Transform Learners Into Industry-Ready Professionals',
     description: siteDescription,
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: '4Ability Hive - Employability Training',
+        alt: '4Ability Hive - Employability Training Across India',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: '4Ability Hive - Transform Students Into Industry-Ready Professionals',
+    title: '4Ability Hive - Transform Learners Into Industry-Ready Professionals',
     description: siteDescription,
     images: ['/twitter-image.jpg'],
     creator: '@4abilityhive',
+    site: '@4abilityhive',
   },
   robots: {
     index: true,
@@ -85,40 +92,58 @@ export const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'EducationalOrganization',
   name: '4Ability Hive',
-  alternateName: '4AH',
+  alternateName: ['4AH', '4Ability', 'Four Ability Hive'],
   url: siteUrl,
   logo: `${siteUrl}/logo.png`,
+  image: `${siteUrl}/og-image.jpg`,
   description: siteDescription,
-  foundingDate: '2020', // Update with actual founding year
+  foundingDate: '2018',
+  slogan: 'Transform Learners Into Industry-Ready Professionals',
   numberOfEmployees: {
     '@type': 'QuantitativeValue',
-    value: '10-50', // Update with actual range
+    value: '10-50',
   },
-  areaServed: {
-    '@type': 'Country',
-    name: 'India',
+  areaServed: [
+    {
+      '@type': 'Country',
+      name: 'India',
+    },
+    {
+      '@type': 'State',
+      name: 'All States of India',
+    },
+  ],
+  audience: {
+    '@type': 'EducationalAudience',
+    audienceType: 'College Students, Corporate Employees, Educational Institutions',
   },
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'Add your street address here',
-    addressLocality: 'Add your city here',
-    addressRegion: 'Add your state here',
-    postalCode: 'Add your postal code here',
     addressCountry: 'IN',
+    addressRegion: 'India',
   },
-  contactPoint: {
-    '@type': 'ContactPoint',
-    telephone: '+91-XXXXXXXXXX', // Replace with actual phone number
-    contactType: 'Customer Service',
-    email: 'info@4ah.in',
-    areaServed: 'IN',
-    availableLanguage: ['English', 'Hindi'],
-  },
+  contactPoint: [
+    {
+      '@type': 'ContactPoint',
+      contactType: 'Customer Service',
+      email: 'info@4ah.in',
+      areaServed: 'IN',
+      availableLanguage: ['English', 'Hindi'],
+    },
+    {
+      '@type': 'ContactPoint',
+      contactType: 'Sales',
+      email: 'info@4ah.in',
+      areaServed: 'IN',
+      availableLanguage: ['English', 'Hindi'],
+    },
+  ],
   sameAs: [
     'https://www.linkedin.com/company/4abilityhive',
     'https://twitter.com/4abilityhive',
     'https://www.instagram.com/4abilityhive',
     'https://www.youtube.com/@4abilityhive',
+    'https://www.facebook.com/4abilityhive',
   ],
   founder: [
     {
@@ -130,7 +155,66 @@ export const organizationSchema = {
         name: '4Ability Hive',
       },
     },
+    {
+      '@type': 'Person',
+      name: 'Aviral Jain',
+      jobTitle: 'Co-Founder & COO',
+      worksFor: {
+        '@type': 'Organization',
+        name: '4Ability Hive',
+      },
+    },
+    {
+      '@type': 'Person',
+      name: 'Anand Tiwari',
+      jobTitle: 'Co-Founder & Head of Training',
+      worksFor: {
+        '@type': 'Organization',
+        name: '4Ability Hive',
+      },
+    },
   ],
+  knowsAbout: [
+    'Employability Training',
+    'Soft Skills Development',
+    'Aptitude Training',
+    'Communication Skills',
+    'Placement Readiness',
+    'Corporate Training',
+    'Professional Development',
+    'Career Skills',
+    'Interview Preparation',
+  ],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Training Programs',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Course',
+          name: 'Flagship 90-Hour Employability Program',
+          description: 'Comprehensive aptitude and soft skills training for final year learners',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Course',
+          name: 'College Solutions Programs',
+          description: 'Year-wise progressive training from first year to placement',
+        },
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Course',
+          name: 'Corporate Training Solutions',
+          description: 'Professional development and upskilling programs for employees',
+        },
+      },
+    ],
+  },
 };
 
 export const websiteSchema = {

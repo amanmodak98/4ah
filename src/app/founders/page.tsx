@@ -20,7 +20,7 @@ export default function FoundersPage() {
       image: '/founders/himani.jpg',
       linkedin: 'https://linkedin.com/in/himani-s',
       email: 'himani@4ah.in',
-      quote: 'Every student has untapped potential. Our mission is to unlock it through structured learning, real-world practice, and continuous mentorship.',
+      quote: 'Every learner has untapped potential. Our mission is to unlock it through structured learning, real-world practice, and continuous mentorship.',
       vision: 'Building a generation of confident, skilled, and employable professionals who are ready to make an impact from day one.',
       expertise: ['Leadership Development', 'Curriculum Design', 'Corporate Training', 'Career Counseling'],
       background: '12+ years in L&D and talent development. Former Training Head at Fortune 500 companies. Certified Corporate Trainer with expertise in soft skills and placement readiness.',
@@ -38,7 +38,7 @@ export default function FoundersPage() {
       linkedin: 'https://linkedin.com/in/aviral-jain',
       email: 'aviral@4ah.in',
       quote: 'True employability is not about clearing interviews—it\'s about being ready to contribute, lead, and grow within an organization from day one.',
-      vision: 'Creating training programs that don\'t just prepare students for jobs, but equip them with lifelong learning mindsets and professional competencies.',
+      vision: 'Creating training programs that don\'t just prepare learners for jobs, but equip them with lifelong learning mindsets and professional competencies.',
       expertise: ['Operations Management', 'Program Delivery', 'Client Relations', 'Quality Assurance'],
       background: '10+ years in operations and client success. Built scalable training delivery models for 50+ institutions. Expert in institutional partnerships and program execution.',
       color: 'from-blue-500 to-cyan-500',
@@ -55,9 +55,9 @@ export default function FoundersPage() {
       linkedin: 'https://linkedin.com/in/anand-tiwari',
       email: 'anand@4ah.in',
       quote: 'Skills are not just taught—they are practiced, refined, and internalized through real-world application and continuous feedback.',
-      vision: 'Bridging the employability gap by delivering practical, industry-aligned training that makes students workplace-ready from their first day.',
+      vision: 'Bridging the employability gap by delivering practical, industry-aligned training that makes learners workplace-ready from their first day.',
       expertise: ['Aptitude Training', 'Technical Skills', 'Assessment Design', 'Trainer Development'],
-      background: '15+ years in aptitude and technical training. Designed proprietary assessment frameworks used by leading colleges. Trained 5000+ students with 90%+ placement rates.',
+      background: '15+ years in aptitude and soft skills training. Designed proprietary assessment frameworks used by leading colleges. Trained 5000+ learners with 90%+ placement rates.',
       color: 'from-purple-500 to-pink-500',
       tagBg: 'bg-purple/10',
       tagText: 'text-purple',
@@ -84,14 +84,14 @@ export default function FoundersPage() {
     },
     {
       name: 'Aarti Tiwari',
-      role: 'Co-Founder & Head of Soft Skills',
+      role: 'Chief Marketing Officer (CMO)',
       image: '/founders/aarti.jpg',
       linkedin: 'https://linkedin.com/in/aarti-tiwari',
       email: 'aarti@4ah.in',
-      quote: 'Communication, confidence, and emotional intelligence are not "soft" skills—they are the foundation of every successful professional.',
-      vision: 'Empowering learners with the interpersonal and communication skills that transform them from students into confident, articulate professionals.',
-      expertise: ['Communication Training', 'Personality Development', 'Interview Coaching', 'Public Speaking'],
-      background: '11+ years in communication and soft skills training. Certified NLP Practitioner. Conducted 200+ workshops across top institutions. Expert in behavioral training.',
+      quote: 'Great marketing isn\'t about selling—it\'s about building genuine connections and communicating the transformative impact we create for every learner.',
+      vision: 'Building a brand that resonates with institutions and learners alike, while driving growth through strategic partnerships and impactful storytelling.',
+      expertise: ['Marketing Strategy', 'Brand Development', 'Partnership Growth', 'Digital Marketing'],
+      background: '11+ years in marketing, communications, and brand strategy. Led growth initiatives across educational institutions. Expert in building strategic partnerships and driving organizational visibility.',
       color: 'from-amber-500 to-orange-500',
       tagBg: 'bg-amber-500/10',
       tagText: 'text-amber-500',
@@ -165,7 +165,7 @@ export default function FoundersPage() {
             </h1>
             <p className="text-xl text-gray-300 leading-relaxed">
               A team of passionate educators, trainers, and technologists united by one mission:
-              <span className="text-white font-semibold"> transforming students into workplace-ready professionals</span>.
+              <span className="text-white font-semibold"> transforming learners into workplace-ready professionals</span>.
             </p>
           </div>
         </div>
@@ -342,7 +342,7 @@ export default function FoundersPage() {
                 <div className="text-sm font-bold text-teal mb-2">2020-Present</div>
                 <h3 className="text-2xl font-display font-bold text-gray-900 mb-3">Growing Impact</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Today, 4Ability Hive has trained 1000+ students across 50+ institutions. Our programs span aptitude training, soft skills,
+                  Today, 4Ability Hive has trained 10,000+ learners across 50+ institutions. Our programs span aptitude training, soft skills,
                   communication, and workplace readiness—delivered through a blend of classroom training, online modules, and continuous mentorship.
                   But numbers aside, what drives us every day is seeing confident, articulate, job-ready professionals walk out of our programs.
                 </p>
@@ -379,7 +379,7 @@ export default function FoundersPage() {
               {
                 icon: Heart,
                 title: 'Empathy-Driven Training',
-                desc: 'We understand the anxiety, the pressure, and the dreams of every student. Training is personal, not transactional.',
+                desc: 'We understand the anxiety, the pressure, and the dreams of every learner. Training is personal, not transactional.',
               },
               {
                 icon: Sparkles,

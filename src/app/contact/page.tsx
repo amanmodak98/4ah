@@ -8,7 +8,7 @@ import { faqSchema, breadcrumbSchema } from '@/lib/metadata';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
-    name: '', email: '', phone: '', institution: '', institutionType: 'college', studentCount: '', message: '',
+    name: '', email: '', phone: '', institution: '', institutionType: 'college', learnerCount: '', message: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -23,7 +23,7 @@ export default function ContactPage() {
     setTimeout(() => {
       setIsSubmitting(false);
       setIsSubmitted(true);
-      setFormData({ name: '', email: '', phone: '', institution: '', institutionType: 'college', studentCount: '', message: '' });
+      setFormData({ name: '', email: '', phone: '', institution: '', institutionType: 'college', learnerCount: '', message: '' });
     }, 1500);
   };
 
@@ -34,7 +34,7 @@ export default function ContactPage() {
     },
     {
       question: 'What information do you need to prepare a proposal?',
-      answer: 'We need basic information about your institution (type, student strength, year groups), your training objectives, preferred timeline, and any specific skill areas you want to focus on. The more details you provide, the more tailored our proposal will be.',
+      answer: 'We need basic information about your institution (type, learner strength, year groups), your training objectives, preferred timeline, and any specific skill areas you want to focus on. The more details you provide, the more tailored our proposal will be.',
     },
     {
       question: 'How quickly can training programs be started?',
@@ -45,8 +45,8 @@ export default function ContactPage() {
       answer: 'We provide training across India in both online and offline modes. Our trainer network covers multiple cities, and we can arrange sessions anywhere in the country based on your location and requirements.',
     },
     {
-      question: 'Is there a minimum student count required for institutional training?',
-      answer: 'We work with batches of all sizes, from small groups of 20-30 students to large batches of 200+ students. Our programs are designed to scale while maintaining quality and individual attention.',
+      question: 'Is there a minimum learner count required for institutional training?',
+      answer: 'We work with batches of all sizes, from small groups of 20-30 learners to large batches of 200+ learners. Our programs are designed to scale while maintaining quality and individual attention.',
     },
   ];
 
@@ -98,7 +98,7 @@ export default function ContactPage() {
               Let's Transform
               <br />
               <span className="inline-block px-4 py-1 bg-white text-orange rounded-2xl mt-2">
-                Students Together
+                Learners Together
               </span>
             </h1>
 
@@ -209,11 +209,11 @@ export default function ContactPage() {
                         </select>
                       </div>
                       <div>
-                        <label className="block text-sm font-bold text-gray-900 mb-2">Number of Students *</label>
+                        <label className="block text-sm font-bold text-gray-900 mb-2">Number of Learners *</label>
                         <input
                           type="text"
-                          name="studentCount"
-                          value={formData.studentCount}
+                          name="learnerCount"
+                          value={formData.learnerCount}
                           onChange={handleChange}
                           required
                           className="input"
@@ -348,7 +348,7 @@ export default function ContactPage() {
               {[
                 { value: '24 hrs', label: 'Response Time' },
                 { value: '95%', label: 'Satisfaction Rate' },
-                { value: '1000+', label: 'Students Trained' },
+                { value: '10k+', label: 'Learners Trained' },
                 { value: 'Custom', label: 'Flexible Programs' },
               ].map((stat) => (
                 <div key={stat.label} className="p-6 rounded-2xl bg-gradient-to-br from-orange/5 to-purple/5 border border-orange/20">

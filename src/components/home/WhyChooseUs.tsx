@@ -65,7 +65,7 @@ export default function WhyChooseUs() {
 
             {/* Floating Stats */}
             <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-xl p-6 border-2 border-orange-500">
-              <div className="text-4xl font-black text-orange-500 mb-1">1000+</div>
+              <div className="text-4xl font-black text-orange-500 mb-1">10k+</div>
               <div className="text-sm font-bold text-navy-900">Success Stories</div>
             </div>
           </div>

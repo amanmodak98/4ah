@@ -73,17 +73,17 @@ export default function FlagshipProgramPage() {
     { icon: Brain, value: '85%', label: 'Aptitude Improvement', sub: 'Average score increase' },
     { icon: MessageSquare, value: '95%', label: 'Communication Boost', sub: 'Self-reported confidence' },
     { icon: Target, value: '3x', label: 'Interview Success', sub: 'vs. untrained peers' },
-    { icon: Award, value: '90hrs', label: 'Structured Learning', sub: 'Per student delivered' },
+    { icon: Award, value: '90hrs', label: 'Structured Learning', sub: 'Per learner delivered' },
   ];
 
   const deliverables = [
-    '90 structured training hours per student',
+    '90 structured training hours per learner',
     'Pre & post-training assessment with reports',
     'Practice worksheets, test papers & reference material',
     'Complete mock GD & interview process',
     'Individual personalised feedback report per learner',
     'Noticeably improved confidence, communication & aptitude',
-    'Students equipped to clear competitive selection processes',
+    'Learners equipped to clear competitive selection processes',
   ];
 
   const faqs = [
@@ -97,7 +97,7 @@ export default function FlagshipProgramPage() {
     },
     {
       question: 'What results can we expect from this program?',
-      answer: 'Institutions typically see an 85% average improvement in aptitude test scores, 95% improvement in communication confidence (self-reported), and 3x higher interview success rates compared to untrained peers. Students also receive individual feedback reports showing their progress.',
+      answer: 'Institutions typically see an 85% average improvement in aptitude test scores, 95% improvement in communication confidence (self-reported), and 3x higher interview success rates compared to untrained peers. Learners also receive individual feedback reports showing their progress.',
     },
     {
       question: 'Is the curriculum customizable for our institution?',
@@ -105,7 +105,7 @@ export default function FlagshipProgramPage() {
     },
     {
       question: 'What is included in the 90-hour program?',
-      answer: 'The program includes 60 hours of aptitude training covering quantitative reasoning, logical reasoning, and data interpretation, plus 30 hours of soft skills training covering communication, group discussions, interview preparation, resume building, and professional development. All students receive pre/post assessments, practice materials, and personalized feedback.',
+      answer: 'The program includes 60 hours of aptitude training covering quantitative reasoning, logical reasoning, and data interpretation, plus 30 hours of soft skills training covering communication, group discussions, interview preparation, resume building, and professional development. All learners receive pre/post assessments, practice materials, and personalized feedback.',
     },
     {
       question: 'Who are the trainers for this program?',
@@ -116,7 +116,7 @@ export default function FlagshipProgramPage() {
   // Course Schema for SEO/GEO
   const flagshipCourseSchema = courseSchema({
     name: 'Final Year Employability Skills Program - 90 Hours',
-    description: 'Comprehensive 90-hour training program combining 60 hours of quantitative and logical aptitude training with 30 hours of soft skills and corporate readiness training. Designed to prepare final year students for campus placements.',
+    description: 'Comprehensive 90-hour training program combining 60 hours of quantitative and logical aptitude training with 30 hours of soft skills and corporate readiness training. Designed to prepare final year learners for campus placements.',
     provider: '4Ability Hive',
     url: 'https://4ah.in/flagship-program',
     hasCourseInstance: {
@@ -207,7 +207,7 @@ export default function FlagshipProgramPage() {
             </div>
 
             <p className="text-xl text-white/90 leading-relaxed max-w-3xl">
-              A comprehensive, structured, and interactive curriculum designed to prepare final year students for campus recruitment through experiential learning, continuous practice, and personalised feedback.
+              A comprehensive, structured, and interactive curriculum designed to prepare final year learners for campus recruitment through experiential learning, continuous practice, and personalised feedback.
             </p>
           </div>
         </div>
@@ -219,7 +219,7 @@ export default function FlagshipProgramPage() {
           <div className="text-center mb-14">
             <div className="section-label justify-center mb-4">Measurable Results</div>
             <h2 className="text-headline text-gray-900 mb-3">
-              What Results Do Students <span className="gradient-text">Actually Achieve?</span>
+              What Results Do Learners <span className="gradient-text">Actually Achieve?</span>
             </h2>
           </div>
 
@@ -404,11 +404,11 @@ export default function FlagshipProgramPage() {
           <div className="max-w-3xl mx-auto">
             <Award className="w-16 h-16 mx-auto mb-6 opacity-90" />
             <h2 className="text-5xl font-display font-black mb-6 leading-tight">
-              Ready to Make Your Students<br />
+              Ready to Make Your Learners<br />
               <span className="underline decoration-4 decoration-yellow">Campus Placement Ready?</span>
             </h2>
             <p className="text-xl text-white/90 mb-10 leading-relaxed">
-              Partner with us to deliver this comprehensive 90-hour program and transform your final year students.
+              Partner with us to deliver this comprehensive 90-hour program and transform your final year learners.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact" className="btn btn-lg bg-white text-orange hover:bg-gray-50 shadow-2xl font-bold px-10">
