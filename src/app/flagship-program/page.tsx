@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 import {
   Clock, Brain, MessageSquare, Target, CheckCircle,
   ArrowRight, Zap, Award,
@@ -20,8 +21,10 @@ export default function FlagshipProgramPage() {
   // curriculumRef is the ScrollTrigger anchor for the week-row animation
   const curriculumRef = useRef(null);
 
+  // Remove GSAP animations that hide cards
   useEffect(() => {
     const ctx = gsap.context(() => {
+      // Hero animation only
       gsap.fromTo('.flag-hero > *',
         { opacity: 0, y: 40 },
         { opacity: 1, y: 0, stagger: 0.15, duration: 0.8, ease: 'power3.out' }
@@ -34,13 +37,9 @@ export default function FlagshipProgramPage() {
     return () => ctx.revert();
   }, []);
 
-  // Re-animate curriculum rows whenever the active tab changes
+  // Don't animate curriculum cards - just show them
   useEffect(() => {
-    if (!curriculumRef.current) return;
-    gsap.fromTo('.week-row',
-      { opacity: 0, x: -20 },
-      { opacity: 1, x: 0, stagger: 0.05, duration: 0.4, ease: 'power2.out' }
-    );
+    // Cards are always visible - no animation needed
   }, [activeTab]);
 
   const aptitude = [
@@ -89,7 +88,7 @@ export default function FlagshipProgramPage() {
   const faqs = [
     {
       question: 'What is the duration of the flagship 90-hour program?',
-      answer: 'The program is delivered over 10 weeks, with 90 total hours of structured training. This includes 60 hours of quantitative and logical aptitude training (6 hours per week) and 30 hours of soft skills and corporate readiness training (3 hours per week).',
+      answer: 'The program is delivered over 10 weeks, with 90 total hours of structured training. This includes comprehensive quantitative and logical aptitude training (6 hours per week) and soft skills and corporate readiness training (3 hours per week).',
     },
     {
       question: 'How is the training delivered - online or offline?',
@@ -101,7 +100,7 @@ export default function FlagshipProgramPage() {
     },
     {
       question: 'Is the curriculum customizable for our institution?',
-      answer: 'Yes, the schedule and curriculum are indicative and can be customized to align with your institutional calendar, student needs, and specific placement requirements. We work closely with colleges to design the optimal training plan.',
+      answer: 'Yes, the schedule and curriculum are indicative and can be customized to align with your institutional calendar, learner needs, and specific placement requirements. We work closely with colleges to design the optimal training plan.',
     },
     {
       question: 'What is included in the 90-hour program?',
@@ -109,7 +108,7 @@ export default function FlagshipProgramPage() {
     },
     {
       question: 'Who are the trainers for this program?',
-      answer: 'All our trainers have 10+ years of combined corporate and academic experience. They bring real-world expertise and use experiential learning methods to ensure students gain practical, applicable skills.',
+      answer: 'All our trainers have 10+ years of combined corporate and academic experience. They bring real-world expertise and use experiential learning methods to ensure learners gain practical, applicable skills.',
     },
   ];
 
@@ -188,7 +187,7 @@ export default function FlagshipProgramPage() {
               <div className="flex items-center gap-3 px-6 py-3 rounded-full bg-white/15 backdrop-blur-sm border border-white/25">
                 <Brain className="w-6 h-6 text-white" />
                 <div>
-                  <div className="text-xl font-display font-black text-white">60 hrs</div>
+                  <div className="text-xl font-display font-black text-white">Comprehensive</div>
                   <div className="text-xs text-white/80">Aptitude Training</div>
                 </div>
               </div>
@@ -196,7 +195,7 @@ export default function FlagshipProgramPage() {
               <div className="flex items-center gap-3 px-6 py-3 rounded-full bg-white/15 backdrop-blur-sm border border-white/25">
                 <MessageSquare className="w-6 h-6 text-white" />
                 <div>
-                  <div className="text-xl font-display font-black text-white">30 hrs</div>
+                  <div className="text-xl font-display font-black text-white">Complete</div>
                   <div className="text-xs text-white/80">Soft Skills & Corporate Readiness</div>
                 </div>
               </div>
@@ -269,7 +268,7 @@ export default function FlagshipProgramPage() {
                 }`}
               >
                 <Brain className="w-5 h-5" />
-                Aptitude Training (60 hrs)
+                Aptitude Training
               </button>
               <button
                 onClick={() => setActiveTab('softskills')}
@@ -280,7 +279,7 @@ export default function FlagshipProgramPage() {
                 }`}
               >
                 <MessageSquare className="w-5 h-5" />
-                Soft Skills (30 hrs)
+                Soft Skills (Complete)
               </button>
             </div>
           </div>
@@ -296,15 +295,16 @@ export default function FlagshipProgramPage() {
                 {activeTab === 'aptitude' ? 'Quantitative & Logical Aptitude Curriculum' : 'Soft Skills & Corporate Readiness Curriculum'}
               </span>
               <span className="ml-auto bg-white/20 backdrop-blur-sm px-3 py-1 rounded-full text-white text-sm font-bold">
-                {activeTab === 'aptitude' ? '60 hours | 10 weeks' : '30 hours | 10 weeks'}
+                {activeTab === 'aptitude' ? 'Comprehensive | 10 weeks' : 'Complete | 10 weeks'}
               </span>
             </div>
 
-            <div className="divide-y divide-gray-100">
+            <div className="divide-y divide-gray-100" style={{ opacity: 1 }}>
               {(activeTab === 'aptitude' ? aptitude : softSkills).map((item) => (
                 <div
                   key={item.week}
                   className="week-row flex items-center gap-5 px-6 py-5 hover:bg-gray-50 transition-colors"
+                  style={{ opacity: 1 }}
                 >
                   <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0 font-display font-black text-white text-lg"

@@ -11,7 +11,7 @@ export default function CorporateSolutions() {
     {
       icon: Users,
       title: 'Employee Upskilling',
-      description: 'Enhance workforce capabilities through targeted soft skills and technical training programs',
+      description: 'Enhance workforce capabilities through targeted soft skills and professional development programs',
       features: ['Communication Excellence', 'Leadership Development', 'Team Building'],
       color: 'from-blue-500 to-cyan-500',
     },

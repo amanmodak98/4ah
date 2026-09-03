@@ -30,7 +30,7 @@ export default function MethodologyPage() {
       number: '01',
       title: 'ASSESS',
       subtitle: 'Understand Current State',
-      description: 'Begin with comprehensive pre-training assessments to understand each student\'s baseline abilities, strengths, and areas for improvement. This diagnostic phase helps us tailor the learning journey to actual needs.',
+      description: 'Begin with comprehensive pre-training assessments to understand each learner\'s baseline abilities, strengths, and areas for improvement. This diagnostic phase helps us tailor the learning approach to actual needs.',
       details: [
         'Pre-module skill assessments',
         'Baseline aptitude testing',
@@ -78,7 +78,7 @@ export default function MethodologyPage() {
       number: '04',
       title: 'FEEDBACK',
       subtitle: 'Identify & Guide',
-      description: 'Offer personalized, constructive feedback on every practice attempt. Students receive clear insights into what they did well, where they need improvement, and specific strategies for growth.',
+      description: 'Offer personalized, constructive feedback on every practice attempt. Learners receive clear insights into what they did well, where they need improvement, and specific strategies for growth.',
       details: [
         'Individual performance analysis',
         'Constructive improvement suggestions',
@@ -94,7 +94,7 @@ export default function MethodologyPage() {
       number: '05',
       title: 'IMPROVE',
       subtitle: 'Achieve Mastery',
-      description: 'Students revisit concepts, practice with enhanced strategies, and demonstrate measurable improvement. The cycle repeats until competency is achieved across all skill areas.',
+      description: 'Learners revisit concepts, practice with enhanced strategies, and demonstrate measurable improvement. The cycle repeats until competency is achieved across all skill areas.',
       details: [
         'Targeted skill refinement',
         'Post-assessment validation',
@@ -126,17 +126,17 @@ export default function MethodologyPage() {
     {
       icon: Award,
       title: 'Progressive Difficulty',
-      description: 'We build confidence by starting with foundational skills and gradually increasing complexity as students demonstrate readiness.',
+      description: 'We build confidence by starting with foundational skills and gradually increasing complexity as learners demonstrate readiness.',
     },
     {
       icon: Zap,
       title: 'Real Workplace Context',
-      description: 'All training is designed around actual recruitment processes and workplace scenarios students will encounter.',
+      description: 'All training is designed around actual recruitment processes and workplace scenarios learners will encounter.',
     },
     {
       icon: TrendingUp,
       title: 'Measurable Outcomes',
-      description: 'Progress is tracked, validated, and reported. Students see tangible evidence of their growth throughout the program.',
+      description: 'Progress is tracked, validated, and reported. Learners see tangible evidence of their growth throughout the program.',
     },
   ];
 
@@ -145,7 +145,7 @@ export default function MethodologyPage() {
     '@context': 'https://schema.org',
     '@type': 'HowTo',
     name: 'How 4Ability Hive Training Methodology Works',
-    description: 'Our proven 5-step training methodology: Assess, Learn, Practice, Feedback, and Improve - designed to transform students into workplace-ready professionals.',
+    description: 'Our proven 5-step training methodology: Assess, Learn, Practice, Feedback, and Improve - designed to transform learners into workplace-ready professionals.',
     step: methodologySteps.map((step, index) => ({
       '@type': 'HowToStep',
       position: index + 1,
@@ -210,7 +210,7 @@ export default function MethodologyPage() {
 
             <p className="text-2xl text-neutral-300 leading-relaxed mb-8">
               A structured, experiential learning framework designed for lasting transformation.
-              Every module follows our proven 5-step cycle that moves students from awareness to mastery.
+              Every module follows our proven 5-step cycle that moves learners from awareness to mastery.
             </p>
           </motion.div>
 
@@ -294,7 +294,7 @@ export default function MethodologyPage() {
                           <step.icon className="w-12 h-12 text-white" />
                         </div>
                         <div>
-                          <div className="text-6xl font-bold text-neutral-700 mb-2">{step.number}</div>
+                          <div className="text-6xl font-bold text-orange-400/40 mb-2">{step.number}</div>
                           <h3 className="text-4xl font-bold text-white mb-2">{step.title}</h3>
                           <p className="text-xl text-orange-400 font-semibold">{step.subtitle}</p>
                         </div>
@@ -311,7 +311,7 @@ export default function MethodologyPage() {
                         {step.details.map((detail, idx) => (
                           <div key={idx} className="flex items-start space-x-3">
                             <CheckCircle2 className="w-5 h-5 text-orange-400 flex-shrink-0 mt-1" />
-                            <span className="text-neutral-400">{detail}</span>
+                            <span className="text-neutral-300">{detail}</span>
                           </div>
                         ))}
                       </div>
@@ -460,7 +460,7 @@ export default function MethodologyPage() {
               Experience Our <span className="text-gradient-animate">Methodology</span> in Action
             </h2>
             <p className="text-2xl text-neutral-300 max-w-3xl mx-auto mb-10 leading-relaxed">
-              See how our proven 5-step process transforms students into industry-ready professionals
+              See how our proven 5-step process transforms learners into industry-ready professionals
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
