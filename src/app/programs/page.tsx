@@ -340,7 +340,7 @@ export default function ProgramsPage() {
           <div className="mt-14 p-10 rounded-3xl border border-white/10 text-center"
                style={{ background: 'rgba(249,115,22,0.08)' }}>
             <p className="text-xl text-white font-semibold">
-              "The learner is <span className="text-orange">not a passive participant</span> — every module creates opportunities to apply, receive feedback and improve."
+              "The participant is <span className="text-orange">not passive</span> — every module creates opportunities to apply, receive feedback and improve."
             </p>
           </div>
         </div>

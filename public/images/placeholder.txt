@@ -1,0 +1,8 @@
+This directory contains image placeholders for the 4Ability Hive website.
+
+Please refer to /img.md in the root directory for complete image specifications and requirements.
+
+Temporary placeholders can use:
+- Unsplash for photos: https://unsplash.com/
+- SVG generators for illustrations
+- Brand colors: Orange #F97316, Purple #7C3AED, Teal #0D9488, Blue #3B82F6

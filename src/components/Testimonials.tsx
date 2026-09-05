@@ -14,7 +14,7 @@ export default function Testimonials() {
       name: 'Dr. Rajesh Kumar',
       role: 'Principal, Engineering College',
       institution: 'JNTU Hyderabad',
-      content: '4Ability Hive has been instrumental in improving our students\' placement outcomes. Their structured approach and experienced trainers have made a significant impact on our final year students.',
+      content: '4Ability Hive has been instrumental in improving our participants\' placement outcomes. Their structured approach and experienced trainers have made a significant impact on our final year participants.',
       rating: 5,
     },
     {
@@ -28,12 +28,12 @@ export default function Testimonials() {
       name: 'Arun Reddy',
       role: 'Training & Placement Officer',
       institution: 'CVR College of Engineering',
-      content: 'We have been partnering with 4Ability Hive for 3 years now. The year-wise training structure has helped our students build skills progressively, resulting in better placements.',
+      content: 'We have been partnering with 4Ability Hive for 3 years now. The year-wise training structure has helped our participants build skills progressively, resulting in better placements.',
       rating: 5,
     },
     {
       name: 'Sneha Patel',
-      role: 'Final Year Student',
+      role: 'Final Year Participant',
       institution: 'CBIT, Hyderabad',
       content: 'The 90-hour flagship program completely transformed my confidence. I cleared 8 aptitude tests and got placed in my dream company. Thank you 4AH!',
       rating: 5,

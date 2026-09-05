@@ -64,7 +64,7 @@ export default function Outcomes() {
             Expected <span className="gradient-text">Outcomes</span>
           </h2>
           <p className="text-xl text-neutral-300 leading-relaxed mt-6">
-            Measurable improvements and lasting transformations in every learner through our comprehensive training programs.
+            Measurable improvements and lasting transformations in every participant through our comprehensive training programs.
           </p>
         </div>
 
@@ -100,10 +100,10 @@ export default function Outcomes() {
             <span className="gradient-text">Our Commitment</span>
           </h3>
           <p className="text-xl text-neutral-300 leading-relaxed mb-6">
-            Our commitment goes beyond conducting classroom sessions — we strive to create <span className="text-orange-400 font-semibold">lasting transformations</span> in every learner.
+            Our commitment goes beyond conducting classroom sessions — we strive to create <span className="text-orange-400 font-semibold">lasting transformations</span> in every participant.
           </p>
           <p className="text-lg text-neutral-400">
-            By the time students complete our programs, they are more confident, polished, professionally mature, and better prepared than peers who begin preparing only in their final year.
+            By the time participants complete our programs, they are more confident, polished, professionally mature, and better prepared than peers who begin preparing only in their final year.
           </p>
         </div>
       </div>

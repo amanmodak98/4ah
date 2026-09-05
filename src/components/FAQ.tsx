@@ -25,7 +25,7 @@ export default function FAQ({ faqs, title = "Frequently Asked Questions", subtit
     <div className="max-w-3xl mx-auto">
       {/* Header */}
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-4xl font-display font-black text-gray-900 mb-3">
+        <h2 className="text-3xl md:text-4xl font-display font-black text-gray-800 mb-3">
           {title}
         </h2>
         {subtitle && (
@@ -46,7 +46,7 @@ export default function FAQ({ faqs, title = "Frequently Asked Questions", subtit
               aria-expanded={openIndex === index}
               aria-controls={`faq-answer-${index}`}
             >
-              <span className="font-display font-bold text-gray-900 text-lg flex-1">
+              <span className="font-display font-bold text-gray-800 text-lg flex-1">
                 {faq.question}
               </span>
               <ChevronDown

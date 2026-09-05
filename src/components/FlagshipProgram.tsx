@@ -16,7 +16,7 @@ export default function FlagshipProgram() {
   ];
 
   const trainingGoals = [
-    'Build the confidence level of the students',
+    'Build the confidence level of the participants',
     'Enhance motivation to face the selection process through structured practice',
     'Improve awareness of various selection processes adopted by recruiting companies',
     'Strengthen logical, critical and analytical reasoning along with verbal ability',
@@ -62,7 +62,7 @@ export default function FlagshipProgram() {
             Final Year <span className="gradient-text glow-effect">Employability Skills</span> Program
           </h2>
           <p className="text-2xl text-neutral-300 leading-relaxed mt-6">
-            A comprehensive <span className="text-orange-400 font-bold">90-hour program</span> designed to prepare final year students for campus recruitment through structured, practical, and interactive learning.
+            A comprehensive <span className="text-orange-400 font-bold">90-hour program</span> designed to prepare final year participants for campus recruitment through structured, practical, and interactive learning.
           </p>
         </div>
 

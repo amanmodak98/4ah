@@ -124,7 +124,7 @@ export default function CollegeSolutionsPage() {
   const faqs = [
     {
       question: 'Why should we start training from first year instead of just final year?',
-      answer: 'Employability is a step-by-step process, not a last-minute effort. Learners who start training in first year arrive at final year placements with years of continuous practice and confidence. This progressive approach ensures skills are deeply ingrained rather than superficially learned under pressure.',
+      answer: 'Employability is a step-by-step process, not a last-minute effort. Participants who start training in first year arrive at final year placements with years of continuous practice and confidence. This progressive approach ensures skills are deeply ingrained rather than superficially learned under pressure.',
     },
     {
       question: 'How does the year-wise learning approach work?',
@@ -132,15 +132,15 @@ export default function CollegeSolutionsPage() {
     },
     {
       question: 'Can we customize the year-wise curriculum for our college?',
-      answer: 'Absolutely. We design programs based on your institution\'s calendar, learner profile, industry focus, and placement goals. The year-wise framework is flexible and can be adapted to your specific requirements and constraints.',
+      answer: 'Absolutely. We design programs based on your institution\'s calendar, participant profile, industry focus, and placement goals. The year-wise framework is flexible and can be adapted to your specific requirements and constraints.',
     },
     {
-      question: 'What if we only want training for final year learners?',
+      question: 'What if we only want training for final year participants?',
       answer: 'We offer standalone final year programs including our flagship 90-hour employability program. However, we always recommend the year-wise approach for maximum impact. Institutions that implement progressive training consistently see better placement outcomes.',
     },
     {
       question: 'How do you measure progress across the four years?',
-      answer: 'Each program includes pre and post-assessments, individual feedback reports, and progress tracking. Learners and institutions receive detailed reports showing skill development, improvement areas, and readiness metrics at each stage.',
+      answer: 'Each program includes pre and post-assessments, individual feedback reports, and progress tracking. Participants and institutions receive detailed reports showing skill development, improvement areas, and readiness metrics at each stage.',
     },
   ];
 
@@ -196,7 +196,7 @@ export default function CollegeSolutionsPage() {
             </h1>
 
             <p className="text-xl text-white/90 leading-relaxed max-w-2xl mb-8">
-              Employability is a step-by-step process — not a last-minute effort. We partner with institutions to build learner competence progressively, from first year to final placement.
+              Employability is a step-by-step process — not a last-minute effort. We partner with institutions to build participant competence progressively, from first year to final placement.
             </p>
 
             <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/15 backdrop-blur-sm border border-white/25">
@@ -226,7 +226,7 @@ export default function CollegeSolutionsPage() {
                 </h3>
                 <ul className="space-y-3">
                   {[
-                    'Students start placement prep only in final year',
+                    'Participants start placement prep only in final year',
                     'Too much to master in too little time',
                     'Confidence gaps show up in interviews',
                     'Low aptitude scores and poor communication',
@@ -248,7 +248,7 @@ export default function CollegeSolutionsPage() {
                   {[
                     'Year-wise structured programs from Year 1',
                     'Skills built progressively over 4 years',
-                    'Students arrive at placements already prepared',
+                    'Participants arrive at placements already prepared',
                     'Higher confidence, better scores, better outcomes',
                   ].map(s => (
                     <li key={s} className="flex items-start gap-3 text-gray-700">
@@ -273,7 +273,7 @@ export default function CollegeSolutionsPage() {
               <span className="gradient-text">1 Career-Ready Graduate.</span>
             </h2>
             <p className="text-gray-500 text-lg max-w-2xl mx-auto">
-              Progressive skill building so your learners arrive at placements with years of preparation — not just weeks.
+              Progressive skill building so your participants arrive at placements with years of preparation — not just weeks.
             </p>
           </div>
 
@@ -390,7 +390,7 @@ export default function CollegeSolutionsPage() {
       {/* ═══════ CTA ═══════ */}
       <section className="section text-white" style={{ background: 'linear-gradient(135deg, #0D9488 0%, #0284C7 100%)' }}>
         <div className="container text-center">
-          <h2 className="text-5xl font-display font-black mb-6">
+          <h2 className="text-5xl font-display font-black text-white mb-6">
             Build a <span className="underline decoration-4 decoration-teal-200">Long-Term</span> Partnership
           </h2>
           <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">

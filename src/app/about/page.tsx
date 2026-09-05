@@ -62,7 +62,7 @@ export default function AboutPage() {
       icon: Rocket,
       title: 'ASPIRE',
       subtitle: 'Dream Bigger',
-      desc: 'Help learners identify goals, potential, passion and career aspirations.',
+      desc: 'Help participants identify goals, potential, passion and career aspirations.',
       gradient: 'from-orange via-orange-light to-yellow',
       iconBg: 'bg-gradient-to-br from-orange to-orange-dark',
     },
@@ -107,7 +107,7 @@ export default function AboutPage() {
   const faqs = [
     {
       question: 'What is 4Ability Hive and when was it founded?',
-      answer: '4Ability Hive is a Learning & Development company specializing in employability training for students and corporate professionals. We partner with colleges and organizations across India to transform students into confident, industry-ready professionals through our structured, experiential training programs.',
+      answer: '4Ability Hive is a Learning & Development company specializing in employability training for participants and corporate professionals. We partner with colleges and organizations across India to transform participants into confident, industry-ready professionals through our structured, experiential training programs.',
     },
     {
       question: 'What does the 4A philosophy mean?',
@@ -248,7 +248,7 @@ export default function AboutPage() {
                 <div className="story-item flex gap-4">
                   <CheckCircle className="w-6 h-6 text-orange flex-shrink-0 mt-1" />
                   <p>
-                    After years of industry exposure working with thousands of learners, we recognized a <strong className="text-gray-900">significant gap between academic education and workplace expectations</strong>.
+                    After years of industry exposure working with thousands of participants, we recognized a <strong className="text-gray-900">significant gap between academic education and workplace expectations</strong>.
                   </p>
                 </div>
 
@@ -331,7 +331,7 @@ export default function AboutPage() {
           {/* Bottom quote */}
           <div className="mt-16 max-w-4xl mx-auto p-10 rounded-3xl bg-gradient-to-br from-orange to-orange-dark text-white text-center shadow-2xl">
             <Sparkles className="w-12 h-12 mx-auto mb-4 opacity-80" />
-            <p className="text-2xl font-display font-bold leading-snug">
+            <p className="text-2xl font-display font-bold text-white leading-snug">
               "Employability is not a skill developed overnight — it's a <span className="underline decoration-4 decoration-yellow">journey that begins early</span> in a student's academic life."
             </p>
           </div>
@@ -385,7 +385,7 @@ export default function AboutPage() {
       {/* ═══════════════ CTA ═══════════════ */}
       <section className="section bg-gradient-to-br from-purple via-purple-light to-pink-500 text-white">
         <div className="container text-center">
-          <h2 className="text-5xl font-display font-black mb-6">
+          <h2 className="text-5xl font-display font-black text-white mb-6">
             Ready to Transform Together?
           </h2>
           <p className="text-xl text-purple-50 mb-10 max-w-2xl mx-auto leading-relaxed">

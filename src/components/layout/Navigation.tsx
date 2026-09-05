@@ -118,7 +118,7 @@ export default function Navigation() {
               />
             </div>
             <div className="hidden sm:block">
-              <div className="font-display font-black text-gray-900 text-lg leading-none">
+              <div className="font-display font-black text-gray-800 text-lg leading-none">
                 4Ability Hive
               </div>
               <div className="text-xs text-orange font-semibold mt-0.5">
@@ -215,7 +215,7 @@ export default function Navigation() {
                       {hasChildren ? (
                         <button
                           onClick={() => toggleDropdown(item.label)}
-                          className={`w-full flex items-center justify-between px-4 py-3 text-left font-display font-bold text-gray-900 hover:bg-gray-50 rounded-lg transition-colors ${
+                          className={`w-full flex items-center justify-between px-4 py-3 text-left font-display font-bold text-gray-800 hover:bg-gray-50 rounded-lg transition-colors ${
                             active ? 'bg-orange-50 text-orange' : ''
                           }`}
                         >
@@ -229,7 +229,7 @@ export default function Navigation() {
                       ) : (
                         <Link
                           href={item.href}
-                          className={`block px-4 py-3 font-display font-bold text-gray-900 hover:bg-gray-50 rounded-lg transition-colors ${
+                          className={`block px-4 py-3 font-display font-bold text-gray-800 hover:bg-gray-50 rounded-lg transition-colors ${
                             active ? 'bg-orange-50 text-orange' : ''
                           }`}
                         >

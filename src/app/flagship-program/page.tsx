@@ -56,7 +56,7 @@ export default function FlagshipProgramPage() {
   ];
 
   const softSkills = [
-    { week: 1, topic: 'Ice Breaker, Self Discovery, Growth Mindset & Goal Setting', hours: 3 },
+    { week: 1, topic: 'Self Discovery, Growth Mindset & Goal Setting', hours: 3 },
     { week: 2, topic: 'Communication Skills Fundamentals — Verbal & Non-Verbal Communication', hours: 3 },
     { week: 3, topic: 'Active Listening, Barriers to Communication, Vocabulary Building, Synonyms & Antonyms', hours: 3 },
     { week: 4, topic: 'Presentation Skills, Public Speaking Activities, Analogies & Word Relationships', hours: 3 },
@@ -72,17 +72,17 @@ export default function FlagshipProgramPage() {
     { icon: Brain, value: '85%', label: 'Aptitude Improvement', sub: 'Average score increase' },
     { icon: MessageSquare, value: '95%', label: 'Communication Boost', sub: 'Self-reported confidence' },
     { icon: Target, value: '3x', label: 'Interview Success', sub: 'vs. untrained peers' },
-    { icon: Award, value: '90hrs', label: 'Structured Learning', sub: 'Per learner delivered' },
+    { icon: Award, value: '90hrs', label: 'Structured Learning', sub: 'Per participant delivered' },
   ];
 
   const deliverables = [
-    '90 structured training hours per learner',
+    '90 structured training hours per participant',
     'Pre & post-training assessment with reports',
     'Practice worksheets, test papers & reference material',
     'Complete mock GD & interview process',
-    'Individual personalised feedback report per learner',
+    'Individual personalised feedback report per participant',
     'Noticeably improved confidence, communication & aptitude',
-    'Learners equipped to clear competitive selection processes',
+    'Participants equipped to clear competitive selection processes',
   ];
 
   const faqs = [
@@ -96,26 +96,26 @@ export default function FlagshipProgramPage() {
     },
     {
       question: 'What results can we expect from this program?',
-      answer: 'Institutions typically see an 85% average improvement in aptitude test scores, 95% improvement in communication confidence (self-reported), and 3x higher interview success rates compared to untrained peers. Learners also receive individual feedback reports showing their progress.',
+      answer: 'Institutions typically see an 85% average improvement in aptitude test scores, 95% improvement in communication confidence (self-reported), and 3x higher interview success rates compared to untrained peers. Participants also receive individual feedback reports showing their progress.',
     },
     {
       question: 'Is the curriculum customizable for our institution?',
-      answer: 'Yes, the schedule and curriculum are indicative and can be customized to align with your institutional calendar, learner needs, and specific placement requirements. We work closely with colleges to design the optimal training plan.',
+      answer: 'Yes, the schedule and curriculum are indicative and can be customized to align with your institutional calendar, participant needs, and specific placement requirements. We work closely with colleges to design the optimal training plan.',
     },
     {
       question: 'What is included in the 90-hour program?',
-      answer: 'The program includes 60 hours of aptitude training covering quantitative reasoning, logical reasoning, and data interpretation, plus 30 hours of soft skills training covering communication, group discussions, interview preparation, resume building, and professional development. All learners receive pre/post assessments, practice materials, and personalized feedback.',
+      answer: 'The program includes 60 hours of aptitude training covering quantitative reasoning, logical reasoning, and data interpretation, plus 30 hours of soft skills training covering communication, group discussions, interview preparation, resume building, and professional development. All participants receive pre/post assessments, practice materials, and personalized feedback.',
     },
     {
       question: 'Who are the trainers for this program?',
-      answer: 'All our trainers have 10+ years of combined corporate and academic experience. They bring real-world expertise and use experiential learning methods to ensure learners gain practical, applicable skills.',
+      answer: 'All our trainers have 10+ years of combined corporate and academic experience. They bring real-world expertise and use experiential learning methods to ensure participants gain practical, applicable skills.',
     },
   ];
 
   // Course Schema for SEO/GEO
   const flagshipCourseSchema = courseSchema({
     name: 'Final Year Employability Skills Program - 90 Hours',
-    description: 'Comprehensive 90-hour training program combining 60 hours of quantitative and logical aptitude training with 30 hours of soft skills and corporate readiness training. Designed to prepare final year learners for campus placements.',
+    description: 'Comprehensive 90-hour training program combining 60 hours of quantitative and logical aptitude training with 30 hours of soft skills and corporate readiness training. Designed to prepare final year participants for campus placements.',
     provider: '4Ability Hive',
     url: 'https://4ah.in/flagship-program',
     hasCourseInstance: {
@@ -206,7 +206,7 @@ export default function FlagshipProgramPage() {
             </div>
 
             <p className="text-xl text-white/90 leading-relaxed max-w-3xl">
-              A comprehensive, structured, and interactive curriculum designed to prepare final year learners for campus recruitment through experiential learning, continuous practice, and personalised feedback.
+              A comprehensive, structured, and interactive curriculum designed to prepare final year participants for campus recruitment through experiential learning, continuous practice, and personalised feedback.
             </p>
           </div>
         </div>
@@ -218,7 +218,7 @@ export default function FlagshipProgramPage() {
           <div className="text-center mb-14">
             <div className="section-label justify-center mb-4">Measurable Results</div>
             <h2 className="text-headline text-gray-900 mb-3">
-              What Results Do Learners <span className="gradient-text">Actually Achieve?</span>
+              What Results Do Participants <span className="gradient-text">Actually Achieve?</span>
             </h2>
           </div>
 
@@ -316,7 +316,7 @@ export default function FlagshipProgramPage() {
                   </div>
                   <div className="flex-1">
                     <div className="text-xs font-bold uppercase tracking-wider text-gray-400 mb-1">Week {item.week}</div>
-                    <div className="font-semibold text-gray-800">{item.topic}</div>
+                    <div className="font-semibold text-gray-700">{item.topic}</div>
                   </div>
                   <div className="flex items-center gap-1 text-gray-500 font-bold flex-shrink-0">
                     <Clock className="w-4 h-4" />
@@ -366,7 +366,7 @@ export default function FlagshipProgramPage() {
                   Why Does This Approach Work?
                 </h3>
                 <p className="text-gray-400 text-lg leading-relaxed mb-8">
-                  The learner is <span className="text-orange font-bold">not a passive participant</span> — every module creates opportunities to apply, receive feedback and improve.
+                  The participant is <span className="text-orange font-bold">not passive</span> — every module creates opportunities to apply, receive feedback and improve.
                 </p>
                 <div className="space-y-4">
                   {[
@@ -403,12 +403,12 @@ export default function FlagshipProgramPage() {
         <div className="container text-center">
           <div className="max-w-3xl mx-auto">
             <Award className="w-16 h-16 mx-auto mb-6 opacity-90" />
-            <h2 className="text-5xl font-display font-black mb-6 leading-tight">
-              Ready to Make Your Learners<br />
+            <h2 className="text-5xl font-display font-black text-white mb-6 leading-tight">
+              Ready to Make Your Team<br />
               <span className="underline decoration-4 decoration-yellow">Campus Placement Ready?</span>
             </h2>
             <p className="text-xl text-white/90 mb-10 leading-relaxed">
-              Partner with us to deliver this comprehensive 90-hour program and transform your final year learners.
+              Partner with us to deliver this comprehensive 90-hour program and transform your final year candidates.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact" className="btn btn-lg bg-white text-orange hover:bg-gray-50 shadow-2xl font-bold px-10">

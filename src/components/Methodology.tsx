@@ -26,7 +26,7 @@ export default function Methodology() {
       icon: Users,
       step: 'PRACTISE',
       title: 'Apply & Experience',
-      description: 'Interactive sessions with role play, icebreakers, brainstorming, group activities, and simulations',
+      description: 'Interactive sessions with role play, group activities, simulations, reading material, and practice sheets',
       color: 'from-orange-500 to-red-500',
     },
     {
@@ -124,7 +124,7 @@ export default function Methodology() {
               Every module combines concept explanation, guided practice, real workplace scenarios, and structured feedback — ensuring <span className="text-orange-400 font-semibold">learning is applied, not just discussed</span>.
             </p>
             <p className="text-neutral-400">
-              The learner is not a passive participant — every module creates opportunities to apply, receive feedback, and improve.
+              The participant is not passive — every module creates opportunities to apply, receive feedback, and improve.
             </p>
           </div>
 
@@ -154,7 +154,7 @@ export default function Methodology() {
             {[
               { label: 'Mode', value: 'In-person on campus, hybrid option available' },
               { label: 'Venue', value: 'As designated by the institution' },
-              { label: 'Language', value: 'English, can be aligned with learner needs' },
+              { label: 'Language', value: 'English, can be aligned with participant needs' },
               { label: 'Resources', value: 'AV material, reading material, practice sheets, and assessments' },
               { label: 'Teaching Method', value: 'Interactive sessions with role play, icebreakers, brainstorming, peer-to-peer learning, group activities, VARK Methodology' },
               { label: 'Assessment', value: 'Pre & post module assessments, quizzes, assignments, progressive tests' },

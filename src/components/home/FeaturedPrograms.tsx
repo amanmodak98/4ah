@@ -46,7 +46,7 @@ export default function FeaturedPrograms() {
           </h2>
           <div className="divider"></div>
           <p className="section-subtitle text-gray-600">
-            Comprehensive programs designed to transform students and professionals into confident, skilled, and employment-ready individuals.
+            Comprehensive programs designed to transform participants and professionals into confident, skilled, and employment-ready individuals.
           </p>
         </div>
 

@@ -30,7 +30,7 @@ export default function MethodologyPage() {
       number: '01',
       title: 'ASSESS',
       subtitle: 'Understand Current State',
-      description: 'Begin with comprehensive pre-training assessments to understand each learner\'s baseline abilities, strengths, and areas for improvement. This diagnostic phase helps us tailor the learning approach to actual needs.',
+      description: 'Begin with comprehensive pre-training assessments to understand each participant\'s baseline abilities, strengths, and areas for improvement. This diagnostic phase helps us tailor the learning approach to actual needs.',
       details: [
         'Pre-module skill assessments',
         'Baseline aptitude testing',
@@ -78,7 +78,7 @@ export default function MethodologyPage() {
       number: '04',
       title: 'FEEDBACK',
       subtitle: 'Identify & Guide',
-      description: 'Offer personalized, constructive feedback on every practice attempt. Learners receive clear insights into what they did well, where they need improvement, and specific strategies for growth.',
+      description: 'Offer personalized, constructive feedback on every practice attempt. Participants receive clear insights into what they did well, where they need improvement, and specific strategies for growth.',
       details: [
         'Individual performance analysis',
         'Constructive improvement suggestions',
@@ -94,7 +94,7 @@ export default function MethodologyPage() {
       number: '05',
       title: 'IMPROVE',
       subtitle: 'Achieve Mastery',
-      description: 'Learners revisit concepts, practice with enhanced strategies, and demonstrate measurable improvement. The cycle repeats until competency is achieved across all skill areas.',
+      description: 'Participants revisit concepts, practice with enhanced strategies, and demonstrate measurable improvement. The cycle repeats until competency is achieved across all skill areas.',
       details: [
         'Targeted skill refinement',
         'Post-assessment validation',
@@ -121,22 +121,22 @@ export default function MethodologyPage() {
     {
       icon: MessageCircle,
       title: 'Constructive Feedback',
-      description: 'Personalized feedback is the bridge between practice and improvement. Every learner receives specific, actionable guidance.',
+      description: 'Personalized feedback is the bridge between practice and improvement. Every participant receives specific, actionable guidance.',
     },
     {
       icon: Award,
       title: 'Progressive Difficulty',
-      description: 'We build confidence by starting with foundational skills and gradually increasing complexity as learners demonstrate readiness.',
+      description: 'We build confidence by starting with foundational skills and gradually increasing complexity as participants demonstrate readiness.',
     },
     {
       icon: Zap,
       title: 'Real Workplace Context',
-      description: 'All training is designed around actual recruitment processes and workplace scenarios learners will encounter.',
+      description: 'All training is designed around actual recruitment processes and workplace scenarios participants will encounter.',
     },
     {
       icon: TrendingUp,
       title: 'Measurable Outcomes',
-      description: 'Progress is tracked, validated, and reported. Learners see tangible evidence of their growth throughout the program.',
+      description: 'Progress is tracked, validated, and reported. Participants see tangible evidence of their growth throughout the program.',
     },
   ];
 
@@ -145,7 +145,7 @@ export default function MethodologyPage() {
     '@context': 'https://schema.org',
     '@type': 'HowTo',
     name: 'How 4Ability Hive Training Methodology Works',
-    description: 'Our proven 5-step training methodology: Assess, Learn, Practice, Feedback, and Improve - designed to transform learners into workplace-ready professionals.',
+    description: 'Our proven 5-step training methodology: Assess, Learn, Practice, Feedback, and Improve - designed to transform participants into workplace-ready professionals.',
     step: methodologySteps.map((step, index) => ({
       '@type': 'HowToStep',
       position: index + 1,
@@ -210,7 +210,7 @@ export default function MethodologyPage() {
 
             <p className="text-2xl text-neutral-300 leading-relaxed mb-8">
               A structured, experiential learning framework designed for lasting transformation.
-              Every module follows our proven 5-step cycle that moves learners from awareness to mastery.
+              Every module follows our proven 5-step cycle that moves participants from awareness to mastery.
             </p>
           </motion.div>
 
@@ -401,7 +401,7 @@ export default function MethodologyPage() {
               },
               {
                 title: 'Language',
-                value: 'English (can be aligned with learner needs)',
+                value: 'English (can be aligned with participant needs)',
                 icon: MessageCircle,
               },
               {
@@ -411,7 +411,7 @@ export default function MethodologyPage() {
               },
               {
                 title: 'Teaching Method',
-                value: 'Interactive sessions with role play, icebreakers, brainstorming, peer-to-peer learning, group activities, VARK methodology, quizzes, and assessments',
+                value: 'Interactive sessions with role play, group activities, reading material, practice sheets, and assessments',
                 icon: Zap,
               },
               {
@@ -460,7 +460,7 @@ export default function MethodologyPage() {
               Experience Our <span className="text-gradient-animate">Methodology</span> in Action
             </h2>
             <p className="text-2xl text-neutral-300 max-w-3xl mx-auto mb-10 leading-relaxed">
-              See how our proven 5-step process transforms learners into industry-ready professionals
+              See how our proven 5-step process transforms participants into industry-ready professionals
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">

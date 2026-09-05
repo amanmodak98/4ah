@@ -19,7 +19,7 @@ export const defaultMetadata: Metadata = {
     'placement readiness training',
     'college training programs',
     'corporate training solutions',
-    'learner development programs',
+    'participant development programs',
     'career skills training',
     'professional development',
     'job readiness training',
@@ -115,7 +115,7 @@ export const organizationSchema = {
   ],
   audience: {
     '@type': 'EducationalAudience',
-    audienceType: 'College Students, Corporate Employees, Educational Institutions',
+    audienceType: 'College Participants, Corporate Employees, Educational Institutions',
   },
   address: {
     '@type': 'PostalAddress',

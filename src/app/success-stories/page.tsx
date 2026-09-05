@@ -14,7 +14,7 @@ export default function SuccessStoriesPage() {
       role: 'Placement Officer',
       institution: 'National Institute of Technology',
       type: 'College',
-      quote: 'The 4Ability Hive program transformed our final year learners. Their confidence levels skyrocketed, and we saw a 40% improvement in placement success rates. The trainers are exceptional, and the structured curriculum covers everything from aptitude to mock interviews.',
+      quote: 'The 4Ability Hive program transformed our final year participants. Their confidence levels skyrocketed, and we saw a 40% improvement in placement success rates. The trainers are exceptional, and the structured curriculum covers everything from aptitude to mock interviews.',
       initials: 'PS',
       rating: 5,
       impact: '40% increase in placements',
@@ -33,7 +33,7 @@ export default function SuccessStoriesPage() {
     },
     {
       name: 'Ananya Verma',
-      role: 'Final Year Student',
+      role: 'Final Year Participant',
       institution: 'Engineering College, Batch 2024',
       type: 'Student',
       quote: 'The 90-hour flagship program prepared me completely for campus placements. The aptitude training and mock interviews gave me the confidence to crack multiple offers. I landed my dream job at a top IT company!',
@@ -47,7 +47,7 @@ export default function SuccessStoriesPage() {
       role: 'Dean - Career Development',
       institution: 'Management Institute',
       type: 'College',
-      quote: 'Year-wise training from 4Ability Hive has become integral to our curriculum. Students develop progressively, and by final year, they are truly industry-ready. A game-changer for our institution.',
+      quote: 'Year-wise training from 4Ability Hive has become integral to our curriculum. Participants develop progressively, and by final year, they are truly industry-ready. A game-changer for our institution.',
       initials: 'SM',
       rating: 5,
       impact: 'Placement rate: 92%',
@@ -55,7 +55,7 @@ export default function SuccessStoriesPage() {
     },
     {
       name: 'Kavita Desai',
-      role: 'Student, B.Com 2023',
+      role: 'Participant, B.Com 2023',
       institution: 'Commerce College',
       type: 'Student',
       quote: 'I was nervous about placements but the communication skills training changed everything. I can now speak confidently in interviews and group discussions. Got placed in a finance company with excellent package.',
@@ -78,7 +78,7 @@ export default function SuccessStoriesPage() {
   ];
 
   const stats = [
-    { icon: Users, value: '10k+', label: 'Learners Transformed', color: 'text-orange' },
+    { icon: Users, value: '10k+', label: 'Participants Transformed', color: 'text-orange' },
     { icon: Award, value: '50+', label: 'Partner Institutions', color: 'text-purple' },
     { icon: TrendingUp, value: '95%', label: 'Satisfaction Rate', color: 'text-teal' },
     { icon: Star, value: '4.8/5', label: 'Average Rating', color: 'text-yellow-500' },
@@ -92,16 +92,16 @@ export default function SuccessStoriesPage() {
 
   const faqs = [
     {
-      question: 'Are these testimonials from real learners and institutions?',
-      answer: 'Yes, all testimonials are from genuine learners, colleges, and corporate clients who have completed our training programs. We value authentic feedback and these represent real experiences and measurable outcomes from our partnerships.',
+      question: 'Are these testimonials from real participants and institutions?',
+      answer: 'Yes, all testimonials are from genuine participants, colleges, and corporate clients who have completed our training programs. We value authentic feedback and these represent real experiences and measurable outcomes from our partnerships.',
     },
     {
-      question: 'What kind of results do learners typically achieve?',
-      answer: 'Learners typically see 85% improvement in aptitude test scores, 95% boost in communication confidence, and 3x higher interview success rates. Many learners receive multiple job offers and report feeling significantly more prepared for workplace challenges.',
+      question: 'What kind of results do participants typically achieve?',
+      answer: 'Participants typically see 85% improvement in aptitude test scores, 95% boost in communication confidence, and 3x higher interview success rates. Many participants receive multiple job offers and report feeling significantly more prepared for workplace challenges.',
     },
     {
       question: 'How do colleges measure the impact of your training?',
-      answer: 'Colleges track improvements through pre and post-training assessments, placement success rates, learner feedback surveys, and employer satisfaction scores. Most institutions report 30-50% improvement in overall placement rates after implementing our programs.',
+      answer: 'Colleges track improvements through pre and post-training assessments, placement success rates, participant feedback surveys, and employer satisfaction scores. Most institutions report 30-50% improvement in overall placement rates after implementing our programs.',
     },
     {
       question: 'What do corporate clients say about the training effectiveness?',
@@ -173,7 +173,7 @@ export default function SuccessStoriesPage() {
             Real Results From Real People
           </h1>
           <p className="text-xl text-orange-50 max-w-2xl mx-auto leading-relaxed">
-            Hear from learners, colleges, and corporates who experienced transformation through our training programs.
+            Hear from participants, colleges, and corporates who experienced transformation through our training programs.
           </p>
         </div>
       </section>
@@ -273,7 +273,7 @@ export default function SuccessStoriesPage() {
             <div className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-orange/10 border border-orange/20">
               <Star className="w-5 h-5 text-orange fill-orange" />
               <span className="font-display font-bold text-gray-900">
-                Rated 4.8/5 by 500+ Students and Institutions
+                Rated 4.8/5 by 500+ Participants and Institutions
               </span>
             </div>
           </div>
@@ -294,11 +294,11 @@ export default function SuccessStoriesPage() {
       {/* CTA */}
       <section className="section bg-gradient-to-br from-navy to-navy-light text-white">
         <div className="container text-center">
-          <h2 className="text-4xl md:text-5xl font-display font-black mb-6">
+          <h2 className="text-4xl md:text-5xl font-display font-black text-white mb-6">
             Ready to Write Your <span className="gradient-text">Success Story?</span>
           </h2>
           <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto leading-relaxed">
-            Join 50+ institutions and 10,000+ learners who transformed with 4Ability Hive training programs.
+            Join 50+ institutions and 10,000+ participants who transformed with 4Ability Hive training programs.
           </p>
           <Link href="/contact" className="btn btn-primary btn-lg">
             Partner With Us

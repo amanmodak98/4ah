@@ -34,7 +34,7 @@ export default function ContactPage() {
     },
     {
       question: 'What information do you need to prepare a proposal?',
-      answer: 'We need basic information about your institution (type, learner strength, year groups), your training objectives, preferred timeline, and any specific skill areas you want to focus on. The more details you provide, the more tailored our proposal will be.',
+      answer: 'We need basic information about your institution (type, participant strength, year groups), your training objectives, preferred timeline, and any specific skill areas you want to focus on. The more details you provide, the more tailored our proposal will be.',
     },
     {
       question: 'How quickly can training programs be started?',
@@ -45,8 +45,8 @@ export default function ContactPage() {
       answer: 'We provide training across India in both online and offline modes. Our trainer network covers multiple cities, and we can arrange sessions anywhere in the country based on your location and requirements.',
     },
     {
-      question: 'Is there a minimum learner count required for institutional training?',
-      answer: 'We work with batches of all sizes, from small groups of 20-30 learners to large batches of 200+ learners. Our programs are designed to scale while maintaining quality and individual attention.',
+      question: 'Is there a minimum participant count required for institutional training?',
+      answer: 'We work with batches of all sizes, from small groups of 20-30 participants to large batches of 200+ participants. Our programs are designed to scale while maintaining quality and individual attention.',
     },
   ];
 
@@ -116,7 +116,7 @@ export default function ContactPage() {
             {/* Form */}
             <div>
               <div className="card p-10 bg-white">
-                <h2 className="text-3xl font-display font-black text-gray-900 mb-2">
+                <h2 className="text-3xl font-display font-black text-gray-800 mb-2">
                   Request Training Proposal
                 </h2>
                 <p className="text-gray-500 mb-8">
@@ -140,7 +140,7 @@ export default function ContactPage() {
                   <form onSubmit={handleSubmit} className="space-y-5">
                     <div className="grid md:grid-cols-2 gap-5">
                       <div>
-                        <label className="block text-sm font-bold text-gray-900 mb-2">Full Name *</label>
+                        <label className="block text-sm font-bold text-gray-700 mb-2">Full Name *</label>
                         <input
                           type="text"
                           name="name"
@@ -152,7 +152,7 @@ export default function ContactPage() {
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-bold text-gray-900 mb-2">Email Address *</label>
+                        <label className="block text-sm font-bold text-gray-700 mb-2">Email Address *</label>
                         <input
                           type="email"
                           name="email"
@@ -167,7 +167,7 @@ export default function ContactPage() {
 
                     <div className="grid md:grid-cols-2 gap-5">
                       <div>
-                        <label className="block text-sm font-bold text-gray-900 mb-2">Phone Number *</label>
+                        <label className="block text-sm font-bold text-gray-700 mb-2">Phone Number *</label>
                         <input
                           type="tel"
                           name="phone"
@@ -179,7 +179,7 @@ export default function ContactPage() {
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-bold text-gray-900 mb-2">Institution Name *</label>
+                        <label className="block text-sm font-bold text-gray-700 mb-2">Institution Name *</label>
                         <input
                           type="text"
                           name="institution"
@@ -194,7 +194,7 @@ export default function ContactPage() {
 
                     <div className="grid md:grid-cols-2 gap-5">
                       <div>
-                        <label className="block text-sm font-bold text-gray-900 mb-2">Institution Type *</label>
+                        <label className="block text-sm font-bold text-gray-700 mb-2">Institution Type *</label>
                         <select
                           name="institutionType"
                           value={formData.institutionType}
@@ -209,7 +209,7 @@ export default function ContactPage() {
                         </select>
                       </div>
                       <div>
-                        <label className="block text-sm font-bold text-gray-900 mb-2">Number of Learners *</label>
+                        <label className="block text-sm font-bold text-gray-700 mb-2">Number of Learners *</label>
                         <input
                           type="text"
                           name="learnerCount"
@@ -223,7 +223,7 @@ export default function ContactPage() {
                     </div>
 
                     <div>
-                      <label className="block text-sm font-bold text-gray-900 mb-2">Training Requirements *</label>
+                      <label className="block text-sm font-bold text-gray-700 mb-2">Training Requirements *</label>
                       <textarea
                         name="message"
                         value={formData.message}

@@ -50,7 +50,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-sm leading-relaxed mb-6">
-              Empowering students with the skills that matter. Transforming potential into performance through comprehensive employability training programs.
+              Empowering participants with the skills that matter. Transforming potential into performance through comprehensive employability training programs.
             </p>
             <div className="flex space-x-3">
               {socialLinks.map((social) => (

@@ -32,8 +32,8 @@ export default function Contact() {
     {
       icon: Phone,
       label: 'Phone',
-      value: '+91 XXX XXX XXXX',
-      link: 'tel:+91XXXXXXXXXX',
+      value: '+91 9152053225',
+      link: 'tel:+919152053225',
       color: 'from-blue-500 to-cyan-500',
     },
     {
@@ -57,7 +57,7 @@ export default function Contact() {
             Let's <span className="gradient-text">Partner Together</span>
           </h2>
           <p className="text-xl text-neutral-300 leading-relaxed mt-6">
-            Ready to transform your students into industry-ready professionals? Get in touch with us to discuss a customized training program for your institution.
+            Ready to transform your team into industry-ready professionals? Get in touch with us to discuss a customized training program for your institution.
           </p>
         </div>
 
@@ -211,7 +211,7 @@ export default function Contact() {
                 <span className="gradient-text">Lifetime Mentorship</span>
               </h3>
               <p className="text-neutral-300 leading-relaxed">
-                Our relationship with learners does not end after the training. We are committed to providing lifetime mentorship and guidance for interview preparation, resume enhancement, communication improvement, and career readiness whenever students seek our support.
+                Our relationship with participants does not end after the training. We are committed to providing lifetime mentorship and guidance for interview preparation, resume enhancement, communication improvement, and career readiness whenever they seek our support.
               </p>
             </div>
 

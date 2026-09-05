@@ -24,7 +24,7 @@ export default function WhyChooseUs() {
     },
     {
       title: 'Year-wise Learning Journey',
-      description: 'Progressive training from first year to final year ensures students are campus-placement ready, not rushed at the last minute.',
+      description: 'Progressive training from first year to final year ensures participants are campus-placement ready, not rushed at the last minute.',
     },
     {
       title: 'Customized Training Programs',

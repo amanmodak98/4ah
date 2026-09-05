@@ -78,7 +78,7 @@ export default function CollegeSolutions() {
             <span className="gradient-text">College Solutions</span>
           </h2>
           <p className="text-xl text-neutral-300 leading-relaxed">
-            Progressive, year-wise employability programs designed to transform students from{' '}
+            Progressive, year-wise employability programs designed to transform participants from{' '}
             <span className="text-orange-400 font-semibold">first year to placement-ready professionals</span>.
           </p>
         </div>
@@ -131,7 +131,7 @@ export default function CollegeSolutions() {
             {
               icon: TrendingUp,
               title: 'Better Preparedness',
-              description: 'Students arrive at final year already trained, confident, and placement-ready',
+              description: 'Participants arrive at final year already trained, confident, and placement-ready',
               color: 'from-orange-500 to-red-500',
             },
             {

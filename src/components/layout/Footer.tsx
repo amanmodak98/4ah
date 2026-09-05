@@ -152,7 +152,7 @@ export default function Footer() {
               <input
                 type="email"
                 placeholder="Your email address"
-                className="px-4 py-2.5 rounded-lg text-sm text-gray-900 bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-orange"
+                className="px-4 py-2.5 rounded-lg text-sm text-gray-700 bg-white border border-gray-200 focus:outline-none focus:ring-2 focus:ring-orange"
               />
               <button type="submit" className="btn btn-primary justify-center">
                 Subscribe

@@ -13,7 +13,7 @@ export default function About() {
       icon: Target,
       title: 'ASPIRE',
       subtitle: 'Dream Bigger',
-      description: 'Help learners identify their goals, potential, passion, and career aspirations. Know where you want to go.',
+      description: 'Help participants identify their goals, potential, passion, and career aspirations. Know where you want to go.',
       color: 'from-orange-500 to-red-500',
     },
     {
@@ -27,14 +27,14 @@ export default function About() {
       icon: Rocket,
       title: 'ASCEND',
       subtitle: 'Grow & Progress',
-      description: 'Help learners apply their skills, build confidence, become employable, and advance their careers through continuous growth.',
+      description: 'Help participants apply their skills, build confidence, become employable, and advance their careers through continuous growth.',
       color: 'from-purple-500 to-pink-500',
     },
     {
       icon: Award,
       title: 'AMPLIFY',
       subtitle: 'Create Impact',
-      description: 'Enable learners to showcase their strengths, influence others, lead, and create meaningful impact in their workplace and society.',
+      description: 'Enable participants to showcase their strengths, influence others, lead, and create meaningful impact in their workplace and society.',
       color: 'from-yellow-500 to-orange-500',
     },
   ];
@@ -109,7 +109,7 @@ export default function About() {
               Every trainer associated with our organization brings extensive experience in corporate and academic training. Having worked closely with organizations across various industries, we understand what employers truly expect from fresh graduates — not just technical knowledge, but the <span className="text-orange-400 font-semibold">professional competencies that determine long-term career success</span>.
             </p>
             <p className="text-neutral-300 leading-relaxed">
-              We believe that every student possesses unique potential. Our programs are thoughtfully designed to help learners discover their hidden strengths, build confidence, develop professional competencies, and become the best version of themselves.
+              We believe that every participant possesses unique potential. Our programs are thoughtfully designed to help participants discover their hidden strengths, build confidence, develop professional competencies, and become the best version of themselves.
             </p>
           </div>
 
@@ -118,13 +118,13 @@ export default function About() {
               <span className="gradient-text">Our Commitment</span>
             </h3>
             <p className="text-neutral-300 leading-relaxed mb-6">
-              Our commitment goes beyond conducting classroom sessions — we strive to create lasting transformations in every learner.
+              Our commitment goes beyond conducting classroom sessions — we strive to create lasting transformations in every participant.
             </p>
             <p className="text-neutral-300 leading-relaxed mb-6">
-              One of the biggest challenges observed across campuses is that students often begin preparing for placements only during their final year. At that stage, they are expected to master communication skills, teamwork, leadership, interview techniques, aptitude, professional etiquette, and workplace readiness within a very limited timeframe.
+              One of the biggest challenges observed across campuses is that participants often begin preparing for placements only during their final year. At that stage, they are expected to master communication skills, teamwork, leadership, interview techniques, aptitude, professional etiquette, and workplace readiness within a very limited timeframe.
             </p>
             <p className="text-neutral-300 leading-relaxed">
-              To address this, we have designed structured training programs for students from <span className="text-orange-400 font-semibold">First Year through Final Year</span>, enabling institutions to progressively build students' employability.
+              To address this, we have designed structured training programs for participants from <span className="text-orange-400 font-semibold">First Year through Final Year</span>, enabling institutions to progressively build participant employability.
             </p>
           </div>
         </div>
@@ -159,7 +159,7 @@ export default function About() {
           <div className="card p-12 text-center bg-gradient-to-br from-orange-500/5 via-purple-500/5 to-blue-500/5 border-orange-500/20">
             <p className="text-2xl font-bold text-white leading-relaxed">
               "Employability is not a skill that can be developed overnight — it is a{' '}
-              <span className="gradient-text">journey that should begin early</span> in a student's academic life."
+              <span className="gradient-text">journey that should begin early</span> in a participant's academic life."
             </p>
           </div>
         </div>

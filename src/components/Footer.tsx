@@ -52,7 +52,7 @@ export default function Footer() {
               </div>
             </Link>
             <p className="text-neutral-400 leading-relaxed mb-6 max-w-sm">
-              Empowering students and professionals with the skills that matter. Transforming potential into performance through comprehensive employability training.
+              Empowering participants and professionals with the skills that matter. Transforming potential into performance through comprehensive employability training.
             </p>
             <div className="space-y-3">
               <div className="flex items-center text-neutral-400 hover:text-orange-400 transition-colors">

@@ -60,7 +60,6 @@ export default function CorporateSolutionsPage() {
         'Problem Solving & Critical Thinking',
         'Decision Making Skills',
         'Analytical & Logical Reasoning',
-        'Process Optimization',
         'Quality & Efficiency Improvement',
       ],
       gradient: 'from-orange-500 to-red-500',
@@ -72,7 +71,7 @@ export default function CorporateSolutionsPage() {
       features: [
         'Strategic Planning & Execution',
         'People Management & Motivation',
-        'Change Leadership',
+        'Change Management and Adaptability',
         'Conflict Resolution',
         'Mentoring & Coaching Skills',
       ],
@@ -83,7 +82,7 @@ export default function CorporateSolutionsPage() {
       title: 'Customized Programs',
       description: 'Tailored training solutions designed to meet specific organizational needs, goals, and industry requirements.',
       features: [
-        'Comprehensive Need Assessment',
+        'Comprehensive Need Assessment (TNA - Training Need Assessment and TNI - Training Need Identification)',
         'Custom Curriculum Design',
         'Flexible Delivery Options',
         'On-site or Hybrid Training',
@@ -93,14 +92,14 @@ export default function CorporateSolutionsPage() {
     },
     {
       icon: TrendingUp,
-      title: 'Continuous Learning',
-      description: 'Ongoing development programs to keep employees updated with latest industry trends and best practices.',
+      title: 'Specialized Programs',
+      description: 'Targeted wellness and professional development programs focused on holistic employee growth and wellbeing.',
       features: [
-        'Regular Workshops & Seminars',
-        'Skill Gap Assessments',
-        'Progress Monitoring',
-        'Certification Programs',
-        'Long-term Mentorship Support',
+        'Stress Management',
+        'Emotional Intelligence',
+        'Mindfulness',
+        'Conflict Resolution',
+        'Employee Wellbeing Sessions',
       ],
       gradient: 'from-pink-500 to-purple-500',
     },
@@ -171,7 +170,7 @@ export default function CorporateSolutionsPage() {
     },
     {
       question: 'How do you measure training effectiveness and ROI?',
-      answer: 'We use pre and post-training assessments, performance metrics, behavioral observations, and participant feedback surveys. You receive detailed reports showing skill improvements, competency gains, and measurable impact on employee performance. Most organizations see 30-40% performance improvement.',
+      answer: 'We use TNA (Training Need Assessment) and TNI (Training Need Identification), performance metrics, behavioral observations, and participant feedback surveys. You receive detailed reports showing skill improvements, competency gains, and measurable impact on employee performance. Most organizations see 30-40% performance improvement.',
     },
     {
       question: 'What makes your corporate training different from others?',
@@ -232,7 +231,7 @@ export default function CorporateSolutionsPage() {
               <span className="text-sm font-bold text-orange-400">For Corporates & Organizations</span>
             </div>
 
-            <h1 className="text-5xl md:text-6xl font-black mb-6 leading-tight">
+            <h1 className="text-5xl md:text-6xl font-black text-white mb-6 leading-tight">
               Transform Your <span className="gradient-text">Workforce</span>
             </h1>
 

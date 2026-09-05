@@ -91,7 +91,7 @@ export default function Home() {
       icon: '🎯',
       title: 'Aptitude Training',
       desc: 'Quantitative, logical reasoning and data interpretation — with progressive practice and mock tests.',
-      tag: 'Comprehensive',
+      tag: 'Campus',
       tagColor: 'badge-orange',
       href: '/programs#aptitude',
       border: 'hover:border-orange',
@@ -100,7 +100,7 @@ export default function Home() {
       icon: '💬',
       title: 'Communication Skills',
       desc: 'Verbal & non-verbal communication, public speaking, vocabulary and corporate correspondence.',
-      tag: 'Beginner – Advanced',
+      tag: 'Campus',
       tagColor: 'badge-purple',
       href: '/programs#communication',
       border: 'hover:border-purple',
@@ -109,7 +109,7 @@ export default function Home() {
       icon: '🚀',
       title: 'Soft Skills & Personality',
       desc: 'Leadership, teamwork, EQ, time management, professional grooming and workplace etiquette.',
-      tag: 'Year-wise',
+      tag: 'Campus & Corporate',
       tagColor: 'badge-teal',
       href: '/programs#soft-skills',
       border: 'hover:border-teal',
@@ -118,7 +118,7 @@ export default function Home() {
       icon: '📄',
       title: 'Placement Readiness',
       desc: 'Resume building, LinkedIn, ATS tips, group discussion, HR interviews and mock processes.',
-      tag: 'Final Year',
+      tag: 'Campus',
       tagColor: 'badge-orange',
       href: '/programs#placement',
       border: 'hover:border-orange',
@@ -127,7 +127,7 @@ export default function Home() {
       icon: '🏢',
       title: 'Corporate Training',
       desc: 'Customised employee upskilling programs — leadership, performance and change management.',
-      tag: 'Enterprise',
+      tag: 'Corporates',
       tagColor: 'badge-purple',
       href: '/corporate-solutions',
       border: 'hover:border-purple',
@@ -136,7 +136,7 @@ export default function Home() {
       icon: '⭐',
       title: 'Flagship 90-Hour Program',
       desc: 'Comprehensive aptitude and soft skills training — complete campus placement preparation in one program.',
-      tag: 'Most Popular',
+      tag: 'Campus to Corporate & Personality',
       tagColor: 'badge-teal',
       href: '/flagship-program',
       border: 'hover:border-teal',
@@ -144,7 +144,7 @@ export default function Home() {
   ];
 
   const stats = [
-    { value: 10000, suffix: '+', label: 'Learners Trained' },
+    { value: 10000, suffix: '+', label: 'Professionals Trained' },
     { value: 50,   suffix: '+', label: 'Partner Institutions' },
     { value: 95,   suffix: '%', label: 'Satisfaction Rate' },
     { value: 90,   suffix: 'hrs', label: 'Flagship Program' },
@@ -153,13 +153,13 @@ export default function Home() {
   const whyPoints = [
     { icon: Zap,       title: 'Experiential Learning', desc: 'Real workplace scenarios, role-plays, and continuous practice — not just theory.' },
     { icon: Target,    title: 'Proven Methodology', desc: 'Our 5-step Assess → Learn → Practice → Feedback → Improve cycle delivers results.' },
-    { icon: TrendingUp,title: 'Progressive Skill Building', desc: 'Year-wise programs from first year to placement — skills built over time, not overnight.' },
+    { icon: TrendingUp,title: 'Progressive Skill Building', desc: 'Step-by-step programs from foundation to placement — skills built over time, not overnight.' },
     { icon: Users,     title: 'Expert Trainer Network', desc: 'Every trainer brings 10+ years of corporate and academic experience.' },
   ];
 
   const testimonials = [
     {
-      quote: 'The 4AH program completely transformed our placement numbers. Learners came in confident, articulate, and genuinely ready for interviews.',
+      quote: 'The 4AH program completely transformed our placement numbers. Individuals came in confident, articulate, and genuinely ready for interviews.',
       name: 'Dr. Priya Sharma',
       role: 'Placement Officer',
       college: 'National Engineering College',
@@ -167,7 +167,7 @@ export default function Home() {
       rating: 5,
     },
     {
-      quote: 'Their year-wise approach is exactly what colleges need. By final year, learners have already been preparing for three years — it shows.',
+      quote: 'Their step-by-step approach is exactly what colleges need. By the final stage, participants have already been preparing for years — it shows.',
       name: 'Prof. Ramesh Nair',
       role: 'Training & Placement Head',
       college: 'State Technical University',
@@ -177,7 +177,7 @@ export default function Home() {
     {
       quote: 'We saw a 40% improvement in aptitude test performance after the flagship program. The structured practice and individual feedback made all the difference.',
       name: 'Ananya Verma',
-      role: 'Learner, B.Tech 2024',
+      role: 'Participant, B.Tech 2024',
       college: 'Engineering College',
       initials: 'AV',
       rating: 5,
@@ -195,15 +195,15 @@ export default function Home() {
   const faqs = [
     {
       question: 'What is 4Ability Hive and what services do you provide?',
-      answer: '4Ability Hive is a Learning & Development company specializing in employability training for learners and corporate professionals. We offer comprehensive programs in soft skills, communication, aptitude training, placement readiness, and corporate training solutions across India.',
+      answer: '4Ability Hive is a Learning & Development company specializing in employability training for individuals and corporate professionals. We offer comprehensive programs in soft skills, communication, aptitude training, placement readiness, and corporate training solutions across India.',
     },
     {
-      question: 'How does the year-wise learning approach work for college learners?',
-      answer: 'Our progressive approach starts from first year with foundation skills (self-awareness, grooming, learning mindset), builds professional communication and adaptability in second year, develops leadership and emotional intelligence in third year, and culminates with advanced aptitude and placement preparation in final year. This ensures learners are continuously developing rather than cramming skills at the last minute.',
+      question: 'How does the step-by-step learning approach work for college participants?',
+      answer: 'Our progressive approach starts from Step 1 with foundation skills (self-awareness, grooming, learning mindset), builds professional communication and adaptability in Step 2, develops leadership and emotional intelligence in Step 3, and culminates with advanced aptitude and placement preparation in the final step. This ensures participants are continuously developing rather than cramming skills at the last minute.',
     },
     {
       question: 'What makes your training methodology different from traditional classroom teaching?',
-      answer: 'We follow a 5-step experiential learning methodology: Assess → Learn → Practice → Feedback → Improve. Unlike passive lectures, 70% of our time is spent on hands-on activities, role-plays, simulations, and continuous feedback. Learners actively participate and apply what they learn in real workplace scenarios.',
+      answer: 'We follow a 5-step experiential learning methodology: Assess → Learn → Practice → Feedback → Improve. Unlike passive lectures, 70% of our time is spent on hands-on activities, role-plays, simulations, and continuous feedback. Participants actively engage and apply what they learn in real workplace scenarios.',
     },
     {
       question: 'What results can institutions expect from your training programs?',
@@ -256,6 +256,15 @@ export default function Home() {
         ref={heroRef}
         className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-[#0A1628] via-[#0F1F35] to-[#000000]"
       >
+        {/* Hero Background Image */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/images/hero/hero-main-bg.jpg"
+            alt="Professional training session with diverse participants"
+            className="w-full h-full object-cover opacity-20"
+          />
+        </div>
+
         {/* 3D Background Scene */}
         <Suspense fallback={null}>
           <FloatingScene />
@@ -311,7 +320,7 @@ export default function Home() {
                     transition={{ delay: 0.3, duration: 0.6 }}
                     className="block"
                   >
-                    Transform Into
+                    Transforming Individuals.
                   </motion.span>
                   <motion.span
                     initial={{ opacity: 0, y: 30 }}
@@ -319,7 +328,7 @@ export default function Home() {
                     transition={{ delay: 0.5, duration: 0.6 }}
                     className="block bg-gradient-to-r from-[#FF6B35] via-[#F97316] to-[#3B82F6] bg-clip-text text-transparent"
                   >
-                    Industry-Ready
+                    Empowering Leaders.
                   </motion.span>
                   <motion.span
                     initial={{ opacity: 0, y: 30 }}
@@ -327,7 +336,7 @@ export default function Home() {
                     transition={{ delay: 0.7, duration: 0.6 }}
                     className="block"
                   >
-                    Professionals
+                    Building Teams.
                   </motion.span>
                 </motion.h1>
 
@@ -338,7 +347,7 @@ export default function Home() {
                   transition={{ delay: 0.9 }}
                   className="text-lg text-gray-300 mb-8 max-w-xl leading-relaxed"
                 >
-                  Join <span className="font-semibold text-[#FF6B35]">10,000+ learners</span> who transformed their careers with our proven system combining aptitude, communication & workplace readiness training.
+                  Join <span className="font-semibold text-[#FF6B35]">10,000+ professionals</span> who transformed their careers with our proven system combining aptitude, communication & workplace readiness training.
                 </motion.p>
 
                 {/* CTAs */}
@@ -425,6 +434,78 @@ export default function Home() {
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white via-white/50 to-transparent z-10" />
       </section>
 
+      {/* ═══════════════ KEY OUTCOMES SECTION ═══════════════ */}
+      <section className="section bg-white relative overflow-hidden">
+        <div className="container">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-display font-black text-gray-800 mb-4">
+              From Individuals to <span className="gradient-text">Industry-Ready Professionals</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Our Transformation Journey
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            {/* Industry Ready Graduates */}
+            <div className="group relative p-8 rounded-3xl border-2 border-orange/20 hover:border-orange/40 bg-white hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+              <div className="mb-4 h-16 flex items-center justify-center">
+                <img
+                  src="/images/outcomes/campus-placement.jpg"
+                  alt="Graduates celebrating placement success"
+                  className="w-16 h-16 rounded-full object-cover"
+                />
+              </div>
+              <h3 className="text-xl font-display font-bold text-gray-800 mb-2 group-hover:text-orange transition-colors">
+                Industry-Ready Graduates
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Transforming individuals into confident professionals ready for the workplace
+              </p>
+            </div>
+
+            {/* An Efficient Team */}
+            <div className="group relative p-8 rounded-3xl border-2 border-purple/20 hover:border-purple/40 bg-white hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+              <div className="mb-4 h-16 flex items-center justify-center">
+                <img
+                  src="/images/features/soft-skills.svg"
+                  alt="Team collaboration illustration"
+                  className="w-16 h-16"
+                />
+              </div>
+              <h3 className="text-xl font-display font-bold text-gray-800 mb-2 group-hover:text-purple transition-colors">
+                An Efficient Team
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Building collaborative teams that work together seamlessly
+              </p>
+            </div>
+
+            {/* A Leader Not a Boss */}
+            <div className="group relative p-8 rounded-3xl border-2 border-teal/20 hover:border-teal/40 bg-white hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+              <div className="text-5xl mb-4">👔</div>
+              <h3 className="text-xl font-display font-bold text-gray-800 mb-2 group-hover:text-teal transition-colors">
+                A Leader, Not a Boss
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Developing leaders who inspire and empower their teams
+              </p>
+            </div>
+
+            {/* Campus to Corporate */}
+            <div className="group relative p-8 rounded-3xl border-2 border-blue-500/20 hover:border-blue-500/40 bg-white hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+              <div className="text-5xl mb-4">🚀</div>
+              <h3 className="text-xl font-display font-bold text-gray-800 mb-2 group-hover:text-blue-500 transition-colors">
+                Campus to Corporate & Personality Development
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                Bridging the gap between academic learning and corporate excellence through comprehensive personality development
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ═══════════════ RESULTS SECTION ═══════════════ */}
       <section className="section bg-white relative overflow-hidden">
         {/* Background decorative elements */}
@@ -437,11 +518,11 @@ export default function Home() {
               <Zap className="w-4 h-4 text-orange" />
               <span className="text-sm font-bold text-orange">Real Impact, Real Numbers</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-display font-black text-gray-900 mb-4">
-              What Do Learners <span className="gradient-text">Actually Achieve?</span>
+            <h2 className="text-4xl md:text-5xl font-display font-black text-gray-800 mb-4">
+              What Do Participants <span className="gradient-text">Actually Achieve?</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Measurable outcomes from learners who completed our comprehensive training programs
+              Measurable outcomes from participants who completed our comprehensive training programs
             </p>
           </div>
 
@@ -452,7 +533,7 @@ export default function Home() {
                 <div className="text-7xl font-display font-black mb-2 bg-gradient-to-br from-orange to-orange-dark bg-clip-text text-transparent">
                   85%
                 </div>
-                <div className="text-2xl font-display font-bold text-gray-900 mb-3">
+                <div className="text-2xl font-display font-bold text-gray-800 mb-3">
                   Aptitude Improvement
                 </div>
                 <p className="text-gray-600 font-medium">
@@ -461,7 +542,7 @@ export default function Home() {
               </div>
               <div className="mt-6 pt-6 border-t border-gray-200">
                 <p className="text-sm text-gray-500 text-center leading-relaxed">
-                  Learners show dramatic improvement in quantitative, logical reasoning, and data interpretation after our structured training
+                  Participants show dramatic improvement in quantitative, logical reasoning, and data interpretation after our structured training
                 </p>
               </div>
             </div>
@@ -472,7 +553,7 @@ export default function Home() {
                 <div className="text-7xl font-display font-black mb-2 bg-gradient-to-br from-purple to-purple-light bg-clip-text text-transparent">
                   95%
                 </div>
-                <div className="text-2xl font-display font-bold text-gray-900 mb-3">
+                <div className="text-2xl font-display font-bold text-gray-800 mb-3">
                   Communication Boost
                 </div>
                 <p className="text-gray-600 font-medium">
@@ -481,7 +562,7 @@ export default function Home() {
               </div>
               <div className="mt-6 pt-6 border-t border-gray-200">
                 <p className="text-sm text-gray-500 text-center leading-relaxed">
-                  Learners report significant confidence gains in verbal communication, presentations, and professional interactions
+                  Participants report significant confidence gains in verbal communication, presentations, and professional interactions
                 </p>
               </div>
             </div>
@@ -492,7 +573,7 @@ export default function Home() {
                 <div className="text-7xl font-display font-black mb-2 bg-gradient-to-br from-teal to-cyan-500 bg-clip-text text-transparent">
                   3x
                 </div>
-                <div className="text-2xl font-display font-bold text-gray-900 mb-3">
+                <div className="text-2xl font-display font-bold text-gray-800 mb-3">
                   Interview Success
                 </div>
                 <p className="text-gray-600 font-medium">
@@ -510,7 +591,7 @@ export default function Home() {
           {/* Bottom CTA */}
           <div className="text-center mt-16">
             <p className="text-gray-600 mb-6 text-lg">
-              Join <span className="font-bold text-gray-900">10,000+ learners</span> who transformed their careers with 4Ability Hive
+              Join <span className="font-bold text-gray-800">10,000+ professionals</span> who transformed their careers with 4Ability Hive
             </p>
             <Link href="/success-stories" className="btn btn-lg bg-gradient-to-r from-orange to-purple text-white hover:shadow-2xl hover:scale-105 transition-all inline-flex">
               Read Success Stories
@@ -572,16 +653,16 @@ export default function Home() {
         <div className="container">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
             {[
-              { value: 10000, suffix: '+', label: 'Learners Trained', desc: 'Across colleges & corporates' },
+              { value: 10000, suffix: '+', label: 'Professionals Trained', desc: 'Across colleges & corporates' },
               { value: 50,   suffix: '+', label: 'Institutions',     desc: 'Colleges and corporate clients' },
               { value: 90,   suffix: 'hrs', label: 'Flagship Program',desc: 'Comprehensive training' },
-              { value: 95,   suffix: '%',  label: 'Satisfaction',    desc: 'From learners & institutions' },
+              { value: 95,   suffix: '%',  label: 'Satisfaction',    desc: 'From participants & institutions' },
             ].map((s) => (
               <div key={s.label} className="py-4">
-                <div className="text-5xl md:text-6xl font-display font-black leading-none mb-2 opacity-95">
+                <div className="text-5xl md:text-6xl font-display font-black text-white leading-none mb-2 opacity-95">
                   <span className="count-up" data-target={s.value} data-suffix={s.suffix}>0{s.suffix}</span>
                 </div>
-                <div className="font-display font-bold text-lg mb-1">{s.label}</div>
+                <div className="font-display font-bold text-white text-lg mb-1">{s.label}</div>
                 <div className="text-orange-100 text-sm">{s.desc}</div>
               </div>
             ))}
@@ -597,6 +678,14 @@ export default function Home() {
             <div className="order-2 lg:order-1">
               <div className="relative rounded-3xl overflow-hidden"
                    style={{ background: 'linear-gradient(135deg, #0F172A 0%, #1E293B 100%)', padding: '3rem', minHeight: '480px' }}>
+                {/* Background Image */}
+                <div className="absolute inset-0 opacity-10">
+                  <img
+                    src="/images/features/learning-path.svg"
+                    alt="Progressive learning pathway"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
                 {/* Gradient blobs */}
                 <div className="absolute top-0 right-0 w-64 h-64 rounded-full opacity-20"
                      style={{ background: 'radial-gradient(circle, rgba(249,115,22,0.6) 0%, transparent 70%)' }} />
@@ -606,16 +695,15 @@ export default function Home() {
                 <div className="relative z-10">
                   <div className="text-5xl mb-4">🎓</div>
                   <h3 className="text-2xl font-display font-black text-white mb-4">
-                    Why Is Employability a Process of Steps,<br />Not a Last-Minute Effort?
+                    Building Leaders and Teams,<br />Step by Step
                   </h3>
                   <p className="text-gray-300 leading-relaxed mb-8">
-                    Learners who start in first year arrive at placements with years of practice.
-                    Our progressive, year-wise approach ensures your learners are always ahead.
+                    Our progressive approach transforms individuals into industry-ready professionals, effective team members, and inspiring leaders through continuous development.
                   </p>
 
-                  {/* Timeline preview */}
+                  {/* Steps preview */}
                   <div className="space-y-4">
-                    {['Year 1 — Foundation & Confidence', 'Year 2 — Professional Skills', 'Year 3 — Leadership & Growth', 'Year 4 — Placement Excellence'].map((item, idx) => (
+                    {['Foundation Skills — Build confidence and self-awareness', 'Professional Development — Master communication and collaboration', 'Leadership Growth — Develop emotional intelligence and team management', 'Career Excellence — Achieve placement readiness and corporate success'].map((item, idx) => (
                       <div key={idx} className="flex items-center gap-3">
                         <div className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 text-sm font-bold"
                              style={{ background: idx === 3 ? '#F97316' : 'rgba(249,115,22,0.20)', color: idx === 3 ? 'white' : '#F97316' }}>

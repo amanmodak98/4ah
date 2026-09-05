@@ -42,7 +42,7 @@ export default function Testimonials() {
       name: 'Dr. Priya Sharma',
       role: 'Placement Officer',
       institution: 'National Institute of Technology',
-      content: 'The 4Ability Hive program transformed our final year students. Their confidence levels skyrocketed, and we saw a 40% improvement in placement success rates. The trainers are exceptional.',
+      content: 'The 4Ability Hive program transformed our final year participants. Their confidence levels skyrocketed, and we saw a 40% improvement in placement success rates. The trainers are exceptional.',
       rating: 5,
       image: '/images/testimonial-1.jpg',
     },
@@ -56,7 +56,7 @@ export default function Testimonials() {
     },
     {
       name: 'Ananya Verma',
-      role: 'Final Year Student',
+      role: 'Final Year Participant',
       institution: 'Engineering College',
       content: 'The 90-hour flagship program prepared me completely for campus placements. The aptitude training and mock interviews gave me the confidence to crack multiple offers. Highly recommended!',
       rating: 5,
@@ -66,7 +66,7 @@ export default function Testimonials() {
       name: 'Prof. Suresh Menon',
       role: 'Dean - Career Development',
       institution: 'Management Institute',
-      content: 'Year-wise training from 4Ability Hive has become integral to our curriculum. Students develop progressively, and by final year, they are truly industry-ready. A game-changer for our institution.',
+      content: 'Year-wise training from 4Ability Hive has become integral to our curriculum. Participants develop progressively, and by final year, they are truly industry-ready. A game-changer for our institution.',
       rating: 5,
       image: '/images/testimonial-4.jpg',
     },
@@ -134,7 +134,7 @@ export default function Testimonials() {
           <div className="inline-flex items-center justify-center space-x-2 px-6 py-3 bg-orange-500/10 rounded-full border border-orange-500/30">
             <Star className="w-5 h-5 text-orange-500 fill-orange-500" />
             <span className="font-bold text-navy-900">
-              Rated 4.8/5 by 500+ Students and Institutions
+              Rated 4.8/5 by 500+ Participants and Institutions
             </span>
           </div>
         </div>

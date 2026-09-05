@@ -35,7 +35,7 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
             <li key={item.url} className="flex items-center gap-2">
               <ChevronRight className="w-4 h-4 text-gray-400" />
               {isLast ? (
-                <span className="text-gray-900 font-semibold" aria-current="page">
+                <span className="text-gray-800 font-semibold" aria-current="page">
                   {item.name}
                 </span>
               ) : (

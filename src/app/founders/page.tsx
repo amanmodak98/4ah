@@ -342,7 +342,7 @@ export default function FoundersPage() {
                 <div className="text-sm font-bold text-teal mb-2">2020-Present</div>
                 <h3 className="text-2xl font-display font-bold text-gray-900 mb-3">Growing Impact</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Today, 4Ability Hive has trained 10,000+ learners across 50+ institutions. Our programs span aptitude training, soft skills,
+                  Today, 4Ability Hive has trained 10,000+ participants across 50+ institutions. Our programs span aptitude training, soft skills,
                   communication, and workplace readiness—delivered through a blend of classroom training, online modules, and continuous mentorship.
                   But numbers aside, what drives us every day is seeing confident, articulate, job-ready professionals walk out of our programs.
                 </p>
@@ -360,7 +360,7 @@ export default function FoundersPage() {
               <Users className="w-4 h-4 text-orange" />
               <span className="text-sm font-bold text-orange">Our Culture</span>
             </div>
-            <h2 className="text-4xl md:text-5xl font-display font-black mb-6">
+            <h2 className="text-4xl md:text-5xl font-display font-black text-white mb-6">
               What We{' '}
               <span className="gradient-text">Stand For</span>
             </h2>
@@ -394,7 +394,7 @@ export default function FoundersPage() {
                 <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-orange to-purple flex items-center justify-center mb-5 group-hover:scale-110 transition-transform">
                   <value.icon className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="text-2xl font-display font-bold mb-3">{value.title}</h3>
+                <h3 className="text-2xl font-display font-bold text-white mb-3">{value.title}</h3>
                 <p className="text-gray-300 leading-relaxed">{value.desc}</p>
               </div>
             ))}

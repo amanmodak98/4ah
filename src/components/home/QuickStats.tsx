@@ -4,7 +4,7 @@ import { Target, Users, TrendingUp, Award } from 'lucide-react';
 
 export default function QuickStats() {
   const stats = [
-    { icon: Users,      value: '10k+', label: 'Learners Trained',    desc: 'Across colleges and corporates' },
+    { icon: Users,      value: '10k+', label: 'Participants Trained',    desc: 'Across colleges and corporates' },
     { icon: Target,     value: '90+',   label: 'Hours Training',      desc: 'Comprehensive flagship program' },
     { icon: TrendingUp, value: '95%',   label: 'Satisfaction Rate',   desc: 'From learners and institutions' },
     { icon: Award,      value: '50+',   label: 'Partner Institutions',desc: 'Colleges and corporate clients' },
@@ -18,7 +18,7 @@ export default function QuickStats() {
             Our <span className="gradient-text">Impact</span>
           </h2>
           <p className="text-gray-400 text-lg max-w-xl mx-auto">
-            Measurable transformations across learners, colleges and corporates.
+            Measurable transformations across participants, colleges and corporates.
           </p>
         </div>
 
