@@ -173,6 +173,7 @@ export default function FoundersPage() {
                           src={founder.image}
                           alt={founder.name}
                           fill
+                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 300px, 300px"
                           className="object-cover group-hover:scale-105 transition-transform duration-500"
                           onError={(e) => {
                             const target = e.target as HTMLImageElement;
