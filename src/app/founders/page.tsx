@@ -2,16 +2,14 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { Quote, Linkedin, Mail, ChevronDown, Sparkles, Heart, Target, Users } from 'lucide-react';
+import { Quote, Linkedin, Mail, Sparkles, Heart, Target, Users } from 'lucide-react';
 import { useFadeInUp, useStaggerAnimation } from '@/hooks/useGSAP';
-import { useState } from 'react';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import { breadcrumbSchema } from '@/lib/metadata';
 
 export default function FoundersPage() {
   const titleRef = useFadeInUp();
   const cardsRef = useStaggerAnimation(5);
-  const [expandedCard, setExpandedCard] = useState<number | null>(null);
 
   const founders = [
     {
@@ -23,7 +21,7 @@ export default function FoundersPage() {
       quote: 'Every individual has untapped potential. My role is not merely to make them learn, but to create the environment, practice and guidance that helps that potential become capability.',
       vision: 'To build confident, skilled and adaptable individuals—and enable organisations to build an efficient, capable and future-ready workforce.',
       expertise: ['Communication Skills', 'Leadership Development', 'Personality Development', 'Interpersonal & Behavioural Skills', 'Workplace Readiness', 'Employability', 'Personal Effectiveness', 'Adaptability & Resilience', 'Change Management', 'Emotional Intelligence', 'Coaching & Mentoring', 'Verbal Aptitude Training'],
-      background: '15+ years of experience in Training & Facilitation. Certified by Google, NSD. Passionate Learning & Development professional specializing in campus-to-corporate skill development and corporate behavioural training. Has worked extensively with students, young professionals, educators, and corporate teams across academic institutions, government ITIs, CSR initiatives, and corporate programmes. Delivers practical, high-impact training focused on helping individuals strengthen workplace skills, enhance professional presence, and achieve lasting growth. Believes in experiential and learner-centric learning—creating opportunities for participants to learn, participate, practise, reflect and apply skills in real-world situations. For her, training has never been about status—it\'s about impact.',
+      background: '15+ years of experience in Training & Facilitation. Certified by Google, NSD. Passionate Learning & Development professional specializing in campus-to-corporate skill development and corporate behavioural training.\n\nHas worked extensively with students, young professionals, educators, and corporate teams across academic institutions, government ITIs, CSR initiatives, and corporate programmes. Delivers practical, high-impact training focused on helping individuals strengthen workplace skills, enhance professional presence, and achieve lasting growth.\n\nBelieves in experiential and learner-centric learning—creating opportunities for participants to learn, participate, practise, reflect and apply skills in real-world situations.\n\nFor her, training has never been about status—it\'s about impact. True training is not just about sharing knowledge—it is about building confidence, developing skills, changing mindsets, and creating positive behavioral transformation.',
       color: 'from-orange-500 to-red-500',
       tagBg: 'bg-orange/10',
       tagText: 'text-orange',
@@ -40,7 +38,7 @@ export default function FoundersPage() {
       quote: 'Skills are not just taught—they are practiced, refined, and internalized through real-world application and continuous feedback.',
       vision: 'Bridging the employability gap by delivering practical, industry-aligned training that makes learners workplace-ready from their first day.',
       expertise: ['Aptitude Training', 'Technical Skills', 'Assessment Design', 'Trainer Development'],
-      background: '15+ years in aptitude and soft skills training. Designed proprietary assessment frameworks used by leading colleges. Trained 5000+ learners with 90%+ placement rates.',
+      background: '15+ years of experience in aptitude and soft skills training, specializing in quantitative reasoning, logical thinking, and professional development.\n\nDesigned proprietary assessment frameworks that are now used by leading colleges across India. Expert in creating structured curricula that combine theoretical knowledge with hands-on practice.\n\nTrained over 5,000+ individuals with an impressive 90%+ placement success rate. Passionate about bridging the employability gap through practical, industry-aligned training that prepares individuals to be workplace-ready from day one.\n\nBelieves that skills are not just taught—they are practiced, refined, and internalized through real-world application and continuous feedback.',
       color: 'from-purple-500 to-pink-500',
       tagBg: 'bg-purple/10',
       tagText: 'text-purple',
@@ -49,15 +47,15 @@ export default function FoundersPage() {
       borderColor: 'border-purple',
     },
     {
-      name: 'Aman Modak',
-      role: 'Co-Founder & Head of Technology',
+      name: 'Aman Kumar Modak',
+      role: 'Co-Founder & Head of Technology | Full-Stack Developer | OCI DevOps Professional | GenAI Academy Certified',
       image: '/founders/aman.jpg',
       linkedin: 'https://linkedin.com/in/aman-modak',
       email: 'aman@4ah.in',
       quote: 'Technology should amplify human potential. We build tools that make learning measurable, feedback actionable, and outcomes transparent.',
-      vision: 'Leveraging technology to scale personalized learning experiences and provide data-driven insights that continuously improve training outcomes.',
-      expertise: ['EdTech Solutions', 'Learning Analytics', 'Platform Development', 'Digital Transformation'],
-      background: '8+ years in software development and edtech. Built learning management systems and assessment platforms. Expert in scaling technology for educational institutions.',
+      vision: 'Leveraging cutting-edge cloud technologies, DevOps practices, and AI to scale personalized learning experiences and provide data-driven insights that continuously improve training outcomes.',
+      expertise: ['Full-Stack Development (Next.js, React, Node.js)', 'DevOps & Cloud (AWS, OCI, Docker, Kubernetes)', 'AI/ML & Generative AI (Vertex AI, Gemini)', 'Database Management (PostgreSQL, MySQL, Prisma)', 'CI/CD & Infrastructure as Code (Terraform)', 'EdTech Solutions & Learning Analytics', 'Digital Transformation', 'REST APIs & Microservices'],
+      background: 'Currently pursuing Bachelor of Technology in Computer Science at Roorkee Institute of Technology, bringing strong academic rigor combined with extensive hands-on technical experience.\n\nCertified as an Oracle Cloud Infrastructure 2025 DevOps Professional with expertise in CI/CD automation, containerized microservices with Kubernetes, Infrastructure as Code using Terraform, DevSecOps practices, and cloud monitoring. Also holds Google Cloud GenAI Academy Certification with skills in Vertex AI, Gemini APIs, Imagen, and Multimodal RAG.\n\nFull-Stack Developer with proven experience building production-grade applications including Travo Bharat (comprehensive travel platform) and Kashavi Infotech (AI-powered digital marketing website), both featuring complete admin dashboards and deployed on AWS with Docker and CI/CD pipelines.\n\nSoftware Developer at Infirexa.tech, where developed enterprise-level ERP system for colleges, building scalable solutions for educational institutions.\n\nAIMA Student Management Games Finalist \'25, demonstrating strategic business acumen alongside technical expertise. Passionate about leveraging cloud technologies, DevOps practices, and AI to drive impactful solutions in the EdTech space, making learning measurable and outcomes transparent.',
       color: 'from-emerald-500 to-teal-500',
       tagBg: 'bg-teal/10',
       tagText: 'text-teal',
@@ -66,15 +64,15 @@ export default function FoundersPage() {
       borderColor: 'border-teal',
     },
     {
-      name: 'Aarti Tiwari',
-      role: 'Chief Marketing Officer (CMO)',
+      name: 'Aarti Pandey',
+      role: 'Soft Skills & Cosmetology Trainer',
       image: '/founders/aarti.jpg',
-      linkedin: 'https://linkedin.com/in/aarti-tiwari',
+      linkedin: 'https://linkedin.com/in/aarti-pandey',
       email: 'aarti@4ah.in',
-      quote: 'Great marketing isn\'t about selling—it\'s about building genuine connections and communicating the transformative impact we create for every learner.',
-      vision: 'Building a brand that resonates with institutions and learners alike, while driving growth through strategic partnerships and impactful storytelling.',
-      expertise: ['Marketing Strategy', 'Brand Development', 'Partnership Growth', 'Digital Marketing'],
-      background: '11+ years in marketing, communications, and brand strategy. Led growth initiatives across educational institutions. Expert in building strategic partnerships and driving organizational visibility.',
+      quote: 'My goal is to help every individual become more confident, professional, presentable, and future-ready.',
+      vision: 'Building confidence, developing skills, changing mindsets, and creating positive behavioral transformation in every individual.',
+      expertise: ['Communication Skills', 'Personality Development', 'Presentation Skills', 'Teamwork & Leadership', 'Emotional Intelligence', 'Interview Skills', 'Workplace Etiquette', 'Professional Grooming', 'Personal Appearance', 'Client Handling'],
+      background: '5 years of professional training experience as a passionate and learner-focused Soft Skills Facilitator and Cosmetology Trainer.\n\nConducts interactive, activity-based, and learner-centric training sessions empowering individuals through effective communication, confidence building, personality development, and professional grooming.\n\nStrong expertise in Personal Appearance, Client Handling, and Grooming Etiquette. Understands the importance of confident self-presentation, body language, and professional personality in personal and workplace success.\n\nBelieves that true training is not just about sharing knowledge—it is about building confidence, developing skills, changing mindsets, and creating positive behavioral transformation.',
       color: 'from-amber-500 to-orange-500',
       tagBg: 'bg-amber-500/10',
       tagText: 'text-amber-500',
@@ -246,26 +244,19 @@ export default function FoundersPage() {
                       </p>
                     </div>
 
-                    {/* Expandable background section */}
+                    {/* Background & Experience - Always visible */}
                     <div>
-                      <button
-                        onClick={() => setExpandedCard(expandedCard === index ? null : index)}
-                        className="flex items-center justify-between w-full text-left p-4 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors group/expand"
-                      >
-                        <span className="font-bold text-gray-900">Background & Experience</span>
-                        <ChevronDown
-                          className={`w-5 h-5 text-gray-500 transition-transform ${
-                            expandedCard === index ? 'rotate-180' : ''
-                          }`}
-                        />
-                      </button>
-                      {expandedCard === index && (
-                        <div className="mt-4 p-6 rounded-xl bg-white border border-gray-200 animate-slide-up">
-                          <p className="text-gray-700 leading-relaxed">
-                            {founder.background}
-                          </p>
-                        </div>
-                      )}
+                      <h3 className="text-sm font-bold text-gray-500 uppercase tracking-wider mb-3">Background & Experience</h3>
+                      <div className="p-6 rounded-xl bg-gray-50 border border-gray-200">
+                        <ul className="space-y-3">
+                          {founder.background.split('\n\n').map((point, idx) => (
+                            <li key={idx} className="flex items-start gap-3">
+                              <span className={`w-2 h-2 rounded-full ${founder.tagBg} ${founder.borderColor} border-2 mt-2 flex-shrink-0`}></span>
+                              <span className="text-gray-700 leading-relaxed">{point}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
                   </div>
                 </div>
