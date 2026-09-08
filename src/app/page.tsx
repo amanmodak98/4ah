@@ -264,7 +264,7 @@ export default function Home() {
              }} />
 
         {/* Hero Content */}
-        <div className="container relative z-20 px-6 py-20">
+        <div className="container relative z-20 px-6 py-4">
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
 
@@ -294,7 +294,7 @@ export default function Home() {
                 {/* Main Headline */}
                 <motion.h1
                   className="font-display font-bold text-white mb-6"
-                  style={{ fontSize: 'clamp(2.5rem, 6vw, 4.5rem)', lineHeight: 1.1, letterSpacing: '-0.02em' }}
+                  style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', lineHeight: 1.1, letterSpacing: '-0.02em' }}
                 >
                   <motion.span
                     initial={{ opacity: 0, y: 30 }}
@@ -329,7 +329,7 @@ export default function Home() {
                   transition={{ delay: 0.9 }}
                   className="text-lg text-gray-300 mb-8 max-w-xl leading-relaxed"
                 >
-                  Join <span className="font-semibold text-[#FF6B35]">10,000+ professionals</span> who transformed their careers with our proven system combining aptitude, communication & workplace readiness training.
+                  Join 10,000+ learners and professionals who have transformed their career trajectories through our outcome-driven learning ecosystem. From campus to corporate, we blend aptitude, communication, behavioural skills and leadership skills,to build confident individuals and high-performing, future-ready teams.
                 </motion.p>
 
                 {/* CTAs */}
@@ -378,34 +378,41 @@ export default function Home() {
                 </motion.div>
               </motion.div>
 
-              {/* Right: Stats Bento Grid */}
+              {/* Right: Stats + Image */}
               <motion.div
                 initial={{ opacity: 0, x: 50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.5 }}
-                className="grid grid-cols-2 gap-4"
+                className="space-y-6"
               >
-                {stats.map((stat, i) => (
-                  <motion.div
-                    key={stat.label}
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.7 + i * 0.1, duration: 0.6 }}
-                    className="hero-stat-card group relative p-6 rounded-2xl backdrop-blur-md border border-white/10 hover:border-white/30 transition-all duration-500 hover:scale-105 cursor-default"
-                    style={{
-                      background: 'linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05))',
-                      boxShadow: '0 8px 32px rgba(0,0,0,0.3)'
-                    }}
-                  >
-                    <div className="absolute inset-0 bg-gradient-to-br from-[#FF6B35]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl" />
-                    <div className="relative z-10">
-                      <div className="text-4xl md:text-5xl font-display font-black mb-2 bg-gradient-to-br from-[#FF6B35] to-[#3B82F6] bg-clip-text text-transparent">
+                {/* Stats Row */}
+                <div className="grid grid-cols-2 gap-4">
+                  {stats.map((stat, i) => (
+                    <motion.div
+                      key={stat.label}
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ delay: 0.7 + i * 0.1, duration: 0.5 }}
+                      className="text-center p-4 rounded-xl backdrop-blur-md border border-white/10"
+                      style={{ background: 'rgba(255,255,255,0.05)' }}
+                    >
+                      <div className="text-3xl md:text-4xl font-display font-black mb-1 bg-gradient-to-br from-[#FF6B35] to-[#3B82F6] bg-clip-text text-transparent">
                         {stat.value}{stat.suffix}
                       </div>
                       <div className="text-xs text-gray-400 font-medium uppercase tracking-wide">{stat.label}</div>
-                    </div>
-                  </motion.div>
-                ))}
+                    </motion.div>
+                  ))}
+                </div>
+
+                {/* 4AH Image */}
+                <div className="relative rounded-2xl overflow-hidden border border-white/10 backdrop-blur-sm">
+                  <img
+                    src="/4ah.jpeg"
+                    alt="4Ability Hive Training Session"
+                    className="w-full h-auto object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                </div>
               </motion.div>
 
             </div>
@@ -431,13 +438,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {/* Industry Ready Graduates */}
             <div className="group relative p-8 rounded-3xl border-2 border-orange/20 hover:border-orange/40 bg-white hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-              <div className="mb-4 h-16 flex items-center justify-center">
-                <img
-                  src="/images/outcomes/campus-placement.jpg"
-                  alt="Graduates celebrating placement success"
-                  className="w-16 h-16 rounded-full object-cover"
-                />
-              </div>
+              <div className="text-5xl mb-4">🎓</div>
               <h3 className="text-xl font-display font-bold text-gray-800 mb-2 group-hover:text-orange transition-colors">
                 Industry-Ready Graduates
               </h3>
@@ -448,13 +449,7 @@ export default function Home() {
 
             {/* An Efficient Team */}
             <div className="group relative p-8 rounded-3xl border-2 border-purple/20 hover:border-purple/40 bg-white hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
-              <div className="mb-4 h-16 flex items-center justify-center">
-                <img
-                  src="/images/features/soft-skills.svg"
-                  alt="Team collaboration illustration"
-                  className="w-16 h-16"
-                />
-              </div>
+              <div className="text-5xl mb-4">🤝</div>
               <h3 className="text-xl font-display font-bold text-gray-800 mb-2 group-hover:text-purple transition-colors">
                 An Efficient Team
               </h3>

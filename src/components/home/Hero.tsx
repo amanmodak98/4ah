@@ -81,7 +81,7 @@ export default function Hero() {
             ref={subtitleRef}
             className="text-xl md:text-2xl text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed"
           >
-            Comprehensive employability training programs that bridge the gap between academic education and workplace expectations. Build confidence, skills, and careers.
+            Join 10,000+ learners and professionals who have transformed their career trajectories through our outcome-driven learning ecosystem. From campus to corporate, we blend aptitude, communication, behavioural skills and leadership skills,to build confident individuals and high-performing, future-ready teams.
           </p>
 
           {/* Tagline Pills */}
