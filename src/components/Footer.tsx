@@ -59,6 +59,10 @@ export default function Footer() {
                 <Mail className="w-5 h-5 mr-3 text-orange-500" />
                 <a href="mailto:info@4ah.in">info@4ah.in</a>
               </div>
+              <div className="flex items-center text-neutral-400 hover:text-orange-400 transition-colors">
+                <Phone className="w-5 h-5 mr-3 text-orange-500" />
+                <a href="tel:+919152053225">+91 9152053225</a>
+              </div>
               <div className="flex items-center text-neutral-400">
                 <MapPin className="w-5 h-5 mr-3 text-orange-500" />
                 <span>India</span>

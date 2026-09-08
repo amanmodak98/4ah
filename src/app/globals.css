@@ -485,10 +485,9 @@
 
   .section-subtitle {
     font-size: 1.125rem;
-    color: inherit;
+    color: #374151;
     max-width: 42rem;
     line-height: 1.8;
-    opacity: 0.75;
   }
 
   /* Secondary / ghost button — works on both dark and light backgrounds */

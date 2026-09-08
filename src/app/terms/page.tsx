@@ -358,8 +358,8 @@ export default function TermsPage() {
                   </div>
                   <div className="flex items-center gap-3">
                     <Phone className="w-5 h-5 text-orange" />
-                    <a href="tel:+919999999999" className="text-gray-700 hover:text-orange transition-colors">
-                      +91 99999 99999
+                    <a href="tel:+919152053225" className="text-gray-700 hover:text-orange transition-colors">
+                      +91 9152053225
                     </a>
                   </div>
                 </div>

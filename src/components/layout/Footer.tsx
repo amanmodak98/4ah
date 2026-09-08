@@ -90,9 +90,9 @@ export default function Footer() {
                 <Mail className="w-4 h-4 flex-shrink-0" />
                 info@4ah.in
               </a>
-              <a href="tel:+919999999999" className="flex items-center gap-2 text-sm text-gray-400 hover:text-orange transition-colors">
+              <a href="tel:+919152053225" className="flex items-center gap-2 text-sm text-gray-400 hover:text-orange transition-colors">
                 <Phone className="w-4 h-4 flex-shrink-0" />
-                +91 99999 99999
+                +91 9152053225
               </a>
             </div>
 

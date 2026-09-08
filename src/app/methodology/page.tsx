@@ -167,7 +167,7 @@ export default function MethodologyPage() {
   ]);
 
   return (
-    <main className="min-h-screen pt-20 bg-[#0A0F1E]">
+    <main className="min-h-screen pt-20 bg-gradient-to-br from-orange-50 via-amber-50 to-orange-100">
       {/* JSON-LD Schema */}
       <script
         type="application/ld+json"
@@ -188,8 +188,8 @@ export default function MethodologyPage() {
       {/* Hero Section */}
       <section className="section-padding relative overflow-hidden">
         <div className="absolute inset-0">
-          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-orange-500/20 to-transparent rounded-full blur-3xl" />
-          <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tl from-blue-500/20 to-transparent rounded-full blur-3xl" />
+          <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-br from-orange-200/40 to-transparent rounded-full blur-3xl" />
+          <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tl from-amber-200/40 to-transparent rounded-full blur-3xl" />
         </div>
 
         <div className="container-custom relative z-10">
@@ -199,16 +199,16 @@ export default function MethodologyPage() {
             transition={{ duration: 0.6 }}
             className="text-center max-w-5xl mx-auto mb-20"
           >
-            <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-orange-500/10 to-blue-500/10 border border-orange-500/20 rounded-full px-6 py-3 backdrop-blur-xl mb-8">
-              <Zap className="w-4 h-4 text-orange-400" />
-              <span className="text-sm font-medium text-orange-300">Our Proven Approach</span>
+            <div className="inline-flex items-center space-x-2 bg-white/60 border border-orange-300 rounded-full px-6 py-3 backdrop-blur-xl mb-8 shadow-sm">
+              <Zap className="w-4 h-4 text-orange-600" />
+              <span className="text-sm font-medium text-orange-700">Our Proven Approach</span>
             </div>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-tight">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 leading-tight">
               Our <span className="text-gradient-animate">Training Methodology</span>
             </h1>
 
-            <p className="text-2xl text-neutral-300 leading-relaxed mb-8">
+            <p className="text-2xl text-gray-700 leading-relaxed mb-8">
               A structured, experiential learning framework designed for lasting transformation.
               Every module follows our proven 5-step cycle that moves participants from awareness to mastery.
             </p>
@@ -221,7 +221,7 @@ export default function MethodologyPage() {
             transition={{ duration: 0.8 }}
             className="relative max-w-6xl mx-auto"
           >
-            <div className="bg-gradient-to-br from-[#131B2E] to-[#0F1521] border border-white/10 rounded-3xl p-12 backdrop-blur-xl">
+            <div className="bg-white/80 border border-orange-200 rounded-3xl p-12 backdrop-blur-xl shadow-lg">
               <div className="flex flex-col md:flex-row items-center justify-center space-y-6 md:space-y-0 md:space-x-4 flex-wrap">
                 {['ASSESS', 'LEARN', 'PRACTICE', 'FEEDBACK', 'IMPROVE'].map((step, index) => (
                   <div key={step} className="flex items-center">
@@ -231,7 +231,7 @@ export default function MethodologyPage() {
                       transition={{ duration: 0.4, delay: 0.2 + index * 0.1 }}
                       className="flex items-center"
                     >
-                      <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center shadow-glow-orange">
+                      <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center shadow-orange">
                         <span className="text-white font-bold text-lg">{step}</span>
                       </div>
                     </motion.div>
@@ -240,13 +240,13 @@ export default function MethodologyPage() {
                         initial={{ width: 0 }}
                         animate={{ width: '3rem' }}
                         transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
-                        className="hidden md:block h-1 bg-gradient-to-r from-orange-500 to-blue-500 mx-2"
+                        className="hidden md:block h-1 bg-gradient-to-r from-orange-500 to-orange-600 mx-2"
                       />
                     )}
                   </div>
                 ))}
               </div>
-              <p className="text-center text-neutral-400 mt-8 text-lg">
+              <p className="text-center text-gray-700 mt-8 text-lg">
                 A continuous improvement cycle applied to every training module
               </p>
             </div>
@@ -255,7 +255,7 @@ export default function MethodologyPage() {
       </section>
 
       {/* Detailed Methodology Steps */}
-      <section ref={stepsRef} className="section-padding bg-[#0A0F1E]">
+      <section ref={stepsRef} className="section-padding bg-gradient-to-br from-orange-50 to-amber-50">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -282,10 +282,10 @@ export default function MethodologyPage() {
               >
                 {/* Connecting Line */}
                 {index < methodologySteps.length - 1 && (
-                  <div className="absolute left-12 top-full w-0.5 h-8 bg-gradient-to-b from-orange-500 to-blue-500 z-0 hidden lg:block" />
+                  <div className="absolute left-12 top-full w-0.5 h-8 bg-gradient-to-b from-orange-400 to-orange-500 z-0 hidden lg:block" />
                 )}
 
-                <div className={`relative bg-gradient-to-br ${step.bgColor} border border-white/10 hover:border-white/20 rounded-3xl p-10 backdrop-blur-xl transition-all duration-500`}>
+                <div className={`relative bg-white/90 border border-orange-200 hover:border-orange-300 rounded-3xl p-10 backdrop-blur-xl transition-all duration-500 shadow-md hover:shadow-lg`}>
                   <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
                     {/* Left: Icon & Title */}
                     <div className="lg:col-span-4">
@@ -294,24 +294,24 @@ export default function MethodologyPage() {
                           <step.icon className="w-12 h-12 text-white" />
                         </div>
                         <div>
-                          <div className="text-6xl font-bold text-orange-400/40 mb-2">{step.number}</div>
-                          <h3 className="text-4xl font-bold text-white mb-2">{step.title}</h3>
-                          <p className="text-xl text-orange-400 font-semibold">{step.subtitle}</p>
+                          <div className="text-6xl font-bold text-orange-300/50 mb-2">{step.number}</div>
+                          <h3 className="text-4xl font-bold text-gray-900 mb-2">{step.title}</h3>
+                          <p className="text-xl text-orange-600 font-semibold">{step.subtitle}</p>
                         </div>
                       </div>
                     </div>
 
                     {/* Right: Description & Details */}
                     <div className="lg:col-span-8">
-                      <p className="text-xl text-neutral-300 leading-relaxed mb-6">
+                      <p className="text-xl text-gray-700 leading-relaxed mb-6">
                         {step.description}
                       </p>
 
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         {step.details.map((detail, idx) => (
                           <div key={idx} className="flex items-start space-x-3">
-                            <CheckCircle2 className="w-5 h-5 text-orange-400 flex-shrink-0 mt-1" />
-                            <span className="text-neutral-300">{detail}</span>
+                            <CheckCircle2 className="w-5 h-5 text-orange-600 flex-shrink-0 mt-1" />
+                            <span className="text-gray-700">{detail}</span>
                           </div>
                         ))}
                       </div>
@@ -325,10 +325,10 @@ export default function MethodologyPage() {
       </section>
 
       {/* Core Principles */}
-      <section ref={principlesRef} className="section-padding relative overflow-hidden">
+      <section ref={principlesRef} className="section-padding relative overflow-hidden bg-gradient-to-br from-amber-50 to-orange-100">
         <div className="absolute inset-0">
-          <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-purple-500/10 to-transparent rounded-full blur-3xl" />
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-pink-500/10 to-transparent rounded-full blur-3xl" />
+          <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-orange-200/30 to-transparent rounded-full blur-3xl" />
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-amber-200/30 to-transparent rounded-full blur-3xl" />
         </div>
 
         <div className="container-custom relative z-10">
@@ -338,10 +338,10 @@ export default function MethodologyPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-20"
           >
-            <h2 className="section-title mb-6">
+            <h2 className="section-title mb-6 text-gray-900">
               Core <span className="text-gradient-animate">Training Principles</span>
             </h2>
-            <p className="section-subtitle mx-auto">
+            <p className="section-subtitle mx-auto text-gray-700">
               The foundational beliefs that shape every program we design and deliver
             </p>
           </motion.div>
@@ -356,13 +356,13 @@ export default function MethodologyPage() {
                 whileHover={{ y: -10, scale: 1.02 }}
                 className="group relative"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/20 to-blue-500/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500" />
-                <div className="relative h-full bg-gradient-to-br from-[#131B2E] to-[#0F1521] border border-white/10 group-hover:border-white/20 rounded-3xl p-8 backdrop-blur-xl transition-all duration-500">
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-300/30 to-amber-300/30 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-500" />
+                <div className="relative h-full bg-white/90 border border-orange-200 group-hover:border-orange-300 rounded-3xl p-8 backdrop-blur-xl transition-all duration-500 shadow-md">
                   <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
                     <principle.icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold text-white mb-4">{principle.title}</h3>
-                  <p className="text-neutral-400 leading-relaxed">{principle.description}</p>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{principle.title}</h3>
+                  <p className="text-gray-700 leading-relaxed">{principle.description}</p>
                 </div>
               </motion.div>
             ))}
@@ -371,7 +371,7 @@ export default function MethodologyPage() {
       </section>
 
       {/* Delivery Framework */}
-      <section ref={deliveryRef} className="section-padding bg-[#0A0F1E]">
+      <section ref={deliveryRef} className="section-padding bg-gradient-to-br from-orange-50 to-amber-50">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -379,10 +379,10 @@ export default function MethodologyPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="section-title mb-6">
+            <h2 className="section-title mb-6 text-gray-900">
               <span className="text-gradient-animate">Delivery Framework</span>
             </h2>
-            <p className="section-subtitle mx-auto">
+            <p className="section-subtitle mx-auto text-gray-700">
               Flexible, practical, and institution-friendly implementation
             </p>
           </motion.div>
@@ -425,15 +425,15 @@ export default function MethodologyPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={deliveryInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-gradient-to-br from-white/5 to-white/0 border border-white/10 hover:border-orange-500/30 rounded-2xl p-8 backdrop-blur-xl transition-all duration-300"
+                className="bg-white/90 border border-orange-200 hover:border-orange-400 rounded-2xl p-8 backdrop-blur-xl transition-all duration-300 shadow-md hover:shadow-lg"
               >
                 <div className="flex items-start space-x-4">
                   <div className="w-14 h-14 rounded-xl bg-gradient-to-br from-orange-500 to-orange-600 flex items-center justify-center flex-shrink-0">
                     <item.icon className="w-7 h-7 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-white mb-2">{item.title}</h3>
-                    <p className="text-neutral-400 leading-relaxed">{item.value}</p>
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
+                    <p className="text-gray-700 leading-relaxed">{item.value}</p>
                   </div>
                 </div>
               </motion.div>
@@ -443,9 +443,9 @@ export default function MethodologyPage() {
       </section>
 
       {/* CTA Section */}
-      <section ref={ctaRef} className="section-padding relative overflow-hidden">
+      <section ref={ctaRef} className="section-padding relative overflow-hidden bg-gradient-to-br from-amber-50 to-orange-100">
         <div className="absolute inset-0">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-orange-500/20 to-transparent rounded-full blur-3xl" />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-orange-300/30 to-transparent rounded-full blur-3xl" />
         </div>
 
         <div className="container-custom relative z-10">
@@ -453,13 +453,13 @@ export default function MethodologyPage() {
             initial={{ opacity: 0, y: 30 }}
             animate={ctaInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="bg-gradient-to-br from-[#131B2E] to-[#0F1521] border border-white/10 rounded-3xl p-16 backdrop-blur-xl text-center"
+            className="bg-white/90 border border-orange-200 rounded-3xl p-16 backdrop-blur-xl text-center shadow-xl"
           >
-            <Zap className="w-20 h-20 text-orange-400 mx-auto mb-8" />
-            <h2 className="text-5xl font-bold text-white mb-6">
+            <Zap className="w-20 h-20 text-orange-600 mx-auto mb-8" />
+            <h2 className="text-5xl font-bold text-gray-900 mb-6">
               Experience Our <span className="text-gradient-animate">Methodology</span> in Action
             </h2>
-            <p className="text-2xl text-neutral-300 max-w-3xl mx-auto mb-10 leading-relaxed">
+            <p className="text-2xl text-gray-700 max-w-3xl mx-auto mb-10 leading-relaxed">
               See how our proven 5-step process transforms participants into industry-ready professionals
             </p>
 
@@ -468,7 +468,7 @@ export default function MethodologyPage() {
                 Request a Demo Session
                 <ArrowRight className="inline-block ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link href="/flagship-program" className="btn btn-secondary text-lg group">
+              <Link href="/flagship-program" className="btn btn-outline text-lg group">
                 View Our Programs
                 <Target className="inline-block ml-2 w-6 h-6" />
               </Link>

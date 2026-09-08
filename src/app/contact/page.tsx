@@ -265,7 +265,7 @@ export default function ContactPage() {
                 <div className="space-y-5">
                   {[
                     { icon: Mail,     label: 'Email',    value: 'info@4ah.in',          href: 'mailto:info@4ah.in',  colorClass: 'bg-orange/10',    textClass: 'text-orange'    },
-                    { icon: Phone,    label: 'Phone',    value: '+91 99999 99999',       href: 'tel:+919999999999',   colorClass: 'bg-purple/10',    textClass: 'text-purple'    },
+                    { icon: Phone,    label: 'Phone',    value: '+91 9152053225',       href: 'tel:+919152053225',   colorClass: 'bg-purple/10',    textClass: 'text-purple'    },
                     { icon: MapPin,   label: 'Location', value: 'India',                 href: null,                  colorClass: 'bg-teal/10',      textClass: 'text-teal'      },
                     { icon: Calendar, label: 'Hours',    value: 'Mon-Sat: 9 AM - 6 PM', href: null,                  colorClass: 'bg-blue-500/10',  textClass: 'text-blue-500'  },
                   ].map((item) => (
