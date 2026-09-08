@@ -12,7 +12,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: '/programs', priority: 0.95, changeFrequency: 'weekly' as const },
     { url: '/college-solutions', priority: 0.95, changeFrequency: 'weekly' as const },
     { url: '/corporate-solutions', priority: 0.95, changeFrequency: 'weekly' as const },
-    { url: '/flagship-program', priority: 0.95, changeFrequency: 'weekly' as const },
     { url: '/success-stories', priority: 0.85, changeFrequency: 'weekly' as const },
     { url: '/contact', priority: 0.9, changeFrequency: 'monthly' as const },
     { url: '/privacy-policy', priority: 0.5, changeFrequency: 'yearly' as const },

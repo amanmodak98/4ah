@@ -17,7 +17,6 @@ export default function Footer() {
       { label: 'All Programs', href: '/#programs' },
       { label: 'College Solutions', href: '/#college-solutions' },
       { label: 'Corporate Training', href: '/#corporate' },
-      { label: 'Flagship Program', href: '/#flagship' },
     ],
     resources: [
       { label: 'Training Methodology', href: '/#methodology' },

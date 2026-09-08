@@ -26,15 +26,6 @@ export default function FeaturedPrograms() {
       gradient: 'from-purple-500 to-pink-500',
       image: '/images/corporate.jpg',
     },
-    {
-      icon: Target,
-      title: 'Flagship 90-Hour Program',
-      description: 'Intensive final-year employability training. 60 hours aptitude + 30 hours soft skills. Complete placement preparation.',
-      features: ['90 Hours Training', 'Mock Interviews', 'Placement Ready'],
-      href: '/flagship-program',
-      gradient: 'from-orange-500 to-red-500',
-      image: '/images/flagship.jpg',
-    },
   ];
 
   return (

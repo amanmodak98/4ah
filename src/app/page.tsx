@@ -123,22 +123,13 @@ export default function Home() {
       href: '/corporate-solutions',
       border: 'hover:border-purple',
     },
-    {
-      icon: '⭐',
-      title: 'Flagship 90-Hour Program',
-      desc: 'Comprehensive aptitude and soft skills training — complete campus placement preparation in one program.',
-      tag: 'Campus to Corporate & Personality',
-      tagColor: 'badge-teal',
-      href: '/flagship-program',
-      border: 'hover:border-teal',
-    },
   ];
 
   const stats = [
     { value: 10000, suffix: '+', label: 'Professionals Trained' },
     { value: 50,   suffix: '+', label: 'Partner Institutions' },
     { value: 95,   suffix: '%', label: 'Satisfaction Rate' },
-    { value: 90,   suffix: 'hrs', label: 'Flagship Program' },
+    { value: 100,  suffix: '%', label: 'Industry Focus' },
   ];
 
   const whyPoints = [
@@ -166,7 +157,7 @@ export default function Home() {
       rating: 5,
     },
     {
-      quote: 'We saw a 40% improvement in aptitude test performance after the flagship program. The structured practice and individual feedback made all the difference.',
+      quote: 'We saw a 40% improvement in aptitude test performance after the training program. The structured practice and individual feedback made all the difference.',
       name: 'Ananya Verma',
       role: 'Participant, B.Tech 2024',
       college: 'Engineering College',
@@ -357,7 +348,7 @@ export default function Home() {
                     <div className="absolute inset-0 bg-gradient-to-r from-[#F97316] to-[#EA580C] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </Link>
                   <Link
-                    href="/flagship-program"
+                    href="/programs"
                     className="group px-8 py-4 border-2 border-white/20 text-white font-semibold rounded-xl backdrop-blur-sm hover:bg-white/10 hover:border-white/40 transition-all duration-300 inline-flex items-center gap-2"
                   >
                     <Play className="w-5 h-5 group-hover:scale-110 transition-transform" />
@@ -646,7 +637,7 @@ export default function Home() {
             {[
               { value: 10000, suffix: '+', label: 'Professionals Trained', desc: 'Across colleges & corporates' },
               { value: 50,   suffix: '+', label: 'Institutions',     desc: 'Colleges and corporate clients' },
-              { value: 90,   suffix: 'hrs', label: 'Flagship Program',desc: 'Comprehensive training' },
+              { value: 100,  suffix: '%', label: 'Industry Focus',desc: 'Real-world skills' },
               { value: 95,   suffix: '%',  label: 'Satisfaction',    desc: 'From participants & institutions' },
             ].map((s) => (
               <div key={s.label} className="py-4">
@@ -833,8 +824,8 @@ export default function Home() {
                 Request a Proposal
                 <ArrowRight className="w-5 h-5" />
               </Link>
-              <Link href="/flagship-program" className="btn btn-ghost btn-lg">
-                View Flagship Program
+              <Link href="/programs" className="btn btn-ghost btn-lg">
+                View All Programs
               </Link>
             </div>
 

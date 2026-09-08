@@ -38,7 +38,6 @@ export default function Navigation() {
         { name: 'All Programs', href: '/programs' },
         { name: 'College Solutions', href: '/college-solutions' },
         { name: 'Corporate Training', href: '/corporate-solutions' },
-        { name: 'Flagship Program', href: '/flagship-program' },
       ],
     },
     { name: 'Success Stories', href: '/success-stories' },

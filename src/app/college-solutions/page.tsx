@@ -117,7 +117,6 @@ export default function CollegeSolutionsPage() {
         'Mock interviews with feedback',
         'Holistic personality development',
       ],
-      highlight: true,
     },
   ];
 
@@ -136,7 +135,7 @@ export default function CollegeSolutionsPage() {
     },
     {
       question: 'What if we only want training for final year participants?',
-      answer: 'We offer standalone final year programs including our flagship 90-hour employability program. However, we always recommend the year-wise approach for maximum impact. Institutions that implement progressive training consistently see better placement outcomes.',
+      answer: 'We offer standalone final year programs including comprehensive employability programs. However, we always recommend the year-wise approach for maximum impact. Institutions that implement progressive training consistently see better placement outcomes.',
     },
     {
       question: 'How do you measure progress across the four years?',
@@ -281,7 +280,7 @@ export default function CollegeSolutionsPage() {
             {years.map((y) => (
               <div
                 key={y.year}
-                className={`year-card relative overflow-hidden rounded-3xl border-2 p-8 bg-gradient-to-br ${y.bg} hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 ${y.highlight ? 'ring-4 ring-orange/40' : ''}`}
+                className={`year-card relative overflow-hidden rounded-3xl border-2 p-8 bg-gradient-to-br ${y.bg} hover:shadow-2xl transition-all duration-300 hover:-translate-y-1`}
                 style={{ borderColor: y.border }}
               >
                 {/* Number badge */}
@@ -300,11 +299,6 @@ export default function CollegeSolutionsPage() {
                     <div className="text-2xl font-display font-black text-gray-900">{y.year}</div>
                     <div className="text-sm font-bold" style={{ color: y.gradientFrom }}>{y.focus}</div>
                   </div>
-                  {y.highlight && (
-                    <div className="ml-auto">
-                      <span className="badge badge-orange">Flagship</span>
-                    </div>
-                  )}
                 </div>
 
                 {/* Skills list */}
@@ -401,8 +395,8 @@ export default function CollegeSolutionsPage() {
               Partner With Us
               <ArrowRight className="w-5 h-5" />
             </Link>
-            <Link href="/flagship-program" className="btn btn-ghost btn-lg px-10">
-              View Final Year Program
+            <Link href="/programs" className="btn btn-ghost btn-lg px-10">
+              View All Programs
             </Link>
           </div>
         </div>

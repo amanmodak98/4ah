@@ -36,7 +36,7 @@ export default function SuccessStoriesPage() {
       role: 'Final Year Participant',
       institution: 'Engineering College, Batch 2024',
       type: 'Student',
-      quote: 'The 90-hour flagship program prepared me completely for campus placements. The aptitude training and mock interviews gave me the confidence to crack multiple offers. I landed my dream job at a top IT company!',
+      quote: 'The comprehensive training program prepared me completely for campus placements. The aptitude training and mock interviews gave me the confidence to crack multiple offers. I landed my dream job at a top IT company!',
       initials: 'AV',
       rating: 5,
       impact: '3 job offers received',

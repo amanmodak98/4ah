@@ -468,7 +468,7 @@ export default function MethodologyPage() {
                 Request a Demo Session
                 <ArrowRight className="inline-block ml-2 w-6 h-6 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link href="/flagship-program" className="btn btn-outline text-lg group">
+              <Link href="/programs" className="btn btn-outline text-lg group">
                 View Our Programs
                 <Target className="inline-block ml-2 w-6 h-6" />
               </Link>

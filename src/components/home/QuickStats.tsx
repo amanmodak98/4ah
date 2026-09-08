@@ -5,7 +5,7 @@ import { Target, Users, TrendingUp, Award } from 'lucide-react';
 export default function QuickStats() {
   const stats = [
     { icon: Users,      value: '10k+', label: 'Participants Trained',    desc: 'Across colleges and corporates' },
-    { icon: Target,     value: '90+',   label: 'Hours Training',      desc: 'Comprehensive flagship program' },
+    { icon: Target,     value: '100%',   label: 'Industry Focus',      desc: 'Real-world skills training' },
     { icon: TrendingUp, value: '95%',   label: 'Satisfaction Rate',   desc: 'From learners and institutions' },
     { icon: Award,      value: '50+',   label: 'Partner Institutions',desc: 'Colleges and corporate clients' },
   ];

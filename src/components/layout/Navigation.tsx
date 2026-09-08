@@ -35,7 +35,6 @@ const navigationItems: NavItem[] = [
       { label: 'All Programs', href: '/programs' },
       { label: 'College Solutions', href: '/college-solutions' },
       { label: 'Corporate Training', href: '/corporate-solutions' },
-      { label: 'Flagship 90-Hour Program', href: '/flagship-program' },
     ],
   },
   { label: 'Success Stories', href: '/success-stories' },

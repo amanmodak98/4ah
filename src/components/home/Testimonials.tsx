@@ -58,7 +58,7 @@ export default function Testimonials() {
       name: 'Ananya Verma',
       role: 'Final Year Participant',
       institution: 'Engineering College',
-      content: 'The 90-hour flagship program prepared me completely for campus placements. The aptitude training and mock interviews gave me the confidence to crack multiple offers. Highly recommended!',
+      content: 'The comprehensive training program prepared me completely for campus placements. The aptitude training and mock interviews gave me the confidence to crack multiple offers. Highly recommended!',
       rating: 5,
       image: '/images/testimonial-3.jpg',
     },

@@ -45,7 +45,7 @@ export default function Hero() {
   }, []);
 
   const stats = [
-    { icon: Target, value: '90+', label: 'Hours Training', color: 'from-orange-500 to-red-500' },
+    { icon: Target, value: '100%', label: 'Industry Focus', color: 'from-orange-500 to-red-500' },
     { icon: TrendingUp, value: '10k+', label: 'Learners Trained', color: 'from-blue-500 to-cyan-500' },
     { icon: Sparkles, value: '50+', label: 'Corporate Partners', color: 'from-purple-500 to-pink-500' },
   ];

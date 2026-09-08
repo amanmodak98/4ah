@@ -21,7 +21,6 @@ export default function Footer() {
     { name: 'Aptitude Training', href: '/programs#aptitude' },
     { name: 'Placement Readiness', href: '/programs#placement' },
     { name: 'Corporate Training', href: '/corporate-solutions' },
-    { name: 'Flagship 90-Hour Program', href: '/flagship-program' },
   ];
 
   const socialLinks = [

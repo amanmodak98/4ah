@@ -193,14 +193,6 @@ export const organizationSchema = {
         '@type': 'Offer',
         itemOffered: {
           '@type': 'Course',
-          name: 'Flagship 90-Hour Employability Program',
-          description: 'Comprehensive aptitude and soft skills training for final year learners',
-        },
-      },
-      {
-        '@type': 'Offer',
-        itemOffered: {
-          '@type': 'Course',
           name: 'College Solutions Programs',
           description: 'Year-wise progressive training from first year to placement',
         },

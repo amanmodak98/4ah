@@ -35,7 +35,7 @@ export default function Testimonials() {
       name: 'Sneha Patel',
       role: 'Final Year Participant',
       institution: 'CBIT, Hyderabad',
-      content: 'The 90-hour flagship program completely transformed my confidence. I cleared 8 aptitude tests and got placed in my dream company. Thank you 4AH!',
+      content: 'The comprehensive training program completely transformed my confidence. I cleared 8 aptitude tests and got placed in my dream company. Thank you 4AH!',
       rating: 5,
     },
   ];

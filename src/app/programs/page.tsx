@@ -121,18 +121,6 @@ export default function ProgramsPage() {
       highlights: ['Employee Upskilling', 'Leadership Programs', 'Change Management', 'Performance Enhancement'],
       href: '/corporate-solutions',
     },
-    {
-      icon: Sparkles,
-      title: 'Flagship 90-Hour Program',
-      tag: '⭐ Most Popular',
-      tagColor: 'badge-orange',
-      gradient: 'linear-gradient(135deg, #F97316 0%, #7C3AED 100%)',
-      light: 'from-orange/5 to-purple/5',
-      border: '#fed7aa',
-      highlights: ['Comprehensive Aptitude', 'Complete Soft Skills', 'Complete Mock Process', 'Individual Feedback'],
-      href: '/flagship-program',
-      featured: true,
-    },
   ];
 
   const methodology = [
@@ -146,11 +134,11 @@ export default function ProgramsPage() {
   const faqs = [
     {
       question: 'What training programs do you offer for colleges?',
-      answer: 'We offer comprehensive training programs including Communication Skills, Quantitative Aptitude, Logical Reasoning, Soft Skills & Personality Development, Technical Training, Placement Readiness, and our flagship 90-hour program. Programs can be customized based on year-wise requirements from first year to final year.',
+      answer: 'We offer comprehensive training programs including Communication Skills, Quantitative Aptitude, Logical Reasoning, Soft Skills & Personality Development, Technical Training, and Placement Readiness. Programs can be customized based on year-wise requirements from first year to final year.',
     },
     {
       question: 'How long does each training program take?',
-      answer: 'Program duration varies based on your needs. Our flagship program is 90 hours delivered over 10 weeks. Individual modules like communication or aptitude can range from 20-60 hours. We design programs to fit your academic calendar and placement timeline.',
+      answer: 'Program duration varies based on your needs. Individual modules like communication or aptitude can range from 20-60 hours, while comprehensive programs can be 60-90 hours delivered over 8-12 weeks. We design programs to fit your academic calendar and placement timeline.',
     },
     {
       question: 'Can programs be customized for our specific requirements?',
@@ -251,7 +239,7 @@ export default function ProgramsPage() {
               <Link
                 key={p.title}
                 href={p.href}
-                className={`prog-card group relative overflow-hidden rounded-3xl border-2 p-7 flex flex-col transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl bg-gradient-to-br ${p.light} ${p.featured ? 'lg:col-span-2 lg:row-span-1' : ''}`}
+                className={`prog-card group relative overflow-hidden rounded-3xl border-2 p-7 flex flex-col transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl bg-gradient-to-br ${p.light}`}
                 style={{ borderColor: p.border }}
               >
                 {/* Top gradient on hover */}
@@ -372,8 +360,8 @@ export default function ProgramsPage() {
                 Request Proposal
                 <ArrowRight className="w-5 h-5" />
               </Link>
-              <Link href="/flagship-program" className="btn btn-ghost btn-lg px-10">
-                Flagship 90-Hour Program
+              <Link href="/college-solutions" className="btn btn-ghost btn-lg px-10">
+                College Solutions
               </Link>
             </div>
           </div>

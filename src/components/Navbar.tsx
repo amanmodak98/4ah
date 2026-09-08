@@ -32,7 +32,6 @@ export default function Navbar() {
   const solutions = [
     { name: 'College Solutions', href: '/college-solutions' },
     { name: 'Corporate Training', href: '/corporate-solutions' },
-    { name: 'Flagship Program', href: '/flagship-program' },
   ];
 
   const isActive = (href: string) => pathname === href;

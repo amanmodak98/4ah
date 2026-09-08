@@ -13,7 +13,6 @@ export default function Footer() {
     { label: 'Communication Skills', href: '/programs#communication' },
     { label: 'Placement Readiness', href: '/programs#placement' },
     { label: 'Technical Training', href: '/programs#technical' },
-    { label: 'Flagship 90-Hour Program', href: '/flagship-program' },
   ];
 
   const companyLinks = [

@@ -22,7 +22,6 @@ export default function Navigation() {
     { label: 'About', href: '/#about' },
     { label: 'Programs', href: '/#programs' },
     { label: 'College Solutions', href: '/#college-solutions' },
-    { label: 'Flagship Program', href: '/#flagship' },
     { label: 'Methodology', href: '/#methodology' },
     { label: 'Contact', href: '/#contact' },
   ];
