@@ -98,7 +98,7 @@ export default function Home() {
     },
     {
       icon: '🚀',
-      title: 'Soft Skills & Personality',
+      title: 'Soft Skills & Personality Development',
       desc: 'Leadership, teamwork, EQ, time management, professional grooming and workplace etiquette.',
       tag: 'Campus & Corporate',
       tagColor: 'badge-teal',

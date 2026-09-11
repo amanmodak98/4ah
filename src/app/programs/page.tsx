@@ -79,7 +79,7 @@ export default function ProgramsPage() {
     },
     {
       icon: Users,
-      title: 'Soft Skills & Personality',
+      title: 'Soft Skills & Personality Development',
       tag: 'Year-wise',
       tagColor: 'badge-orange',
       gradient: 'linear-gradient(135deg, #EC4899 0%, #F97316 100%)',
