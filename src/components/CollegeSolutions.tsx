@@ -9,7 +9,7 @@ export default function CollegeSolutions() {
 
   const yearWiseJourney = [
     {
-      year: 'First Year',
+      year: 'First Step',
       icon: GraduationCap,
       color: 'from-blue-500 to-cyan-500',
       focus: 'Foundation Building',
@@ -22,7 +22,7 @@ export default function CollegeSolutions() {
       ],
     },
     {
-      year: 'Second Year',
+      year: 'Second Step',
       icon: Users2,
       color: 'from-purple-500 to-pink-500',
       focus: 'Professional Development',
@@ -36,7 +36,7 @@ export default function CollegeSolutions() {
       ],
     },
     {
-      year: 'Third Year',
+      year: 'Third Step',
       icon: Rocket,
       color: 'from-orange-500 to-red-500',
       focus: 'Advanced Skills',
@@ -50,7 +50,7 @@ export default function CollegeSolutions() {
       ],
     },
     {
-      year: 'Final Year',
+      year: 'Final Step',
       icon: Star,
       color: 'from-yellow-500 to-orange-500',
       focus: 'Placement Readiness',
